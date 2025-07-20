@@ -1,0 +1,41 @@
+name: homecredit-env
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.10
+  - pip
+
+  # Core libraries
+  - pandas
+  - numpy
+  - scikit-learn
+  - matplotlib
+  - seaborn
+
+  # Notebooks
+  - jupyterlab
+  - ipykernel
+  - nbformat
+
+  # Model libraries
+  - xgboost
+  - lightgbm
+  - catboost
+
+  # Visualization
+  - shap
+  - pandas-profiling
+  - plotly
+
+  # Experiment tracking / tuning 
+  - optuna
+
+  # File support
+  - openpyxl       # Excel
+  - pyarrow        # Parquet
+
+  # pip-only packages
+  - pip:
+
