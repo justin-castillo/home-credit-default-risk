@@ -49,8 +49,9 @@ In credit risk modeling:
 
 **Outcome:** CatBoost was selected for its superior recall and categorical support.
 
-**Placeholder:**  
-![Sample Model Performance Comparison](reports/figures/sample_model_metrics.png)
+<div style="max-width: 75%;">
+  <img src="plots/sample_model_comparison.png" alt="Sample Model Comparison" style="width: 100%; height: auto;" />
+</div>
 
 ---
 
@@ -70,20 +71,24 @@ In credit risk modeling:
 
 > Scaling to the full dataset and enriching the feature set improved recall by ~10 percentage points.
 
-**Placeholder:**  
-![Confusion Matrix - Final Model](reports/figures/confusion_matrix_final_model.png)
+<div style="max-width: 45%;">
+  <img src="plots/full_confusion_matrix.png" alt="Full Confusion Matrix" style="width: 100%; height: auto;" />
+</div>
 
 ---
 
 ## 6. Explainability (SHAP Analysis)
 
 ### Global SHAP Insights:
-- Most important features: `EXT_SOURCE_2`, `EXT_SOURCE_3`, `AMT_ANNUITY`, `EMPLOYED_BIRTH_RATIO`
+- Most important features: `EXT_SOURCE_2`, `EXT_SOURCE_3`
 - Application-level features contributed the most raw impact
 
-**Placeholder:**  
-![SHAP Summary Plot](reports/figures/shap_summary_full_model.png)
-
+<div style="max-width: 50%;">
+  <img src="plots/global_shap_1.png" alt="Global SHAP Summary Plot" style="width: 100%; height: auto;" />
+</div>
+<div style="max-width: 50%;">
+  <img src="plots/global_shap_2.png" alt="Global SHAP Summary Plot" style="width: 100%; height: auto;" />
+</div>
 ---
 
 ### Domain-Level SHAP Grouping:
@@ -92,8 +97,10 @@ Grouped SHAP revealed:
 - Installments + previous applications = stronger effect on defaulters
 - Bureau and social circle = modest but consistent signal
 
-**Placeholder:**  
-![Grouped SHAP by Feature Domain](reports/figures/shap_grouped_by_domain.png)
+<div style="max-width: 75%;">
+  <img src="plots/shap_group_1.png" alt="alt text" style="width: 100%; height: auto;" />
+</div>
+
 
 ---
 
@@ -101,9 +108,9 @@ Grouped SHAP revealed:
 - Helped validate individual risky predictions
 - Often tied to low external scores and high annuity burdens
 
-**Placeholders:**
-- ![SHAP Force Plot - Defaulter](reports/figures/force_plot_defaulter.png)
-- ![SHAP Force Plot - Non-Defaulter](reports/figures/force_plot_nondefaulter.png)
+<div style="max-width: 75%;">
+  <img src="plots/shap_group_2.png" alt="alt text" style="width: 100%; height: auto;" />
+</div>
 
 ---
 

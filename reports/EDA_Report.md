@@ -20,11 +20,9 @@ This analysis explores the `application_train.csv` dataset to understand the cla
 
 Roughly **8%** of applicants experienced payment difficulties.
 
-**Recommended Plot:**  
-- `TARGET` distribution bar plot (e.g., `sns.countplot`)
-- Annotated class imbalance ratio
-
----
+<div style="max-width: 50%;">
+  <img src="plots/class_imbalance.png" alt="Class Imbalance Plot" style="width: 100%; height: auto;" />
+</div>
 
 ## 3. Missing Values
 
@@ -38,10 +36,9 @@ Significant missingness found in:
 - Imputed using `SimpleImputer` (mean or median)
 - Dropped high-missingness building metadata features if low variance or importance
 
-**Recommended Plot:**  
-- Horizontal bar plot: Top 20 columns by percent missing
-
----
+<div style="max-width: 60%;">
+  <img src="plots/top_20_missing.png" alt="Top 20 Missing Columns" style="width: 100%; height: auto;" />
+</div>
 
 ## 4. Numerical Feature Distributions
 
@@ -50,10 +47,20 @@ Key observations:
 - Most clients are aged 25–65 (via `DAYS_BIRTH`)
 - Skewed variables like income and credit were log-transformed
 
-**Recommended Plots:**
-- Histograms: `AMT_CREDIT`, `AMT_INCOME_TOTAL`, `DAYS_BIRTH`
-- KDE plots: `EXT_SOURCE_1/2/3` split by `TARGET`
+<div style="max-width: 100%;">
+  <img src="plots/numerical_1.png" alt="Numerical Plot 1" style="width: 100%; height: auto;" />
+</div>
+<div style="max-width: 50%;">
+  <img src="plots/numerical_2.png" alt="Numerical Plot 2" style="width: 100%; height: auto;" />
+</div>
 
+<div style="max-width: 50%;">
+  <img src="plots/numerical_3.png" alt="Numerical Plot 3" style="width: 100%; height: auto;" />
+</div>
+
+<div style="max-width: 50%;">
+  <img src="plots/numerical_4.png" alt="Numerical Plot 4" style="width: 100%; height: auto;" />
+</div>
 ---
 
 ## 5. Categorical Variable Insights
@@ -63,11 +70,30 @@ Variables with clear class separation:
 - `NAME_FAMILY_STATUS`: Singles tend to default more
 - `NAME_EDUCATION_TYPE`: Lower education correlates with higher default risk
 
-**Recommended Plots:**
-- Count plots of key categorical features split by `TARGET`
-- Target rate by category (e.g., stacked bars or hue-colored bars)
+<div style="max-width: 50%;">
+  <img src="plots/categorical_1.png" alt="Categorical Plot 1" style="width: 100%; height: auto;" />
+</div>
 
----
+<div style="max-width: 50%;">
+  <img src="plots/categorical_2.png" alt="Categorical Plot 2" style="width: 100%; height: auto;" />
+</div>
+
+<div style="max-width: 50%;">
+  <img src="plots/categorical_3.png" alt="Categorical Plot 3" style="width: 100%; height: auto;" />
+</div>
+
+<div style="max-width: 50%;">
+  <img src="plots/categorical_4.png" alt="Categorical Plot 4" style="width: 100%; height: auto;" />
+</div>
+
+<div style="max-width: 50%;">
+  <img src="plots/categorical_5.png" alt="Categorical Plot 5" style="width: 100%; height: auto;" />
+</div>
+
+<div style="max-width: 50%;">
+  <img src="plots/categorical_6.png" alt="Categorical Plot 6" style="width: 100%; height: auto;" />
+</div>
+
 
 ## 6. Correlation Analysis
 
@@ -80,24 +106,41 @@ Top correlations with `TARGET` (absolute):
 **Interpretation:**  
 Lower external scores and younger applicants have higher default rates.
 
-**Recommended Plot:**
-- Correlation heatmap (filtered to top 30 features)
-- Boxplots of continuous variables vs. `TARGET`
+<div style="max-width: 50%;">
+  <img src="plots/correlation_1.png" alt="Correlation Plot 1" style="width: 100%; height: auto;" />
+</div>
 
----
+<div style="max-width: 50%;">
+  <img src="plots/correlation_2.png" alt="Correlation Plot 2" style="width: 100%; height: auto;" />
+</div>
+
+<div style="max-width: 50%;">
+  <img src="plots/correlation_3.png" alt="Correlation Plot 3" style="width: 100%; height: auto;" />
+</div>
+
+<div style="max-width: 50%;">
+  <img src="plots/correlation_4.png" alt="Correlation Plot 4" style="width: 100%; height: auto;" />
+</div>
+
+
+
 
 ## 7. Bivariate Relationships
 
-**Confirmed via Boxplots:**
 - Defaulting clients are generally younger
 - Have lower EXT_SOURCE scores
-- Often lower in income but not always
+- Often lower in income 
 
-**Recommended Plots:**
-- Boxplots: `DAYS_BIRTH`, `EXT_SOURCE_2`, `CREDIT_TO_INCOME_RATIO` vs. `TARGET`
-- Violin or strip plots for SHAP-relevant features
+<div style="max-width: 50%;">
+  <img src="plots/bivariate_1.png" alt="Bivariate Plot 1" style="width: 100%; height: auto;" />
+</div>
 
----
+<div style="max-width: 50%;">
+  <img src="plots/bivariate_2.png" alt="Bivariate Plot 2" style="width: 100%; height: auto;" />
+</div>
+<div style="max-width: 50%;">
+  <img src="plots/correlation_5.png" alt="Correlation Plot 5" style="width: 100%; height: auto;" />
+</div>
 
 ## 8. Feature Engineering Candidates
 

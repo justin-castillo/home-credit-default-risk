@@ -32,7 +32,6 @@ home_credit_default_risk/
 │
 ├── data/                     # Raw and processed CSVs
 ├── notebooks/                # Jupyter notebooks (EDA, modeling)
-├── src/                      # Source modules (optional)
 ├── reports/                  # Visualizations, SHAP plots, and documentation
 ├── environment.yml           # Conda environment specification
 └── README.md                 # Project overview and instructions
@@ -97,16 +96,7 @@ home_credit_default_risk/
 
 ```bash
 conda env create -f environment.yml
-conda activate home-credit-env
-
-## Reproducible Workflow
-
-Run the notebooks in the following order:
-
-1. `1_EDA_FeatureEngineering.ipynb`  
-2. `2_Modeling_CatBoost.ipynb`  
-3. `3_Evaluation_Thresholding_SHAP.ipynb`  
-4. `4_TestPrediction_Submission.ipynb`
+conda activate homecredit-env
 
 ## Future Enhancements
 
