@@ -1,1 +1,72 @@
 ".ipynb_checkpoints/\n*.csv\n*.docx\n.vscode/" 
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# C extensions
+*.pyd
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VSCode settings
+.vscode/
+
+# Environment and dependency folders
+.env/
+.venv/
+env/
+venv/
+*.env
+
+# Conda environment file lock
+conda-meta/
+*.lock
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Python egg metadata
+*.egg-info/
+*.egg
+
+# Output files and logs
+*.log
+*.out
+*.tmp
+
+# Model artifacts
+models/
+*.pkl
+*.joblib
+
+# Data files (optional - keep if you regenerate from source or external download)
+data/raw/
+data/interim/
+data/processed/
+
+# Plot images and reports
+reports/Plots/
+reports/*.png
+outputs/
+*.pdf
+*.docx
+
+# Secrets (add your own if you store API keys locally)
+secrets.*
+token.*
+
+# Submission files
+submission.csv
+
+# Ignore notebook output diffs if using nbstripout
+*.nbstripout
+
+# Ignore any temporary files you may have created during edits
+~$*.*
+
+*.csv     
+!data/    # But keep the directory
+# !data/important_file.csv  # Or whitelist specific files
