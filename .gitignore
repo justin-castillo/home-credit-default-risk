@@ -48,7 +48,7 @@ data/interim/
 data/processed/
 
 # Plot images and reports
-reports/Plots/
+reports/plots/
 reports/*.png
 outputs/
 *.pdf

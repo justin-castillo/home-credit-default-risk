@@ -1,3 +1,7 @@
+![Project Status](https://img.shields.io/badge/status-complete-brightgreen)
+![Model](https://img.shields.io/badge/model-CatBoost-blue)
+![License](https://img.shields.io/badge/license-MIT-lightgrey)
+
 # Home Credit Default Risk Prediction
 
 ## Overview
