@@ -1,4 +1,4 @@
-".ipynb_checkpoints/\n*.csv\n*.docx\n.vscode/" 
+".ipynb_checkpoints/\n*.csv\n*.docx\n.vscode/"
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -67,6 +67,7 @@ submission.csv
 # Ignore any temporary files you may have created during edits
 ~$*.*
 
-*.csv     
+*.csv
 !data/    # But keep the directory
 # !data/important_file.csv  # Or whitelist specific files
+/.quarto/

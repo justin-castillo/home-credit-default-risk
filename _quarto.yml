@@ -1,0 +1,9 @@
+# _quarto.yml
+format:
+  html:
+    toc: true
+    number-sections: false
+execute:
+  echo: false     # hide code, keep outputs
+  freeze: auto    # skip re-render if source hasn't changed
+  enabled: false
