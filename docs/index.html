@@ -19,6 +19,41 @@ ul.task-list li input[type="checkbox"] {
 width: 0.8em;
 margin: 0 0.8em 0.2em -1em;  vertical-align: middle;
 }
+
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+}
+pre.numberSource { margin-left: 3em; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -3829,11 +3864,11 @@ vertical-align: -.125em;
     <ul class="dropdown-menu" aria-labelledby="nav-menu-notebooks">    
         <li>
     <a class="dropdown-item" href="./notebooks/01_homecredit_sample.html">
- <span class="dropdown-text">Sample (small)</span></a>
+ <span class="dropdown-text">Home Credit Default Risk Analysis (Sampled Data)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./notebooks/02_homecredit_full.html">
- <span class="dropdown-text">Full (big)</span></a>
+ <span class="dropdown-text">Home Credit Default Risk Analysis (Full Data)</span></a>
   </li>  
     </ul>
   </li>
@@ -3842,10 +3877,7 @@ vertical-align: -.125em;
  <span class="menu-text">Docs</span>
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-docs">    
-        <li>
-    <a class="dropdown-item" href="./README.html">
- <span class="dropdown-text">Home Credit Default Risk – Credit Scoring Project</span></a>
-  </li>  
+        <li class="dropdown-header">docs/credit_scoring_project.md</li>
     </ul>
   </li>
 </ul>
@@ -3889,42 +3921,49 @@ vertical-align: -.125em;
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./notebooks/02_homecredit_full.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home Credit Default Risk Analysis (Full Dataset)</span></a>
+ <span class="menu-text">Home Credit Default Risk Analysis (Full Data)</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Docs</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./README.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home Credit Default Risk – Credit Scoring Project</span></a>
-  </div>
-</li>
-      </ul>
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Docs</span></span>
   </li>
     </ul>
     </div>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#home-credit-default-risk-credit-scoring-project" id="toc-home-credit-default-risk-credit-scoring-project" class="nav-link active" data-scroll-target="#home-credit-default-risk-credit-scoring-project">Home Credit Default Risk – Credit Scoring Project</a>
+  <ul class="collapse">
+  <li><a href="#project-objective" id="toc-project-objective" class="nav-link" data-scroll-target="#project-objective">Project Objective</a></li>
+  <li><a href="#project-results-highlights" id="toc-project-results-highlights" class="nav-link" data-scroll-target="#project-results-highlights">Project Results &amp; Highlights</a></li>
+  <li><a href="#detailed-project-overview" id="toc-detailed-project-overview" class="nav-link" data-scroll-target="#detailed-project-overview">Detailed Project Overview</a>
+  <ul class="collapse">
+  <li><a href="#dataset" id="toc-dataset" class="nav-link" data-scroll-target="#dataset">Dataset</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
+  <li><a href="#tools-technologies" id="toc-tools-technologies" class="nav-link" data-scroll-target="#tools-technologies">Tools &amp; Technologies</a></li>
+  </ul></li>
+  <li><a href="#key-insights-business-impact" id="toc-key-insights-business-impact" class="nav-link" data-scroll-target="#key-insights-business-impact">Key Insights &amp; Business Impact</a></li>
+  <li><a href="#quick-start-guide" id="toc-quick-start-guide" class="nav-link" data-scroll-target="#quick-start-guide">Quick Start Guide</a></li>
+  <li><a href="#project-structure" id="toc-project-structure" class="nav-link" data-scroll-target="#project-structure">Project Structure</a></li>
+  <li><a href="#author" id="toc-author" class="nav-link" data-scroll-target="#author">Author</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Home Credit Default Risk – Project Overview</h1>
+<div class="quarto-title-block"><div><h1 class="title">Home Credit Default Risk – Project Overview</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -3941,9 +3980,162 @@ vertical-align: -.125em;
 </header>
 
 
-<p>#include “../README.md”</p>
+<section id="home-credit-default-risk-credit-scoring-project" class="level1">
+<h1>Home Credit Default Risk – Credit Scoring Project</h1>
+<section id="project-objective" class="level2">
+<h2 class="anchored" data-anchor-id="project-objective">Project Objective</h2>
+<p>This project develops a robust credit scoring pipeline to predict the probability of loan applicants defaulting, using comprehensive financial and demographic data provided by Home Credit. The primary goal is to effectively identify applicants at higher risk of default, assisting lenders in reducing losses and making better-informed credit decisions.</p>
+<hr>
+</section>
+<section id="project-results-highlights" class="level2">
+<h2 class="anchored" data-anchor-id="project-results-highlights">Project Results &amp; Highlights</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 14%">
+<col style="width: 17%">
+<col style="width: 12%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>ROC-AUC</th>
+<th>Precision</th>
+<th>Recall</th>
+<th>F1 Score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>CatBoost (Final CV)</strong></td>
+<td><strong>0.774</strong></td>
+<td><strong>0.267</strong></td>
+<td><strong>0.376</strong></td>
+<td><strong>0.313</strong></td>
+</tr>
+<tr class="even">
+<td>XGBoost</td>
+<td>0.761</td>
+<td>0.235</td>
+<td>0.401</td>
+<td>0.297</td>
+</tr>
+<tr class="odd">
+<td>LightGBM</td>
+<td>0.763</td>
+<td>0.295</td>
+<td>0.302</td>
+<td>0.298</td>
+</tr>
+<tr class="even">
+<td>Random Forest</td>
+<td>0.740</td>
+<td>0.222</td>
+<td>0.427</td>
+<td>0.292</td>
+</tr>
+<tr class="odd">
+<td>Logistic Regression</td>
+<td>0.722</td>
+<td>0.198</td>
+<td>0.431</td>
+<td>0.271</td>
+</tr>
+</tbody>
+</table>
+<p><em>The final CatBoost model was selected due to its highest ROC-AUC and strong recall, effectively identifying a significant proportion of high-risk clients.</em></p>
+<hr>
+</section>
+<section id="detailed-project-overview" class="level2">
+<h2 class="anchored" data-anchor-id="detailed-project-overview">Detailed Project Overview</h2>
+<section id="dataset" class="level3">
+<h3 class="anchored" data-anchor-id="dataset">Dataset</h3>
+<p>The project utilized the complete <a href="https://www.kaggle.com/c/home-credit-default-risk">Home Credit Default Risk dataset</a>, integrating multiple relational tables: - Bureau data (credit history from other institutions) - Previous loan applications - Installment payments history - Credit card usage data - POS cash balances</p>
+</section>
+<section id="methodology" class="level3">
+<h3 class="anchored" data-anchor-id="methodology">Methodology</h3>
+<ol type="1">
+<li><strong>Exploratory Data Analysis</strong>
+<ul>
+<li>Identified critical features: external credit scores, employment history, loan payment behavior.</li>
+</ul></li>
+<li><strong>Feature Engineering</strong>
+<ul>
+<li>Engineered over 380 predictive features, including financial ratios (e.g., credit-to-income, annuity-to-income) and behavioral indicators (payment timeliness, delinquency).</li>
+</ul></li>
+<li><strong>Modeling &amp; Evaluation</strong>
+<ul>
+<li>Tested several machine learning models: Logistic Regression, Random Forest, XGBoost, LightGBM, and CatBoost.</li>
+<li>Selected <strong>CatBoost</strong> due to superior handling of categorical data and highest model performance metrics.</li>
+</ul></li>
+<li><strong>Hyperparameter Optimization</strong>
+<ul>
+<li>Utilized Optuna for hyperparameter tuning.</li>
+</ul></li>
+<li><strong>Threshold Tuning &amp; Validation</strong>
+<ul>
+<li>Used stratified K-fold cross-validation and optimized classification thresholds to maximize F1-score and recall.</li>
+</ul></li>
+<li><strong>Explainability &amp; Interpretability</strong>
+<ul>
+<li>Applied SHAP analysis to interpret model predictions, providing insights into influential factors.</li>
+</ul></li>
+</ol>
+</section>
+<section id="tools-technologies" class="level3">
+<h3 class="anchored" data-anchor-id="tools-technologies">Tools &amp; Technologies</h3>
+<ul>
+<li><strong>Programming:</strong> Python</li>
+<li><strong>Libraries:</strong> CatBoost, XGBoost, LightGBM, Optuna, SHAP, Pandas, NumPy, Matplotlib, Seaborn</li>
+<li><strong>CI/CD:</strong> GitHub Actions</li>
+<li><strong>Environment &amp; Versioning:</strong> Conda, Docker, DVC</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="key-insights-business-impact" class="level2">
+<h2 class="anchored" data-anchor-id="key-insights-business-impact">Key Insights &amp; Business Impact</h2>
+<ul>
+<li>Achieved strong predictive performance with a ROC-AUC of <strong>0.782</strong>, significantly capturing at-risk clients (Recall: <strong>0.683</strong>).</li>
+<li>SHAP analysis ensured transparency, clearly communicating feature impacts to stakeholders.</li>
+</ul>
+<hr>
+</section>
+<section id="quick-start-guide" class="level2">
+<h2 class="anchored" data-anchor-id="quick-start-guide">Quick Start Guide</h2>
+<p><strong>To reproduce the pipeline locally:</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> env create <span class="at">-f</span> environment.yml</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate homecredit</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> src/features/build_features.py</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> src/training/train.py</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> src/predict.py <span class="at">--output</span> submission.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="project-structure" class="level2">
+<h2 class="anchored" data-anchor-id="project-structure">Project Structure</h2>
+<pre><code>.
+├── data/                   # Raw and processed data
+├── notebooks/              # Exploratory and modeling notebooks
+├── models/                 # Trained models and metadata
+├── src/                    # Project source code
+├── reports/                # Generated reports and visuals
+├── environment.yml         # Conda environment setup
+└── Dockerfile              # Docker container definition</code></pre>
+</section>
+<section id="author" class="level2">
+<h2 class="anchored" data-anchor-id="author">Author</h2>
+<p><strong>Justin Castillo</strong><br>
+Email: <a href="mailto:jcastillo.hotels@gmail.com">jcastillo.hotels@gmail.com</a><br>
+GitHub: <a href="https://github.com/justin-castillo">github.com/justin-castillo</a><br>
+LinkedIn: <a href="https://www.linkedin.com/in/justin-castillo-69351198/">linkedin.com/in/justin-castillo-69351198</a></p>
 
 
+<!-- -->
+
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -4015,6 +4207,57 @@ vertical-align: -.125em;
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -4344,7 +4587,13 @@ vertical-align: -.125em;
       }
     }
   });
-  </script>
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class>
+<div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Home Credit Default Risk – Project Overview&quot;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>{{&lt; include README.md &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 

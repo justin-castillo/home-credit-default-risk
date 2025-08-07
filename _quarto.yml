@@ -1,17 +1,33 @@
 project:
   type: website
-  output-dir: docs           # already set
+  output-dir: docs
   render:
-    - index.qmd              # the new landing page
-    - README.md              # (optional) keep original too
-    - notebooks/**/*.ipynb   # your two notebooks
-    - "*.md"                 # any extra markdown files
+    - index.qmd
+    - notebooks/*.ipynb
+    - docs/*.md           # any extra markdown
 
 format:
   html:
     toc: true
     number-sections: false
     self-contained: true
+    code-tools: true        # adds “Show code / Hide code”
+    echo: false             # hide code by default (PUBLIC)
+
+# ---------- dev version ----------
+profiles:
+  dev:
+    format:
+      html:
+        toc: true
+        number-sections: false
+        self-contained: true
+        code-tools: true
+        echo: true          # show code (DEV)
+        output-dir: docs-dev
+
+execute:
+  freeze: auto            # skip execution unless notebooks change
 
 website:
   title: "Home Credit Default Risk"
@@ -21,19 +37,16 @@ website:
         file: index.qmd
       - text: Notebooks
         menu:
-          - text: Sample (small)
-            file: notebooks/01_homecredit_sample.ipynb
-          - text: Full (big)
-            file: notebooks/02_homecredit_full.ipynb
+          - notebooks/01_homecredit_sample.ipynb
+          - notebooks/02_homecredit_full.ipynb
       - text: Docs
         menu:
-          - README.md         # or any other .md / .qmd
-  sidebar:                    # optional floating sidebar
-    style: "floating"
+          - docs/credit_scoring_project.md
+  sidebar:
     collapse-level: 2
+    style: floating
     contents:
       - section: "Notebooks"
         contents: notebooks/*
       - section: "Docs"
-        contents:
-          - README.md
+        contents: docs/*
