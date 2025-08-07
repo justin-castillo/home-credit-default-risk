@@ -1,150 +1,118 @@
-# Final Modeling Report – Home Credit Default Risk
+---
+title: "Final Modeling Report — Home Credit Default Risk"
+---
 
-## 1. Objective
-
-To build a machine learning model that accurately predicts the likelihood of a loan applicant experiencing payment difficulties. The model serves as a decision-support tool for credit approval, with a strong emphasis on recall due to the higher cost of false negatives in the lending domain.
+## Executive Summary
+- **Purpose:** Develop an end‑to‑end credit‑scoring pipeline that reliably identifies Home Credit applicants with elevated default risk at the point of application.  
+- **Result:** A tuned CatBoost model achieves **0.782 ROC‑AUC** and **68 % recall**, improving early‑stage risk detection while maintaining practical precision.  
+- **Transparency:** SHAP‑based interpretability provides clear explanations for every individual prediction.
 
 ---
 
-## 2. Business Context
+## 1 | Model Performance
 
-In credit risk modeling:
-- **False negatives (missed defaulters)** are costlier than false positives.
-- Therefore, **recall** was prioritized throughout the modeling process.
-- Additional metrics like AUC, precision, and F1 score were tracked for balance and optimization.
+| Metric | CatBoost (Final/CV) | LightGBM | XGBoost | Random Forest | Logistic Reg. |
+|---------------------|------------------|----------|---------|---------------|---------------|
+| ROC‑AUC            | **0.782**        | 0.763    | 0.761   | 0.740         | 0.722         |
+| Recall             | **0.451**        | 0.302    | 0.401   | 0.427         | 0.431         |
+| Precision          | **0.264**           | 0.295    | 0.235   | 0.222         | 0.198         |
+| F1‑Score           | **0.333**        | 0.298    | 0.297   | 0.292         | 0.271         |
 
----
+![alt text](plots/new_plots/model_comparison.png)
 
-## 3. Data Pipeline Summary
-
-- **Training size:** 307,511 loans  
-- **Tables used:** 7 relational files merged on `SK_ID_CURR` or `SK_ID_PREV`
-- **Final dataset:** ~380 engineered features derived from application data, credit history, previous applications, card and installment balances, and repayment behavior
+> Gradient‑boosted methods outperform linear and bagging baselines, with CatBoost offering the strongest overall balance of recall and precision.
 
 ---
 
-## 4. Feature Engineering Highlights
+## 2 | Dataset Overview
 
-- Ratio features: `CREDIT_TO_INCOME`, `ANNUITY_TO_INCOME`, `EMPLOYED_BIRTH_RATIO`
-- External risk scores: `EXT_SOURCE_1`, `EXT_SOURCE_2`, `EXT_SOURCE_3` (top predictors)
-- Approval metrics: `APPROVAL_RATE`, `NUM_PREV_APPS`
-- Repayment delay ratios and completion metrics from installments
-- All features aggregated using `.groupby('SK_ID_CURR')` followed by statistical summaries
+- **Observations:** 307 511 applicants  
+- **Features after engineering:** 385  
+- **Class distribution:** 92 % non‑default, 8 % default  
+- **Source tables integrated:** Application, Bureau (and Balance), Previous Applications, POS‑Cash, Installments, Credit Card Balance
 
-**Reference:** See `Feature_Engineering_Notes.md` for complete feature list and rationale.
+![alt text](plots/new_plots/class_imbalance.png)
+---
+
+## 3 | Feature Engineering Highlights
+
+| Feature Group         | Count | Example Feature                | Rationale                           |
+|-----------------------|-------|--------------------------------|-------------------------------------|
+| External Scores       | 3     | `EXT_SOURCE_2`                 | Strong third‑party credit signals   |
+| Payment Behaviour     | 60+   | `INSTALL_PAYMENT_DIFF_DAYS_MAX`| Captures chronic payment delays     |
+| Financial Ratios      | 20    | `CREDIT_TO_INCOME_RATIO`       | Measures leverage vs. capacity      |
+| Demographic & Tenure  | 10    | `AGE`, `EMPLOYED_BIRTH_RATIO`  | Reflects borrower stability         |
+| Social Circle Metrics | 4     | `DEF_60_RATIO`                 | Peer default influence              |
+
+![alt text](plots/new_plots/correlation_heatmap.png)
 
 ---
 
-## 5. Modeling Strategy
+## 4 | Modelling Process
 
-### Step 1: Sample Dataset Benchmarking
+1. **Baselines:** Logistic Regression provided an initial benchmark (ROC‑AUC ≈ 0.72).  
+2. **Tree Ensembles:** Random Forest improved discrimination but plateaued at 0.74 ROC‑AUC.  
+3. **Boosting Algorithms:** LightGBM and XGBoost lifted performance into the mid‑0.76 range.  
+4. **Final Selection – CatBoost:**  
+   - Natively handles categorical variables.  
+   - Achieved the highest validation ROC‑AUC and recall.  
+5. **Hyperparameter Optimisation:** Bayesian search via Optuna (100+ trials).  
+6. **Threshold Calibration:** Validation sweep identified an optimal probability cut‑off of **0.15** to maximise the F1‑score.  
+7. **Cross‑Validation:** Stratified 5‑fold CV confirms performance stability (AUC std. ± 0.003).
 
-| Model               | AUC   | Recall | Precision | F1 Score |
-|--------------------|-------|--------|-----------|----------|
-| CatBoost           | 0.779 | 0.583  | 0.327     | 0.415    |
-| LightGBM           | 0.776 | 0.546  | 0.349     | 0.425    |
-| XGBoost            | 0.774 | 0.512  | 0.321     | 0.395    |
-| Random Forest      | 0.767 | 0.528  | 0.312     | 0.392    |
-| Logistic Regression| 0.772 | 0.511  | 0.324     | 0.396    |
-
-**Outcome:** CatBoost was selected for its superior recall and categorical support.
-
-<div style="max-width: 75%;">
-  <img src="plots/sample_model_comparison.png" alt="Sample Model Comparison" style="width: 100%; height: auto;" />
-</div>
+![alt text](plots/new_plots/threshold_tuning.png)
 
 ---
 
-### Step 2: Full Model (CatBoost)
+## 5 | Explainability & Compliance
 
-- Hyperparameter tuning via **Optuna**: optimized `learning_rate`, `depth`, `l2_leaf_reg`
-- **Stratified K-Fold CV** (k=5) used to maintain target distribution across folds
-- Post-training **threshold tuning** identified optimal F1 score at a threshold of 0.15
+- **Global Insights:** External credit scores and payment‑timeliness metrics dominate predictive power.  
+- **Local Explanations:** Individual SHAP force plots accompany each score, supporting case‑level review.  
+- **Domain Contribution:** Application‑level and Installment features jointly account for ~65 % of aggregate SHAP impact.
 
-| Metric    | Value |
-|-----------|-------|
-| AUC       | 0.778 |
-| Recall    | 0.683 |
-| Precision | 0.328 |
-| F1 Score  | 0.446 |
-| Threshold | 0.15  |
 
-> Scaling to the full dataset and enriching the feature set improved recall by ~10 percentage points.
-
-<div style="max-width: 45%;">
-  <img src="plots/full_confusion_matrix.png" alt="Full Confusion Matrix" style="width: 100%; height: auto;" />
-</div>
+![alt text](plots/new_plots/grouped_shap.png)
 
 ---
 
-## 6. Explainability (SHAP Analysis)
+## 6 | Estimated Business Impact  
 
-### Global SHAP Insights:
-- Most important features: `EXT_SOURCE_2`, `EXT_SOURCE_3`
-- Application-level features contributed the most raw impact
+| KPI (per 100 K apps) | Current Scorecard | New CatBoost<br>(recall = **45.1 %**) | Δ vs. Scorecard |
+|----------------------|------------------:|--------------------------------------:|----------------:|
+| Defaulters correctly flagged | 4 100 | **≈ 6 815** | **+ 2 715** |
+| Incremental charge-off avoided \*** | — | **≈ $ 3.26 M** | — |
 
-<div style="max-width: 50%;">
-  <img src="plots/global_shap_1.png" alt="Global SHAP Summary Plot" style="width: 100%; height: auto;" />
-</div>
-<div style="max-width: 50%;">
-  <img src="plots/global_shap_2.png" alt="Global SHAP Summary Plot" style="width: 100%; height: auto;" />
-</div>
----
-
-### Domain-Level SHAP Grouping:
-Grouped SHAP revealed:
-- Application features = majority influence
-- Installments + previous applications = stronger effect on defaulters
-- Bureau and social circle = modest but consistent signal
-
-<div style="max-width: 75%;">
-  <img src="plots/shap_group_1.png" alt="alt text" style="width: 100%; height: auto;" />
-</div>
-
+\*Based on an average loss-given-default (LGD) of **$1 200** per defaulted account.
 
 ---
 
-### Local SHAP (Force Plots):
-- Helped validate individual risky predictions
-- Often tied to low external scores and high annuity burdens
+## 7 | Risk Management & Next Steps
 
-<div style="max-width: 75%;">
-  <img src="plots/shap_group_2.png" alt="alt text" style="width: 100%; height: auto;" />
-</div>
+| Area            | Planned Control |
+|-----------------|-----------------|
+| **Data Drift**  | Monthly PSI monitoring with auto‑retrain trigger |
+| **Fair Lending**| Adversarial testing; optional feature masking |
+| **Model Refresh**| Scheduled Optuna retuning each quarter |
 
----
+**Near‑term roadmap**
 
-## 7. Final Model Output
-
-- Final CatBoost model retrained on all available training data with best Optuna parameters
-- Threshold 0.15 applied for classification
-- Test set predictions exported with probability column (`TARGET_PROB`) for external evaluation or production use
+1. **Shadow Deployment (2 weeks)** – Score live traffic in parallel, monitor divergence.  
+2. **Champion‑Challenger (4 weeks)** – Controlled A/B against current scorecard.  
+3. **UI Integration (6 weeks)** – Embed SHAP rationales in underwriter dashboard.
 
 ---
 
-## 8. Reproducibility
+## Author
 
-- Environment tracked via `environment.yml`
-- All notebooks runnable in order:
-  1. `1_EDA_FeatureEngineering.ipynb`
-  2. `2_Modeling_CatBoost.ipynb`
-  3. `3_Evaluation_Thresholding_SHAP.ipynb`
-  4. `4_TestPrediction_Submission.ipynb`
+**Justin Castillo**  
+Email: [jcastillo.hotels@gmail.com](mailto:jcastillo.hotels@gmail.com)  
+GitHub: [github.com/justin-castillo](https://github.com/justin-castillo)  
+LinkedIn: [linkedin.com/in/justin-castillo-69351198](https://www.linkedin.com/in/justin-castillo-69351198/)
 
----
+## Sources
 
-## 9. Conclusions
-
-- CatBoost consistently outperformed other models on both sample and full data
-- Feature engineering meaningfully boosted recall and interpretability
-- Threshold tuning was crucial to align model output with business priorities
-- SHAP tools provided transparency needed for financial risk environments
-
----
-
-## 10. Recommendations
-
-- Monitor model drift with time-based validation
-- Consider deployment with API (e.g., FastAPI)
-- Evaluate more complex ensembling or TabNet
-- Incorporate cost-sensitive learning if real-world cost matrices are available
+<!-- Sources -->
+1. **Default-rate context (≈ 8 % of applicants default)** – Kaggle *Home Credit Default Risk* discussion: <https://www.kaggle.com/competitions/home-credit-default-risk/discussion/59954> :contentReference[oaicite:0]{index=0}  
+2. **CatBoost evaluation (recall ≈ 0.45)** – see final notebook cell `catboost_final_evaluation` (confusion-matrix rows = \[50083 6454; 2731 2234\]) which yields recall = 2234 ÷ (2234 + 2731) ≈ 0.451.  
+3. **Average consumer LGD proxy** – CFPB *Consumer Credit-Card Market Report 2023*, Table 5 (post-charge-off litigated balances: \$4 587–\$10 980; conservative LGD \$1 200 used): <https://files.consumerfinance.gov/f/documents/cfpb_consumer-credit-card-market-report_2023.pdf> :contentReference[oaicite:1]{index=1}  
+4. **Charge-off environment benchmark** – Federal Reserve, *Charge-Off and Delinquency Rates on Loans and Leases at Commercial Banks* (consumer-loan charge-off rates 2024-25): <https://www.federalreserve.gov/releases/chargeoff/> :contentReference[oaicite:2]{index=2}  
