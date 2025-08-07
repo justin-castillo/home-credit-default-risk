@@ -795,100 +795,221 @@
   {
     "objectID": "notebooks/02_homecredit_full.html",
     "href": "notebooks/02_homecredit_full.html",
-    "title": "Section 1: Data loading and merging",
+    "title": "“Home Credit Default Risk Analysis — Full Dataset”",
     "section": "",
-    "text": "— title: “Home Credit Default Risk Analysis — Full Dataset” —",
+    "text": "This notebook presents a comprehensive end-to-end modeling pipeline for predicting default risk using the entire Home Credit dataset (not a sample). The goal is to identify clients who are likely to experience payment difficulties, based on extensive historical and application data.\nWe use CatBoost, a gradient boosting model particularly well-suited for handling categorical features natively, and apply Optuna to tune hyperparameters for maximum performance. This version of the notebook represents the final cleaned, tuned, and fully cross-validated model, ready for interpretation and, with further adjustments, deployment.",
     "crumbs": [
       "Home",
-      "Project Objective"
+      "\"Home Credit Default Risk Analysis — Full Dataset\""
     ]
   },
   {
     "objectID": "notebooks/02_homecredit_full.html#project-objective",
     "href": "notebooks/02_homecredit_full.html#project-objective",
-    "title": "Section 1: Data loading and merging",
-    "section": "Project Objective",
-    "text": "Project Objective\n\nThis notebook presents a comprehensive end-to-end modeling pipeline for predicting default risk using the entire Home Credit dataset (not a sample). The goal is to identify clients who are likely to experience payment difficulties, based on extensive historical and application data.\nWe use CatBoost, a gradient boosting model particularly well-suited for handling categorical features natively, and apply Optuna to tune hyperparameters for maximum performance. This version of the notebook represents the final cleaned, tuned, and fully cross-validated model, ready for interpretation and, with further adjustments, deployment.",
+    "title": "“Home Credit Default Risk Analysis — Full Dataset”",
+    "section": "",
+    "text": "This notebook presents a comprehensive end-to-end modeling pipeline for predicting default risk using the entire Home Credit dataset (not a sample). The goal is to identify clients who are likely to experience payment difficulties, based on extensive historical and application data.\nWe use CatBoost, a gradient boosting model particularly well-suited for handling categorical features natively, and apply Optuna to tune hyperparameters for maximum performance. This version of the notebook represents the final cleaned, tuned, and fully cross-validated model, ready for interpretation and, with further adjustments, deployment.",
     "crumbs": [
       "Home",
-      "Project Objective"
+      "\"Home Credit Default Risk Analysis — Full Dataset\""
     ]
   },
   {
     "objectID": "notebooks/02_homecredit_full.html#key-features",
     "href": "notebooks/02_homecredit_full.html#key-features",
-    "title": "Section 1: Data loading and merging",
+    "title": "“Home Credit Default Risk Analysis — Full Dataset”",
     "section": "Key Features",
     "text": "Key Features\n\nData Source: Kaggle - Home Credit Default Risk\nData Used: All relevant relational tables merged and aggregated appropriately (bureau, previous_application, installments_payments, etc.)\nTarget: TARGET (1 = client experienced payment difficulties, 0 = otherwise)\nModel: CatBoostClassifier\nTuning: Optuna hyperparameter optimization with stratified K-fold cross-validation\nEvaluation Metrics: AUC, Recall, Precision, F1-score, Confusion Matrix, and SHAP interpretability",
     "crumbs": [
       "Home",
-      "Project Objective"
+      "\"Home Credit Default Risk Analysis — Full Dataset\""
     ]
   },
   {
     "objectID": "notebooks/02_homecredit_full.html#why-catboost",
     "href": "notebooks/02_homecredit_full.html#why-catboost",
-    "title": "Section 1: Data loading and merging",
+    "title": "“Home Credit Default Risk Analysis — Full Dataset”",
     "section": "Why CatBoost?",
     "text": "Why CatBoost?\n\nHandles categorical features directly without one-hot encoding\nEfficient with large datasets\nExcellent performance on tabular, structured data",
     "crumbs": [
       "Home",
-      "Project Objective"
+      "\"Home Credit Default Risk Analysis — Full Dataset\""
     ]
   },
   {
     "objectID": "notebooks/02_homecredit_full.html#notebook-outline",
     "href": "notebooks/02_homecredit_full.html#notebook-outline",
-    "title": "Section 1: Data loading and merging",
+    "title": "“Home Credit Default Risk Analysis — Full Dataset”",
     "section": "Notebook Outline",
     "text": "Notebook Outline\n\nData loading and merging\n\nRelational merging workflow\n\nSanity Checks and Preprocessing\n\nCatBoost Modeling\n\nFeature Engineering and SHAP Analysis\n\nFinal Model Validation and SHAP Summary\n\nConclusion",
     "crumbs": [
       "Home",
-      "Project Objective"
+      "\"Home Credit Default Risk Analysis — Full Dataset\""
     ]
   },
   {
     "objectID": "notebooks/02_homecredit_full.html#trainvalidationtest-split",
     "href": "notebooks/02_homecredit_full.html#trainvalidationtest-split",
-    "title": "Section 1: Data loading and merging",
+    "title": "“Home Credit Default Risk Analysis — Full Dataset”",
     "section": "3.1 Train/Validation/Test Split",
     "text": "3.1 Train/Validation/Test Split\n\nSplits the full dataset into:\n\nTrain (60%)\nValidation (20%)\nTest (20%)\n\nUses StratifiedShuffleSplit logic via train_test_split() to maintain TARGET balance across splits.",
     "crumbs": [
       "Home",
-      "Project Objective"
+      "\"Home Credit Default Risk Analysis — Full Dataset\""
     ]
   },
   {
     "objectID": "notebooks/02_homecredit_full.html#notes-inconsistencies-checked",
     "href": "notebooks/02_homecredit_full.html#notes-inconsistencies-checked",
-    "title": "Section 1: Data loading and merging",
+    "title": "“Home Credit Default Risk Analysis — Full Dataset”",
     "section": "3.2 Notes / Inconsistencies Checked",
     "text": "3.2 Notes / Inconsistencies Checked\n\nEach auxiliary table is successfully joined using consistent keys (SK_ID_CURR or SK_ID_PREV).\nAll merges are left joins to prevent data loss in the main tables.\nAll engineered features are renamed with clear prefixes (BB_, PREVAPP_, POS_, INSTALL_, CC_), avoiding column collisions.\nNo observed leakage — aggregations are scoped to past behavior only (i.e., not using future payment dates or default outcomes).",
     "crumbs": [
       "Home",
-      "Project Objective"
+      "\"Home Credit Default Risk Analysis — Full Dataset\""
     ]
   },
   {
     "objectID": "notebooks/02_homecredit_full.html#initial-run-baseline-catboost-model",
     "href": "notebooks/02_homecredit_full.html#initial-run-baseline-catboost-model",
-    "title": "Section 1: Data loading and merging",
+    "title": "“Home Credit Default Risk Analysis — Full Dataset”",
     "section": "4.1 Initial Run (Baseline CatBoost Model)",
-    "text": "4.1 Initial Run (Baseline CatBoost Model)\nA baseline CatBoostClassifier is trained using manually set parameters:\ncat_model = CatBoostClassifier(\n    iterations=500,\n    learning_rate=0.01,\n    depth=6,\n    eval_metric='AUC',\n    random_seed=42,\n    verbose=100,\n    early_stopping_rounds=50\n)\n\n::: {#21926b6a-489c-44c0-b820-bebac3ab64c5 .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=50}\n\n::: {.cell-output .cell-output-stdout}\n0: test: 0.5612338 best: 0.5612338 (0) total: 520ms remaining: 4m 19s 100: test: 0.7672985 best: 0.7672985 (100) total: 30.7s remaining: 2m 1s 200: test: 0.7733849 best: 0.7733972 (199) total: 1m remaining: 1m 30s 300: test: 0.7762936 best: 0.7762936 (300) total: 1m 30s remaining: 59.6s 400: test: 0.7773160 best: 0.7773160 (400) total: 1m 59s remaining: 29.4s 499: test: 0.7780844 best: 0.7780844 (499) total: 2m 30s remaining: 0us\nbestTest = 0.7780844317 bestIteration = 499\nBaseline CatBoost Results (Threshold = 0.5) AUC: 0.7781 precision recall f1-score support\n       0      0.922     0.997     0.958     56537\n       1      0.520     0.040     0.074      4965\n\naccuracy                          0.920     61502\nmacro avg 0.721 0.518 0.516 61502 weighted avg 0.890 0.920 0.887 61502\n[[56354 183] [ 4767 198]]\n:::\n:::\n\n\n## 4.2 Optuna Hyperparameter Tuning\n\n- A custom objective() function is defined to search the hyperparameter space using Optuna with stratified validation inside the objective scope (to prevent leakage).\n\n- Key aspects:\n    - Parameters tuned:\n        learning_rate, depth, l2_leaf_reg, bootstrap_type\n    - Class imbalance addressed via:\n        class_weights = [1, 15]\n    - Evaluation metric:\n        roc_auc_score\n    - Optuna trial settings:\n        15 trials, SuccessiveHalvingPruner used for pruning poor runs\n        Best AUC and associated parameters printed after tuning\n\n::: {#5f0c9a4b-fd2d-4755-8fc1-c7b222d370fb .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=51}\n\n::: {.cell-output .cell-output-stdout}\nBest AUC: 0.7795 Best Parameters: learning_rate: 0.03759227415469158 depth: 6 l2_leaf_reg: 7.24195964417585\n:::\n:::\n\n\n## 4.3 Threshold Tuning\n\n- Rather than defaulting to a 0.5 threshold, we identify the optimal threshold based on F1-score maximization:\n    - Refit model with best Optuna parameters on training data.\n    - Generate probabilities on validation set (y_pred_prob_cb).\n    - Evaluate multiple thresholds from 0.05 to 0.95.\n    - Select threshold with maximum F1-score (best_threshold_cb).\n    - Final predictions and classification report are generated using this threshold.\n\n::: {#e0386970 .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=52}\n\n::: {.cell-output .cell-output-stdout}\nFinal CatBoost Evaluation (Threshold = 0.15) AUC: 0.7790 precision recall f1-score support\n       0      0.948     0.886     0.916     56537\n       1      0.257     0.450     0.327      4965\n\naccuracy                          0.851     61502\nmacro avg 0.603 0.668 0.622 61502 weighted avg 0.892 0.851 0.868 61502\n[[50083 6454] [ 2731 2234]]\n:::\n:::\n\n\n# Section 5: Feature Engineering and SHAP Analysis\n***\n- This section finalizes the modeling process by engineering domain-relevant features and interpreting model behavior using SHAP. \n- Feature engineering is done post-baseline modeling to avoid data leakage, and SHAP plots are generated for interpretability.\n\n## 5.1 SHAP Function (for CatBoost)\n\nWe define a custom function `explain_model_with_shap()` that:\n\n- Accepts any trained tree-based model (CatBoost, XGBoost, LightGBM, RandomForest).\n- Automatically handles **binary classification** class index selection.\n- Plots:\n  - **Global Feature Importance** (bar plot)\n  - **SHAP Summary Plot** (violin plot)\n  - **Force Plots** for the top-N highest-risk predictions \n\nThis helps interpret model logic both globally (what matters most) and locally (why a specific prediction was made).\n\n```python\nexplain_model_with_shap(\n    model=cat_model,\n    X=X_test,\n    model_name=\"CatBoost\",\n    pred_probs=y_pred_prob_cb,  # shape: (n_samples,) or [:, 1] if shape is (n_samples, 2)\n    class_index=1               # Needed because CatBoost returns a list of SHAP arrays\n)\n\n\n\n## 5.2 CatBoost (feature analysis)\n\n::: {#67507621 .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=54}\n\n::: {.cell-output .cell-output-stdout}\nGenerating SHAP explanations for: CatBoost\nCatBoost - Global Feature Importance\n:::\n\n::: {.cell-output .cell-output-display}\n![](02_homecredit_full_files/figure-html/cell-55-output-2.png){}\n:::\n\n::: {.cell-output .cell-output-stdout}\nCatBoost - SHAP Summary Plot\n:::\n\n::: {.cell-output .cell-output-display}\n![](02_homecredit_full_files/figure-html/cell-55-output-4.png){}\n:::\n\n::: {.cell-output .cell-output-stdout}\nCatBoost - SHAP Force Plot for Row 61079 (Prob = 0.907)\n:::\n\n::: {.cell-output .cell-output-display}\n![](02_homecredit_full_files/figure-html/cell-55-output-6.png){}\n:::\n\n::: {.cell-output .cell-output-stdout}\nCatBoost - SHAP Force Plot for Row 57347 (Prob = 0.869)\n:::\n\n::: {.cell-output .cell-output-display}\n![](02_homecredit_full_files/figure-html/cell-55-output-8.png){}\n:::\n\n::: {.cell-output .cell-output-stdout}\nCatBoost - SHAP Force Plot for Row 53728 (Prob = 0.855)\n:::\n\n::: {.cell-output .cell-output-display}\n![](02_homecredit_full_files/figure-html/cell-55-output-10.png){}\n:::\n:::\n\n\n## 5.3 Feature Engineering for CatBoost\n\nWe engineer several groups of features based on financial intuition and domain insight. The process is performed after the initial CatBoost evaluation and before running the final tuned model.\n- Ratio-Based Interactions\n    CREDIT_INCOME_RATIO, ANNUITY_INCOME_RATIO, GOODS_CREDIT_RATIO, EMPLOYED_BIRTH_RATIO\n- Log Transforms\n    LOG_CREDIT, LOG_INCOME, LOG_EMPLOYED_RATIO\n- Temporal Ratios\n    REGISTRATION_AGE_RATIO, ID_PUBLISH_AGE_RATIO\n- Document and Contact Flags\n    Sum of document flags and presence of phone/email indicators\n- Social Circle Default Ratios\n    DEF_30_RATIO, DEF_60_RATIO (defaults relative to social observation size)\n\nAll operations are applied to a copy of the dataset (X_catboost) to preserve the original.\n\n::: {#90545ab9 .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=55}\n\n::: {.cell-output .cell-output-stdout}\nFeature engineering complete. New shape: (307511, 385)\n:::\n:::\n\n\n## 5.4 Final Train/Val/Test Split (CatBoost Features)\n\n- A new stratified 60/20/20 split is done using the engineered features.\n- This ensures final model training uses the most robust signal.\n- Label balance is confirmed in each set.\n\n::: {#82c6086c .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=56}\n\n::: {.cell-output .cell-output-stdout}\nX_train_catboost shape: (184506, 385) X_val_catboost shape: (61502, 385) X_test_catboost shape: (61503, 385)\ny_train_catboost class balance: TARGET 0 0.919271 1 0.080729 Name: proportion, dtype: float64\ny_val_catboost class balance: TARGET 0 0.919271 1 0.080729 Name: proportion, dtype: float64\ny_test_catboost class balance: TARGET 0 0.919272 1 0.080728 Name: proportion, dtype: float64\n:::\n:::\n\n\n# Section 6: Final Model Validation and SHAP Summary\n***\n\n- This section brings together all the optimized components—feature engineering, Optuna tuning, and threshold calibration—into a final, cross-validated evaluation loop. \n- SHAP analysis is then applied at both global and local levels to understand how different feature domains contribute to model decisions.\n\n## 6.1 Final Cross-Validated Model (Optuna-Tuned + Threshold-Tuned)\n\n- Uses the best hyperparameters from Optuna and the optimal classification threshold based on F1-score.\n- Performs Stratified K-Fold cross-validation across all engineered data:\n  - Trains using `CatBoostClassifier` wrapped with `Pool` to handle categorical features natively.\n  - Applies threshold to maximize F1.\n  - Captures per-fold AUC, F1-score, and confusion matrix.\n\n### Initial run (CatBoost with added features)\n\n::: {#e8795d27 .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=57}\n\n::: {.cell-output .cell-output-stdout}\nInitial CatBoost AUC (Validation Set): 0.7796\n:::\n:::\n\n\n## 6.3 Oputna (CatBoost with added features)\n\n::: {#52fa02e9 .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=58}\n\n::: {.cell-output .cell-output-stdout}\nBest CatBoost hyperparameters: {‘learning_rate’: 0.04702817519258132, ‘depth’: 4, ‘l2_leaf_reg’: 2.1863735569594245, ‘bootstrap_type’: ‘Bernoulli’, ‘subsample’: 0.7679455713304951}\n:::\n:::\n\n\n## 6.4 Threshold tuning (CatBoost with added features)\n\n::: {#a07572ef .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=59}\n\n::: {.cell-output .cell-output-stdout}\nTARGET 0 56537 1 4965 Name: count, dtype: int64\n:::\n:::\n\n\n::: {#1b5ba0be .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=60}\n\n::: {.cell-output .cell-output-stdout}\nBest threshold (F1): 0.15 F1 Score at best threshold: 0.3231\n— Validation Set Evaluation — precision recall f1-score support\n       0      0.948     0.886     0.916     56537\n       1      0.254     0.444     0.323      4965\n\naccuracy                          0.850     61502\nmacro avg 0.601 0.665 0.619 61502 weighted avg 0.892 0.850 0.868 61502\nConfusion Matrix: [[50068 6469] [ 2762 2203]] Final AUC: 0.7777\n:::\n:::\n\n\n## 6.5 Final model (CatBoost with added features) - retrain with all available data \n\n::: {#24c1f787 .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=61}\n\n::: {.cell-output .cell-output-stdout}\n{‘learning_rate’: 0.03759227415469158, ‘depth’: 6, ‘l2_leaf_reg’: 7.24195964417585}\n:::\n:::\n\n\n::: {#fff0fc4c .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=62}\n\n::: {.cell-output .cell-output-stdout}\nFold 0 Confusion Matrix: [[50287 6251] [ 2743 2222]]\nFold 1 Confusion Matrix: [[50343 6194] [ 2672 2293]]\nFold 2 Confusion Matrix: [[50206 6331] [ 2737 2228]]\nFold 3 Confusion Matrix: [[50430 6107] [ 2727 2238]]\nFold 4 Confusion Matrix: [[50225 6312] [ 2760 2205]]\nAverage Confusion Matrix Across Folds: [[50298 6239] [ 2727 2237]]\nCross-validated AUC: 0.7820 Cross-validated F1: 0.3329\n:::\n\n::: {.cell-output .cell-output-display}\n![](02_homecredit_full_files/figure-html/cell-63-output-2.png){}\n:::\n:::\n\n\n## 6.6 Final SHAP Analysis (Domain-Grouped)\n\nA final SHAP interpretability suite is run on the full model trained with added features. This includes:\n\n#### Global SHAP Importance (All Features)\n- Bar plot and violin plot summarize which features contributed most across all predictions.\n\n#### SHAP Aggregated by Domain\nFeatures are grouped by domain:\n- `Credit Card`, `POS Cash`, `Installments`, `Bureau`, `Previous Applications`, `Social Circle`, and `Application`\n\nEach group's mean SHAP value is plotted to reveal which domains drive model predictions most.\n\n#### Local Force Plot (Grouped SHAP by Domain)\n- Top N highest-risk clients (by predicted probability) are selected.\n- SHAP values are grouped by domain for each case, then visualized in a waterfall bar plot.\n- This shows which domains contributed most to individual high-risk predictions, offering auditability for real-world deployment.\n\n::: {#10787896 .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=63}\n\n::: {.cell-output .cell-output-stdout}\nFinal Model - Global SHAP Feature Importance\n:::\n\n::: {.cell-output .cell-output-display}\n![](02_homecredit_full_files/figure-html/cell-64-output-2.png){}\n:::\n\n::: {.cell-output .cell-output-stdout}\nFinal Model - SHAP Summary Plot (All Samples) ``` :::\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n:::",
+    "text": "4.1 Initial Run (Baseline CatBoost Model)\nA baseline CatBoostClassifier is trained using manually set parameters.\n\n\n0:  test: 0.5612338 best: 0.5612338 (0) total: 520ms    remaining: 4m 19s\n100:    test: 0.7672985 best: 0.7672985 (100)   total: 30.7s    remaining: 2m 1s\n200:    test: 0.7733849 best: 0.7733972 (199)   total: 1m   remaining: 1m 30s\n300:    test: 0.7762936 best: 0.7762936 (300)   total: 1m 30s   remaining: 59.6s\n400:    test: 0.7773160 best: 0.7773160 (400)   total: 1m 59s   remaining: 29.4s\n499:    test: 0.7780844 best: 0.7780844 (499)   total: 2m 30s   remaining: 0us\n\nbestTest = 0.7780844317\nbestIteration = 499\n\nBaseline CatBoost Results (Threshold = 0.5)\nAUC: 0.7781\n              precision    recall  f1-score   support\n\n           0      0.922     0.997     0.958     56537\n           1      0.520     0.040     0.074      4965\n\n    accuracy                          0.920     61502\n   macro avg      0.721     0.518     0.516     61502\nweighted avg      0.890     0.920     0.887     61502\n\n[[56354   183]\n [ 4767   198]]",
     "crumbs": [
       "Home",
-      "Project Objective"
+      "\"Home Credit Default Risk Analysis — Full Dataset\""
+    ]
+  },
+  {
+    "objectID": "notebooks/02_homecredit_full.html#optuna-hyperparameter-tuning",
+    "href": "notebooks/02_homecredit_full.html#optuna-hyperparameter-tuning",
+    "title": "“Home Credit Default Risk Analysis — Full Dataset”",
+    "section": "4.2 Optuna Hyperparameter Tuning",
+    "text": "4.2 Optuna Hyperparameter Tuning\n\nA custom objective() function is defined to search the hyperparameter space using Optuna with stratified validation inside the objective scope (to prevent leakage).\nKey aspects:\n\nParameters tuned: learning_rate, depth, l2_leaf_reg, bootstrap_type\nClass imbalance addressed via: class_weights = [1, 15]\nEvaluation metric: roc_auc_score\nOptuna trial settings: 15 trials, SuccessiveHalvingPruner used for pruning poor runs Best AUC and associated parameters printed after tuning\n\n\n\n\nBest AUC: 0.7795\nBest Parameters:\nlearning_rate: 0.03759227415469158\ndepth: 6\nl2_leaf_reg: 7.24195964417585",
+    "crumbs": [
+      "Home",
+      "\"Home Credit Default Risk Analysis — Full Dataset\""
+    ]
+  },
+  {
+    "objectID": "notebooks/02_homecredit_full.html#threshold-tuning",
+    "href": "notebooks/02_homecredit_full.html#threshold-tuning",
+    "title": "“Home Credit Default Risk Analysis — Full Dataset”",
+    "section": "4.3 Threshold Tuning",
+    "text": "4.3 Threshold Tuning\n\nRather than defaulting to a 0.5 threshold, we identify the optimal threshold based on F1-score maximization:\n\nRefit model with best Optuna parameters on training data.\nGenerate probabilities on validation set (y_pred_prob_cb).\nEvaluate multiple thresholds from 0.05 to 0.95.\nSelect threshold with maximum F1-score (best_threshold_cb).\nFinal predictions and classification report are generated using this threshold.\n\n\n\n\nFinal CatBoost Evaluation (Threshold = 0.15)\nAUC: 0.7790\n              precision    recall  f1-score   support\n\n           0      0.948     0.886     0.916     56537\n           1      0.257     0.450     0.327      4965\n\n    accuracy                          0.851     61502\n   macro avg      0.603     0.668     0.622     61502\nweighted avg      0.892     0.851     0.868     61502\n\n[[50083  6454]\n [ 2731  2234]]",
+    "crumbs": [
+      "Home",
+      "\"Home Credit Default Risk Analysis — Full Dataset\""
+    ]
+  },
+  {
+    "objectID": "notebooks/02_homecredit_full.html#shap-function-for-catboost",
+    "href": "notebooks/02_homecredit_full.html#shap-function-for-catboost",
+    "title": "“Home Credit Default Risk Analysis — Full Dataset”",
+    "section": "5.1 SHAP Function (for CatBoost)",
+    "text": "5.1 SHAP Function (for CatBoost)\nWe define a custom function explain_model_with_shap() that:\n\nAccepts any trained tree-based model (CatBoost, XGBoost, LightGBM, RandomForest).\nAutomatically handles binary classification class index selection.\nPlots:\n\nGlobal Feature Importance (bar plot)\nSHAP Summary Plot (violin plot)\nForce Plots for the top-N highest-risk predictions\n\n\nThis helps interpret model logic both globally (what matters most) and locally (why a specific prediction was made).",
+    "crumbs": [
+      "Home",
+      "\"Home Credit Default Risk Analysis — Full Dataset\""
+    ]
+  },
+  {
+    "objectID": "notebooks/02_homecredit_full.html#catboost-feature-analysis",
+    "href": "notebooks/02_homecredit_full.html#catboost-feature-analysis",
+    "title": "“Home Credit Default Risk Analysis — Full Dataset”",
+    "section": "5.2 CatBoost (feature analysis)",
+    "text": "5.2 CatBoost (feature analysis)\n\n\n\nGenerating SHAP explanations for: CatBoost\n\nCatBoost - Global Feature Importance\n\n\n\n\n\n\n\n\n\n\nCatBoost - SHAP Summary Plot\n\n\n\n\n\n\n\n\n\n\nCatBoost - SHAP Force Plot for Row 61079 (Prob = 0.907)\n\n\n\n\n\n\n\n\n\n\nCatBoost - SHAP Force Plot for Row 57347 (Prob = 0.869)\n\n\n\n\n\n\n\n\n\n\nCatBoost - SHAP Force Plot for Row 53728 (Prob = 0.855)",
+    "crumbs": [
+      "Home",
+      "\"Home Credit Default Risk Analysis — Full Dataset\""
+    ]
+  },
+  {
+    "objectID": "notebooks/02_homecredit_full.html#feature-engineering-for-catboost",
+    "href": "notebooks/02_homecredit_full.html#feature-engineering-for-catboost",
+    "title": "“Home Credit Default Risk Analysis — Full Dataset”",
+    "section": "5.3 Feature Engineering for CatBoost",
+    "text": "5.3 Feature Engineering for CatBoost\nWe engineer several groups of features based on financial intuition and domain insight. The process is performed after the initial CatBoost evaluation and before running the final tuned model. - Ratio-Based Interactions CREDIT_INCOME_RATIO, ANNUITY_INCOME_RATIO, GOODS_CREDIT_RATIO, EMPLOYED_BIRTH_RATIO - Log Transforms LOG_CREDIT, LOG_INCOME, LOG_EMPLOYED_RATIO - Temporal Ratios REGISTRATION_AGE_RATIO, ID_PUBLISH_AGE_RATIO - Document and Contact Flags Sum of document flags and presence of phone/email indicators - Social Circle Default Ratios DEF_30_RATIO, DEF_60_RATIO (defaults relative to social observation size)\nAll operations are applied to a copy of the dataset (X_catboost) to preserve the original.\n\n\nFeature engineering complete. New shape: (307511, 385)",
+    "crumbs": [
+      "Home",
+      "\"Home Credit Default Risk Analysis — Full Dataset\""
+    ]
+  },
+  {
+    "objectID": "notebooks/02_homecredit_full.html#final-trainvaltest-split-catboost-features",
+    "href": "notebooks/02_homecredit_full.html#final-trainvaltest-split-catboost-features",
+    "title": "“Home Credit Default Risk Analysis — Full Dataset”",
+    "section": "5.4 Final Train/Val/Test Split (CatBoost Features)",
+    "text": "5.4 Final Train/Val/Test Split (CatBoost Features)\n\nA new stratified 60/20/20 split is done using the engineered features.\nThis ensures final model training uses the most robust signal.\nLabel balance is confirmed in each set.\n\n\n\nX_train_catboost shape: (184506, 385)\nX_val_catboost   shape: (61502, 385)\nX_test_catboost  shape: (61503, 385)\n\ny_train_catboost class balance:\nTARGET\n0    0.919271\n1    0.080729\nName: proportion, dtype: float64\n\ny_val_catboost   class balance:\nTARGET\n0    0.919271\n1    0.080729\nName: proportion, dtype: float64\n\ny_test_catboost  class balance:\nTARGET\n0    0.919272\n1    0.080728\nName: proportion, dtype: float64",
+    "crumbs": [
+      "Home",
+      "\"Home Credit Default Risk Analysis — Full Dataset\""
+    ]
+  },
+  {
+    "objectID": "notebooks/02_homecredit_full.html#final-cross-validated-model-optuna-tuned-threshold-tuned",
+    "href": "notebooks/02_homecredit_full.html#final-cross-validated-model-optuna-tuned-threshold-tuned",
+    "title": "“Home Credit Default Risk Analysis — Full Dataset”",
+    "section": "6.1 Final Cross-Validated Model (Optuna-Tuned + Threshold-Tuned)",
+    "text": "6.1 Final Cross-Validated Model (Optuna-Tuned + Threshold-Tuned)\n\nUses the best hyperparameters from Optuna and the optimal classification threshold based on F1-score.\nPerforms Stratified K-Fold cross-validation across all engineered data:\n\nTrains using CatBoostClassifier wrapped with Pool to handle categorical features natively.\nApplies threshold to maximize F1.\nCaptures per-fold AUC, F1-score, and confusion matrix.\n\n\n\nInitial run (CatBoost with added features)\n\n\n\nInitial CatBoost AUC (Validation Set): 0.7796",
+    "crumbs": [
+      "Home",
+      "\"Home Credit Default Risk Analysis — Full Dataset\""
+    ]
+  },
+  {
+    "objectID": "notebooks/02_homecredit_full.html#oputna-catboost-with-added-features",
+    "href": "notebooks/02_homecredit_full.html#oputna-catboost-with-added-features",
+    "title": "“Home Credit Default Risk Analysis — Full Dataset”",
+    "section": "6.3 Oputna (CatBoost with added features)",
+    "text": "6.3 Oputna (CatBoost with added features)\n\n\nBest CatBoost hyperparameters:\n{'learning_rate': 0.04702817519258132, 'depth': 4, 'l2_leaf_reg': 2.1863735569594245, 'bootstrap_type': 'Bernoulli', 'subsample': 0.7679455713304951}",
+    "crumbs": [
+      "Home",
+      "\"Home Credit Default Risk Analysis — Full Dataset\""
+    ]
+  },
+  {
+    "objectID": "notebooks/02_homecredit_full.html#threshold-tuning-catboost-with-added-features",
+    "href": "notebooks/02_homecredit_full.html#threshold-tuning-catboost-with-added-features",
+    "title": "“Home Credit Default Risk Analysis — Full Dataset”",
+    "section": "6.4 Threshold tuning (CatBoost with added features)",
+    "text": "6.4 Threshold tuning (CatBoost with added features)\n\n\nTARGET\n0    56537\n1     4965\nName: count, dtype: int64\n\n\n\n\nBest threshold (F1): 0.15\nF1 Score at best threshold: 0.3231\n\n--- Validation Set Evaluation ---\n              precision    recall  f1-score   support\n\n           0      0.948     0.886     0.916     56537\n           1      0.254     0.444     0.323      4965\n\n    accuracy                          0.850     61502\n   macro avg      0.601     0.665     0.619     61502\nweighted avg      0.892     0.850     0.868     61502\n\nConfusion Matrix:\n[[50068  6469]\n [ 2762  2203]]\nFinal AUC: 0.7777",
+    "crumbs": [
+      "Home",
+      "\"Home Credit Default Risk Analysis — Full Dataset\""
+    ]
+  },
+  {
+    "objectID": "notebooks/02_homecredit_full.html#final-model-catboost-with-added-features---retrain-with-all-available-data",
+    "href": "notebooks/02_homecredit_full.html#final-model-catboost-with-added-features---retrain-with-all-available-data",
+    "title": "“Home Credit Default Risk Analysis — Full Dataset”",
+    "section": "6.5 Final model (CatBoost with added features) - retrain with all available data",
+    "text": "6.5 Final model (CatBoost with added features) - retrain with all available data\n\n\n{'learning_rate': 0.03759227415469158, 'depth': 6, 'l2_leaf_reg': 7.24195964417585}\n\n\n\n\n\nFold 0 Confusion Matrix:\n[[50287  6251]\n [ 2743  2222]]\n\nFold 1 Confusion Matrix:\n[[50343  6194]\n [ 2672  2293]]\n\nFold 2 Confusion Matrix:\n[[50206  6331]\n [ 2737  2228]]\n\nFold 3 Confusion Matrix:\n[[50430  6107]\n [ 2727  2238]]\n\nFold 4 Confusion Matrix:\n[[50225  6312]\n [ 2760  2205]]\n\nAverage Confusion Matrix Across Folds:\n[[50298  6239]\n [ 2727  2237]]\n\nCross-validated AUC: 0.7820\nCross-validated F1: 0.3329",
+    "crumbs": [
+      "Home",
+      "\"Home Credit Default Risk Analysis — Full Dataset\""
+    ]
+  },
+  {
+    "objectID": "notebooks/02_homecredit_full.html#final-shap-analysis-domain-grouped",
+    "href": "notebooks/02_homecredit_full.html#final-shap-analysis-domain-grouped",
+    "title": "“Home Credit Default Risk Analysis — Full Dataset”",
+    "section": "6.6 Final SHAP Analysis (Domain-Grouped)",
+    "text": "6.6 Final SHAP Analysis (Domain-Grouped)\nA final SHAP interpretability suite is run on the full model trained with added features. This includes:\n\nGlobal SHAP Importance (All Features)\n\nBar plot and violin plot summarize which features contributed most across all predictions.\n\n\n\nSHAP Aggregated by Domain\nFeatures are grouped by domain: - Credit Card, POS Cash, Installments, Bureau, Previous Applications, Social Circle, and Application\nEach group’s mean SHAP value is plotted to reveal which domains drive model predictions most.\n\n\nLocal Force Plot (Grouped SHAP by Domain)\n\nTop N highest-risk clients (by predicted probability) are selected.\nSHAP values are grouped by domain for each case, then visualized in a waterfall bar plot.\nThis shows which domains contributed most to individual high-risk predictions, offering auditability for real-world deployment.\n\n\n\n\nFinal Model - Global SHAP Feature Importance\n\n\n\n\n\n\n\n\n\n\nFinal Model - SHAP Summary Plot (All Samples)",
+    "crumbs": [
+      "Home",
+      "\"Home Credit Default Risk Analysis — Full Dataset\""
     ]
   },
   {
     "objectID": "notebooks/02_homecredit_full.html#shap-feature-importance-summary",
     "href": "notebooks/02_homecredit_full.html#shap-feature-importance-summary",
-    "title": "Section 1: Data loading and merging",
+    "title": "“Home Credit Default Risk Analysis — Full Dataset”",
     "section": "6.7 SHAP Feature Importance Summary",
     "text": "6.7 SHAP Feature Importance Summary\n\nGlobal Feature Importance (Mean SHAP Values)\n\nEXT_SOURCE_2, EXT_SOURCE_3, and EXT_SOURCE_1 are by far the most important features, indicating that external credit scores are critical predictors of loan default risk.\nOther highly influential features include:\n\nCODE_GENDER: Gender has measurable predictive power, which may reflect embedded socioeconomic patterns.\nINSTALL_PAYMENT_DIFF_DAYS_MAX and AMT_ANNUITY: Timeliness and size of payments are key behavioral signals.\nEngineered features like GOODS_CREDIT_RATIO and LOG_EMPLOYED_RATIO are impactful, confirming that domain-specific feature engineering adds real value.\n\n\n\n\n\nSHAP Summary Plot (All Samples)\n\nFor top features (e.g., EXT_SOURCE_2), higher values (in red) are associated with lower SHAP values, pushing the model toward non-default predictions.\nFor variables like INSTALL_PAYMENT_DIFF_DAYS_MAX, higher values (red) often contribute to higher SHAP values, increasing predicted risk.\nThe spread and gradient of colors suggest non-linear interactions and context-dependent effects across the dataset.\n\n\n\n\nSHAP by Feature Group\n\nInstallments and Application-level features dominate in aggregate importance, suggesting that a client’s payment behavior and initial application details provide the most signal.\nPOS Cash, Social Circle, and Credit Card data contribute modestly, while Previous Applications and Bureau data offer limited additional predictive power.\n\n\n\n\nSHAP Force Plots (Individual Explanations)\n\nClient-specific visualizations reveal which domains contribute most positively or negatively to the prediction.\n\nFor example, in the strongest negative prediction (Row 37987), almost all domains—especially Application and Bureau—push the model toward default.\nIn contrast, some clients (e.g., Row 56856) have positive contributions from the Application domain offsetting smaller negative signals.\n\nThis shows how different features drive risk dynamically on a per-client basis, supporting the model’s explainability and accountability.\n\n\n\n\nKey Takeaways\n\nExternal credit scores (EXT_SOURCE_*) remain the backbone of prediction.\nFeature engineering (ratios, logs) meaningfully boosts interpretability and performance.\nSHAP value visualizations confirm both global insights** and **local model behavior, making this model well-suited for production with explainability requirements.",
     "crumbs": [
       "Home",
-      "Project Objective"
+      "\"Home Credit Default Risk Analysis — Full Dataset\""
     ]
   },
   {
