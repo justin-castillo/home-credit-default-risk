@@ -42,7 +42,8 @@ website:
     collapse-level: 2
     style: floating
     contents:
-      - section: "Notebooks"
-        contents: notebooks/*
-      - section: "Docs"
-        contents: docs/*
+      - notebooks/01_homecredit_sample.ipynb
+      - notebooks/02_homecredit_full.ipynb
+      - reports/EDA_Report.md
+      - reports/Feature_Engineering_Notes.md
+      - reports/Final_Report.md

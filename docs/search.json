@@ -4,154 +4,242 @@
     "href": "reports/Final_Report.html",
     "title": "Final Modeling Report — Home Credit Default Risk",
     "section": "",
-    "text": "Purpose: Develop an end‑to‑end credit‑scoring pipeline that reliably identifies Home Credit applicants with elevated default risk at the point of application.\n\nResult: A tuned CatBoost model achieves 0.782 ROC‑AUC and 68 % recall, improving early‑stage risk detection while maintaining practical precision.\n\nTransparency: SHAP‑based interpretability provides clear explanations for every individual prediction."
+    "text": "Purpose: Develop an end‑to‑end credit‑scoring pipeline that reliably identifies Home Credit applicants with elevated default risk at the point of application.\n\nResult: A tuned CatBoost model achieves 0.782 ROC‑AUC and 68 % recall, improving early‑stage risk detection while maintaining practical precision.\n\nTransparency: SHAP‑based interpretability provides clear explanations for every individual prediction.",
+    "crumbs": [
+      "Home",
+      "Final Modeling Report — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/Final_Report.html#executive-summary",
     "href": "reports/Final_Report.html#executive-summary",
     "title": "Final Modeling Report — Home Credit Default Risk",
     "section": "",
-    "text": "Purpose: Develop an end‑to‑end credit‑scoring pipeline that reliably identifies Home Credit applicants with elevated default risk at the point of application.\n\nResult: A tuned CatBoost model achieves 0.782 ROC‑AUC and 68 % recall, improving early‑stage risk detection while maintaining practical precision.\n\nTransparency: SHAP‑based interpretability provides clear explanations for every individual prediction."
+    "text": "Purpose: Develop an end‑to‑end credit‑scoring pipeline that reliably identifies Home Credit applicants with elevated default risk at the point of application.\n\nResult: A tuned CatBoost model achieves 0.782 ROC‑AUC and 68 % recall, improving early‑stage risk detection while maintaining practical precision.\n\nTransparency: SHAP‑based interpretability provides clear explanations for every individual prediction.",
+    "crumbs": [
+      "Home",
+      "Final Modeling Report — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/Final_Report.html#model-performance",
     "href": "reports/Final_Report.html#model-performance",
     "title": "Final Modeling Report — Home Credit Default Risk",
     "section": "1 | Model Performance",
-    "text": "1 | Model Performance\n\n\n\n\n\n\n\n\n\n\n\nMetric\nCatBoost (Final/CV)\nLightGBM\nXGBoost\nRandom Forest\nLogistic Reg.\n\n\n\n\nROC‑AUC\n0.782\n0.763\n0.761\n0.740\n0.722\n\n\nRecall\n0.451\n0.302\n0.401\n0.427\n0.431\n\n\nPrecision\n0.264\n0.295\n0.235\n0.222\n0.198\n\n\nF1‑Score\n0.333\n0.298\n0.297\n0.292\n0.271\n\n\n\n\n\n\nalt text\n\n\n\nGradient‑boosted methods outperform linear and bagging baselines, with CatBoost offering the strongest overall balance of recall and precision."
+    "text": "1 | Model Performance\n\n\n\n\n\n\n\n\n\n\n\nMetric\nCatBoost (Final/CV)\nLightGBM\nXGBoost\nRandom Forest\nLogistic Reg.\n\n\n\n\nROC‑AUC\n0.782\n0.763\n0.761\n0.740\n0.722\n\n\nRecall\n0.451\n0.302\n0.401\n0.427\n0.431\n\n\nPrecision\n0.264\n0.295\n0.235\n0.222\n0.198\n\n\nF1‑Score\n0.333\n0.298\n0.297\n0.292\n0.271\n\n\n\n\n\n\nalt text\n\n\n\nGradient‑boosted methods outperform linear and bagging baselines, with CatBoost offering the strongest overall balance of recall and precision.",
+    "crumbs": [
+      "Home",
+      "Final Modeling Report — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/Final_Report.html#dataset-overview",
     "href": "reports/Final_Report.html#dataset-overview",
     "title": "Final Modeling Report — Home Credit Default Risk",
     "section": "2 | Dataset Overview",
-    "text": "2 | Dataset Overview\n\nObservations: 307 511 applicants\n\nFeatures after engineering: 385\n\nClass distribution: 92 % non‑default, 8 % default\n\nSource tables integrated: Application, Bureau (and Balance), Previous Applications, POS‑Cash, Installments, Credit Card Balance"
+    "text": "2 | Dataset Overview\n\nObservations: 307 511 applicants\n\nFeatures after engineering: 385\n\nClass distribution: 92 % non‑default, 8 % default\n\nSource tables integrated: Application, Bureau (and Balance), Previous Applications, POS‑Cash, Installments, Credit Card Balance",
+    "crumbs": [
+      "Home",
+      "Final Modeling Report — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/Final_Report.html#feature-engineering-highlights",
     "href": "reports/Final_Report.html#feature-engineering-highlights",
     "title": "Final Modeling Report — Home Credit Default Risk",
     "section": "3 | Feature Engineering Highlights",
-    "text": "3 | Feature Engineering Highlights\n\n\n\n\n\n\n\n\n\nFeature Group\nCount\nExample Feature\nRationale\n\n\n\n\nExternal Scores\n3\nEXT_SOURCE_2\nStrong third‑party credit signals\n\n\nPayment Behaviour\n60+\nINSTALL_PAYMENT_DIFF_DAYS_MAX\nCaptures chronic payment delays\n\n\nFinancial Ratios\n20\nCREDIT_TO_INCOME_RATIO\nMeasures leverage vs. capacity\n\n\nDemographic & Tenure\n10\nAGE, EMPLOYED_BIRTH_RATIO\nReflects borrower stability\n\n\nSocial Circle Metrics\n4\nDEF_60_RATIO\nPeer default influence\n\n\n\n\n\n\nalt text"
+    "text": "3 | Feature Engineering Highlights\n\n\n\n\n\n\n\n\n\nFeature Group\nCount\nExample Feature\nRationale\n\n\n\n\nExternal Scores\n3\nEXT_SOURCE_2\nStrong third‑party credit signals\n\n\nPayment Behaviour\n60+\nINSTALL_PAYMENT_DIFF_DAYS_MAX\nCaptures chronic payment delays\n\n\nFinancial Ratios\n20\nCREDIT_TO_INCOME_RATIO\nMeasures leverage vs. capacity\n\n\nDemographic & Tenure\n10\nAGE, EMPLOYED_BIRTH_RATIO\nReflects borrower stability\n\n\nSocial Circle Metrics\n4\nDEF_60_RATIO\nPeer default influence\n\n\n\n\n\n\nalt text",
+    "crumbs": [
+      "Home",
+      "Final Modeling Report — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/Final_Report.html#modelling-process",
     "href": "reports/Final_Report.html#modelling-process",
     "title": "Final Modeling Report — Home Credit Default Risk",
     "section": "4 | Modelling Process",
-    "text": "4 | Modelling Process\n\nBaselines: Logistic Regression provided an initial benchmark (ROC‑AUC ≈ 0.72).\n\nTree Ensembles: Random Forest improved discrimination but plateaued at 0.74 ROC‑AUC.\n\nBoosting Algorithms: LightGBM and XGBoost lifted performance into the mid‑0.76 range.\n\nFinal Selection – CatBoost:\n\nNatively handles categorical variables.\n\nAchieved the highest validation ROC‑AUC and recall.\n\n\nHyperparameter Optimisation: Bayesian search via Optuna (100+ trials).\n\nThreshold Calibration: Validation sweep identified an optimal probability cut‑off of 0.15 to maximise the F1‑score.\n\nCross‑Validation: Stratified 5‑fold CV confirms performance stability (AUC std. ± 0.003).\n\n\n\n\nalt text"
+    "text": "4 | Modelling Process\n\nBaselines: Logistic Regression provided an initial benchmark (ROC‑AUC ≈ 0.72).\n\nTree Ensembles: Random Forest improved discrimination but plateaued at 0.74 ROC‑AUC.\n\nBoosting Algorithms: LightGBM and XGBoost lifted performance into the mid‑0.76 range.\n\nFinal Selection – CatBoost:\n\nNatively handles categorical variables.\n\nAchieved the highest validation ROC‑AUC and recall.\n\n\nHyperparameter Optimisation: Bayesian search via Optuna (100+ trials).\n\nThreshold Calibration: Validation sweep identified an optimal probability cut‑off of 0.15 to maximise the F1‑score.\n\nCross‑Validation: Stratified 5‑fold CV confirms performance stability (AUC std. ± 0.003).\n\n\n\n\nalt text",
+    "crumbs": [
+      "Home",
+      "Final Modeling Report — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/Final_Report.html#explainability-compliance",
     "href": "reports/Final_Report.html#explainability-compliance",
     "title": "Final Modeling Report — Home Credit Default Risk",
     "section": "5 | Explainability & Compliance",
-    "text": "5 | Explainability & Compliance\n\nGlobal Insights: External credit scores and payment‑timeliness metrics dominate predictive power.\n\nLocal Explanations: Individual SHAP force plots accompany each score, supporting case‑level review.\n\nDomain Contribution: Application‑level and Installment features jointly account for ~65 % of aggregate SHAP impact.\n\n\n\n\nalt text"
+    "text": "5 | Explainability & Compliance\n\nGlobal Insights: External credit scores and payment‑timeliness metrics dominate predictive power.\n\nLocal Explanations: Individual SHAP force plots accompany each score, supporting case‑level review.\n\nDomain Contribution: Application‑level and Installment features jointly account for ~65 % of aggregate SHAP impact.\n\n\n\n\nalt text",
+    "crumbs": [
+      "Home",
+      "Final Modeling Report — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/Final_Report.html#estimated-business-impact",
     "href": "reports/Final_Report.html#estimated-business-impact",
     "title": "Final Modeling Report — Home Credit Default Risk",
     "section": "6 | Estimated Business Impact",
-    "text": "6 | Estimated Business Impact\n\n\n\n\n\n\n\n\n\nKPI (per 100 K apps)\nCurrent Scorecard\nNew CatBoost(recall = 45.1 %)\nΔ vs. Scorecard\n\n\n\n\nDefaulters correctly flagged\n4 100\n≈ 6 815\n+ 2 715\n\n\nIncremental charge-off avoided ***\n—\n≈ $ 3.26 M\n—\n\n\n\n*Based on an average loss-given-default (LGD) of $1 200 per defaulted account."
+    "text": "6 | Estimated Business Impact\n\n\n\n\n\n\n\n\n\nKPI (per 100 K apps)\nCurrent Scorecard\nNew CatBoost(recall = 45.1 %)\nΔ vs. Scorecard\n\n\n\n\nDefaulters correctly flagged\n4 100\n≈ 6 815\n+ 2 715\n\n\nIncremental charge-off avoided ***\n—\n≈ $ 3.26 M\n—\n\n\n\n*Based on an average loss-given-default (LGD) of $1 200 per defaulted account.",
+    "crumbs": [
+      "Home",
+      "Final Modeling Report — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/Final_Report.html#risk-management-next-steps",
     "href": "reports/Final_Report.html#risk-management-next-steps",
     "title": "Final Modeling Report — Home Credit Default Risk",
     "section": "7 | Risk Management & Next Steps",
-    "text": "7 | Risk Management & Next Steps\n\n\n\nArea\nPlanned Control\n\n\n\n\nData Drift\nMonthly PSI monitoring with auto‑retrain trigger\n\n\nFair Lending\nAdversarial testing; optional feature masking\n\n\nModel Refresh\nScheduled Optuna retuning each quarter\n\n\n\nNear‑term roadmap\n\nShadow Deployment (2 weeks) – Score live traffic in parallel, monitor divergence.\n\nChampion‑Challenger (4 weeks) – Controlled A/B against current scorecard.\n\nUI Integration (6 weeks) – Embed SHAP rationales in underwriter dashboard."
+    "text": "7 | Risk Management & Next Steps\n\n\n\nArea\nPlanned Control\n\n\n\n\nData Drift\nMonthly PSI monitoring with auto‑retrain trigger\n\n\nFair Lending\nAdversarial testing; optional feature masking\n\n\nModel Refresh\nScheduled Optuna retuning each quarter\n\n\n\nNear‑term roadmap\n\nShadow Deployment (2 weeks) – Score live traffic in parallel, monitor divergence.\n\nChampion‑Challenger (4 weeks) – Controlled A/B against current scorecard.\n\nUI Integration (6 weeks) – Embed SHAP rationales in underwriter dashboard.",
+    "crumbs": [
+      "Home",
+      "Final Modeling Report — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/Final_Report.html#author",
     "href": "reports/Final_Report.html#author",
     "title": "Final Modeling Report — Home Credit Default Risk",
     "section": "Author",
-    "text": "Author\nJustin Castillo\nEmail: jcastillo.hotels@gmail.com\nGitHub: github.com/justin-castillo\nLinkedIn: linkedin.com/in/justin-castillo-69351198"
+    "text": "Author\nJustin Castillo\nEmail: jcastillo.hotels@gmail.com\nGitHub: github.com/justin-castillo\nLinkedIn: linkedin.com/in/justin-castillo-69351198",
+    "crumbs": [
+      "Home",
+      "Final Modeling Report — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/Final_Report.html#sources",
     "href": "reports/Final_Report.html#sources",
     "title": "Final Modeling Report — Home Credit Default Risk",
     "section": "Sources",
-    "text": "Sources\n\n\nDefault-rate context (≈ 8 % of applicants default) – Kaggle Home Credit Default Risk discussion: https://www.kaggle.com/competitions/home-credit-default-risk/discussion/59954 :contentReferenceoaicite:0\n\nCatBoost evaluation (recall ≈ 0.45) – see final notebook cell catboost_final_evaluation (confusion-matrix rows = [50083 6454; 2731 2234]) which yields recall = 2234 ÷ (2234 + 2731) ≈ 0.451.\n\nAverage consumer LGD proxy – CFPB Consumer Credit-Card Market Report 2023, Table 5 (post-charge-off litigated balances: $4 587–$10 980; conservative LGD $1 200 used): https://files.consumerfinance.gov/f/documents/cfpb_consumer-credit-card-market-report_2023.pdf :contentReferenceoaicite:1\n\nCharge-off environment benchmark – Federal Reserve, Charge-Off and Delinquency Rates on Loans and Leases at Commercial Banks (consumer-loan charge-off rates 2024-25): https://www.federalreserve.gov/releases/chargeoff/ :contentReferenceoaicite:2"
+    "text": "Sources\n\n\nDefault-rate context (≈ 8 % of applicants default) – Kaggle Home Credit Default Risk discussion: https://www.kaggle.com/competitions/home-credit-default-risk/discussion/59954 :contentReferenceoaicite:0\n\nCatBoost evaluation (recall ≈ 0.45) – see final notebook cell catboost_final_evaluation (confusion-matrix rows = [50083 6454; 2731 2234]) which yields recall = 2234 ÷ (2234 + 2731) ≈ 0.451.\n\nAverage consumer LGD proxy – CFPB Consumer Credit-Card Market Report 2023, Table 5 (post-charge-off litigated balances: $4 587–$10 980; conservative LGD $1 200 used): https://files.consumerfinance.gov/f/documents/cfpb_consumer-credit-card-market-report_2023.pdf :contentReferenceoaicite:1\n\nCharge-off environment benchmark – Federal Reserve, Charge-Off and Delinquency Rates on Loans and Leases at Commercial Banks (consumer-loan charge-off rates 2024-25): https://www.federalreserve.gov/releases/chargeoff/ :contentReferenceoaicite:2",
+    "crumbs": [
+      "Home",
+      "Final Modeling Report — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/EDA_Report.html",
     "href": "reports/EDA_Report.html",
     "title": "Exploratory Data Analysis — Home Credit Default Risk",
     "section": "",
-    "text": "This analysis explores the application_train.csv dataset to understand the class distribution, identify potential predictive signals, and inform feature engineering. The EDA also supports modeling strategy decisions by evaluating data quality, skew, and feature relationships."
+    "text": "This analysis explores the application_train.csv dataset to understand the class distribution, identify potential predictive signals, and inform feature engineering. The EDA also supports modeling strategy decisions by evaluating data quality, skew, and feature relationships.",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/EDA_Report.html#dataset-overview",
     "href": "reports/EDA_Report.html#dataset-overview",
     "title": "Exploratory Data Analysis — Home Credit Default Risk",
     "section": "1. Dataset Overview",
-    "text": "1. Dataset Overview\n\nTotal rows: ~307,511\nTotal columns: 122\nTarget variable: TARGET (binary classification)\n\n0 = no default\n1 = payment difficulty (default)"
+    "text": "1. Dataset Overview\n\nTotal rows: ~307,511\nTotal columns: 122\nTarget variable: TARGET (binary classification)\n\n0 = no default\n1 = payment difficulty (default)",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/EDA_Report.html#class-imbalance",
     "href": "reports/EDA_Report.html#class-imbalance",
     "title": "Exploratory Data Analysis — Home Credit Default Risk",
     "section": "2. Class Imbalance",
-    "text": "2. Class Imbalance\nRoughly 8% of applicants experienced payment difficulties."
+    "text": "2. Class Imbalance\nRoughly 8% of applicants experienced payment difficulties.",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/EDA_Report.html#missing-values",
     "href": "reports/EDA_Report.html#missing-values",
     "title": "Exploratory Data Analysis — Home Credit Default Risk",
     "section": "3. Missing Values",
-    "text": "3. Missing Values\nSignificant missingness found in: - OWN_CAR_AGE - EXT_SOURCE_1 - Building metadata: *_AVG, *_MODE, *_MEDI - Credit bureau request counts (AMT_REQ_CREDIT_BUREAU_*)\nAction Taken: - Imputed using SimpleImputer (mean or median) - Dropped high-missingness building metadata features if low variance or importance"
+    "text": "3. Missing Values\nSignificant missingness found in: - OWN_CAR_AGE - EXT_SOURCE_1 - Building metadata: *_AVG, *_MODE, *_MEDI - Credit bureau request counts (AMT_REQ_CREDIT_BUREAU_*)\nAction Taken: - Imputed using SimpleImputer (mean or median) - Dropped high-missingness building metadata features if low variance or importance",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/EDA_Report.html#numerical-feature-distributions",
     "href": "reports/EDA_Report.html#numerical-feature-distributions",
     "title": "Exploratory Data Analysis — Home Credit Default Risk",
     "section": "4. Numerical Feature Distributions",
-    "text": "4. Numerical Feature Distributions\nKey observations: - AMT_INCOME_TOTAL and AMT_CREDIT show heavy right skew - Most clients are aged 25–65 (via DAYS_BIRTH) - Skewed variables like income and credit were log-transformed"
+    "text": "4. Numerical Feature Distributions\nKey observations: - AMT_INCOME_TOTAL and AMT_CREDIT show heavy right skew - Most clients are aged 25–65 (via DAYS_BIRTH) - Skewed variables like income and credit were log-transformed",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/EDA_Report.html#categorical-variable-insights",
     "href": "reports/EDA_Report.html#categorical-variable-insights",
     "title": "Exploratory Data Analysis — Home Credit Default Risk",
     "section": "5. Categorical Variable Insights",
-    "text": "5. Categorical Variable Insights\nVariables with clear class separation: - NAME_CONTRACT_TYPE: Cash loans correlate with higher default risk - NAME_FAMILY_STATUS: Singles tend to default more - NAME_EDUCATION_TYPE: Lower education correlates with higher default risk"
+    "text": "5. Categorical Variable Insights\nVariables with clear class separation: - NAME_CONTRACT_TYPE: Cash loans correlate with higher default risk - NAME_FAMILY_STATUS: Singles tend to default more - NAME_EDUCATION_TYPE: Lower education correlates with higher default risk",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/EDA_Report.html#correlation-analysis",
     "href": "reports/EDA_Report.html#correlation-analysis",
     "title": "Exploratory Data Analysis — Home Credit Default Risk",
     "section": "6. Correlation Analysis",
-    "text": "6. Correlation Analysis\nTop correlations with TARGET (absolute): - EXT_SOURCE_2: -0.16 - EXT_SOURCE_3: -0.10 - DAYS_BIRTH: -0.08 - DAYS_EMPLOYED: -0.07\nInterpretation:\nLower external scores and younger applicants have higher default rates."
+    "text": "6. Correlation Analysis\nTop correlations with TARGET (absolute): - EXT_SOURCE_2: -0.16 - EXT_SOURCE_3: -0.10 - DAYS_BIRTH: -0.08 - DAYS_EMPLOYED: -0.07\nInterpretation:\nLower external scores and younger applicants have higher default rates.",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/EDA_Report.html#bivariate-relationships",
     "href": "reports/EDA_Report.html#bivariate-relationships",
     "title": "Exploratory Data Analysis — Home Credit Default Risk",
     "section": "7. Bivariate Relationships",
-    "text": "7. Bivariate Relationships\n\nDefaulting clients are generally younger\nHave lower EXT_SOURCE scores\nOften lower in income"
+    "text": "7. Bivariate Relationships\n\nDefaulting clients are generally younger\nHave lower EXT_SOURCE scores\nOften lower in income",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/EDA_Report.html#feature-engineering-candidates",
     "href": "reports/EDA_Report.html#feature-engineering-candidates",
     "title": "Exploratory Data Analysis — Home Credit Default Risk",
     "section": "8. Feature Engineering Candidates",
-    "text": "8. Feature Engineering Candidates\nProposed and implemented features based on EDA:\n\n\n\nFeature Name\nDescription\n\n\n\n\nCREDIT_TO_INCOME_RATIO\nAMT_CREDIT / AMT_INCOME_TOTAL\n\n\nANNUITY_TO_INCOME_RATIO\nAMT_ANNUITY / AMT_INCOME_TOTAL\n\n\nEXT_SOURCES_MEAN\nMean of EXT_SOURCE_1, 2, 3\n\n\nDAYS_EMPLOYED_PERC\nDAYS_EMPLOYED / DAYS_BIRTH\n\n\nINCOME_PER_FAM_MEMBER\nAMT_INCOME_TOTAL / CNT_FAM_MEMBERS\n\n\n\nThese were retained and validated via SHAP and F1-score improvements during model training."
+    "text": "8. Feature Engineering Candidates\nProposed and implemented features based on EDA:\n\n\n\nFeature Name\nDescription\n\n\n\n\nCREDIT_TO_INCOME_RATIO\nAMT_CREDIT / AMT_INCOME_TOTAL\n\n\nANNUITY_TO_INCOME_RATIO\nAMT_ANNUITY / AMT_INCOME_TOTAL\n\n\nEXT_SOURCES_MEAN\nMean of EXT_SOURCE_1, 2, 3\n\n\nDAYS_EMPLOYED_PERC\nDAYS_EMPLOYED / DAYS_BIRTH\n\n\nINCOME_PER_FAM_MEMBER\nAMT_INCOME_TOTAL / CNT_FAM_MEMBERS\n\n\n\nThese were retained and validated via SHAP and F1-score improvements during model training.",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/EDA_Report.html#summary-of-eda-findings",
     "href": "reports/EDA_Report.html#summary-of-eda-findings",
     "title": "Exploratory Data Analysis — Home Credit Default Risk",
     "section": "9. Summary of EDA Findings",
-    "text": "9. Summary of EDA Findings\n\nTarget imbalance is substantial and shaped modeling priorities\nExternal risk scores are the most predictive continuous features\nCategorical variables (contract type, education, family status) show clear stratification\nOutliers and skew addressed via log transforms and caps\nHigh-missing features handled with imputation or removal\nEDA directly informed ratio creation, SHAP grouping, and data prep for CatBoost"
+    "text": "9. Summary of EDA Findings\n\nTarget imbalance is substantial and shaped modeling priorities\nExternal risk scores are the most predictive continuous features\nCategorical variables (contract type, education, family status) show clear stratification\nOutliers and skew addressed via log transforms and caps\nHigh-missing features handled with imputation or removal\nEDA directly informed ratio creation, SHAP grouping, and data prep for CatBoost",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/EDA_Report.html#next-step",
     "href": "reports/EDA_Report.html#next-step",
     "title": "Exploratory Data Analysis — Home Credit Default Risk",
     "section": "10. Next Step",
-    "text": "10. Next Step\nLeverage these insights in a unified feature engineering pipeline, merge relational tables, and evaluate performance impacts through stratified CV and SHAP-based model introspection."
+    "text": "10. Next Step\nLeverage these insights in a unified feature engineering pipeline, merge relational tables, and evaluate performance impacts through stratified CV and SHAP-based model introspection.",
+    "crumbs": [
+      "Home",
+      "Exploratory Data Analysis — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "notebooks/01_homecredit_sample.html",
@@ -161,7 +249,6 @@
     "text": "— title: “Home Credit Default Risk Analysis — Sampled Data” —",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -173,7 +260,6 @@
     "text": "Objective\nThis notebook develops a baseline model using a variety of models on a sampled subset of the Home Credit Default Risk dataset. The primary goal is to predict the likelihood that a loan applicant will experience payment difficulties, using historical credit, demographic, and behavioral features.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -185,7 +271,6 @@
     "text": "Dataset\nThis analysis uses a downsampled version of the original datasets for rapid iteration and model tuning. All preprocessing steps and model logic will mirror the full dataset pipeline with appropriate adaptions (included as a separate notebook), enabling easy transfer. All datasets are merged into one dataset on the loan / applicant level using the key SKI_ID_CURR (or SK_ID_PREV, which merges into datasets that have SK_ID_CURR, which then merge into one dataset.) All time-series features are aggregated to enable their usefulness.\n\nEach row: one loan application (‘SK_ID_CURR’)\nTARGET = 1: client had significant payment issues\nTARGET = 0: client repaid as expected",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -197,7 +282,6 @@
     "text": "Models tested\n\nLogistic Regression: used as a baseline to compare other, more complex models\nRandom Forest: captures nonlinear relationships and reduces overfitting through bagging\nXGBoost: scalable gradient boosting method\nCatBoost: optimized for handling categorical variables natively\nLightGBM: fast and efficient with large datasets\n\nThis dataset, comprised of several base tables, is very large, spanning millions of rows and hundreds of features. This necessitates using a model that can handle a large number of complex features to successfully complete a classification task.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -209,7 +293,6 @@
     "text": "Evaluation metric\nThe primary metric is AUC_ROC, with secondary attention to Recall, due to the cost of missing high-risk clients. Threshold optimization will be explored.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -221,7 +304,6 @@
     "text": "Notebook Outline\n\nLoad and sample datasets\nEncode, aggregate, and merge\nPreprocessing\nModeling\nModel selection\nFeature engineering\nFinal model\nConclusion",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -233,7 +315,6 @@
     "text": "1.1 Import statements",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -245,7 +326,6 @@
     "text": "1.2 Load and sample datasets\n\nTo facilitate for efficient development and model testing, this notebook uses a sampled subset of of the full Home Credit Default Risk dataaset to assess techniques that will be applied to the original dataset in the next notebook.\n\n\nData Integration\nThe main dataset is application_train.csv, which contains one row per loan application and the TARGET variable. To enrich this data, relational joins are made between several secondary tables using SK_ID_CURR or SK_ID_PREV as appropriate.\n\nbureau.csv and bureau_balance.csv: previous credit hitory from other institutions\nprevious_application.csv: prior loan applications with Home Credit\ninstallments_payments.csv: repayment history\ncredit_card_balance.csv: monthly credit card activity\nPOS_CASH_balance.csv: point-of-sale and cash loan snapshots\n\nFor each auxiliary table: - We aggregate features by SK_ID_CURR using summary statistics (mean, max, std, count, sum). - This results in one row per loan in the final joined dataset while preserving alignment with the target variable.\n\n\nSampling strategy\n\nA sample taken, comprising of 10-20% of the original datasets, using stratification to maintain the original class imbalance and ensure that the minority class (TARGET=1) is properly represented.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -257,7 +337,6 @@
     "text": "1.2 Initial load of main table\n\napplication_train.csv is what the other tables will eventually be merged into.\nThere are over 300k rows, and 121 features (minus the target variable) that will need consideration.\n\n\n\n\nApplication Train shape: (307511, 122)\n\nColumns:\n['SK_ID_CURR', 'TARGET', 'NAME_CONTRACT_TYPE', 'CODE_GENDER', 'FLAG_OWN_CAR', 'FLAG_OWN_REALTY', 'CNT_CHILDREN', 'AMT_INCOME_TOTAL', 'AMT_CREDIT', 'AMT_ANNUITY', 'AMT_GOODS_PRICE', 'NAME_TYPE_SUITE', 'NAME_INCOME_TYPE', 'NAME_EDUCATION_TYPE', 'NAME_FAMILY_STATUS', 'NAME_HOUSING_TYPE', 'REGION_POPULATION_RELATIVE', 'DAYS_BIRTH', 'DAYS_EMPLOYED', 'DAYS_REGISTRATION', 'DAYS_ID_PUBLISH', 'OWN_CAR_AGE', 'FLAG_MOBIL', 'FLAG_EMP_PHONE', 'FLAG_WORK_PHONE', 'FLAG_CONT_MOBILE', 'FLAG_PHONE', 'FLAG_EMAIL', 'OCCUPATION_TYPE', 'CNT_FAM_MEMBERS', 'REGION_RATING_CLIENT', 'REGION_RATING_CLIENT_W_CITY', 'WEEKDAY_APPR_PROCESS_START', 'HOUR_APPR_PROCESS_START', 'REG_REGION_NOT_LIVE_REGION', 'REG_REGION_NOT_WORK_REGION', 'LIVE_REGION_NOT_WORK_REGION', 'REG_CITY_NOT_LIVE_CITY', 'REG_CITY_NOT_WORK_CITY', 'LIVE_CITY_NOT_WORK_CITY', 'ORGANIZATION_TYPE', 'EXT_SOURCE_1', 'EXT_SOURCE_2', 'EXT_SOURCE_3', 'APARTMENTS_AVG', 'BASEMENTAREA_AVG', 'YEARS_BEGINEXPLUATATION_AVG', 'YEARS_BUILD_AVG', 'COMMONAREA_AVG', 'ELEVATORS_AVG', 'ENTRANCES_AVG', 'FLOORSMAX_AVG', 'FLOORSMIN_AVG', 'LANDAREA_AVG', 'LIVINGAPARTMENTS_AVG', 'LIVINGAREA_AVG', 'NONLIVINGAPARTMENTS_AVG', 'NONLIVINGAREA_AVG', 'APARTMENTS_MODE', 'BASEMENTAREA_MODE', 'YEARS_BEGINEXPLUATATION_MODE', 'YEARS_BUILD_MODE', 'COMMONAREA_MODE', 'ELEVATORS_MODE', 'ENTRANCES_MODE', 'FLOORSMAX_MODE', 'FLOORSMIN_MODE', 'LANDAREA_MODE', 'LIVINGAPARTMENTS_MODE', 'LIVINGAREA_MODE', 'NONLIVINGAPARTMENTS_MODE', 'NONLIVINGAREA_MODE', 'APARTMENTS_MEDI', 'BASEMENTAREA_MEDI', 'YEARS_BEGINEXPLUATATION_MEDI', 'YEARS_BUILD_MEDI', 'COMMONAREA_MEDI', 'ELEVATORS_MEDI', 'ENTRANCES_MEDI', 'FLOORSMAX_MEDI', 'FLOORSMIN_MEDI', 'LANDAREA_MEDI', 'LIVINGAPARTMENTS_MEDI', 'LIVINGAREA_MEDI', 'NONLIVINGAPARTMENTS_MEDI', 'NONLIVINGAREA_MEDI', 'FONDKAPREMONT_MODE', 'HOUSETYPE_MODE', 'TOTALAREA_MODE', 'WALLSMATERIAL_MODE', 'EMERGENCYSTATE_MODE', 'OBS_30_CNT_SOCIAL_CIRCLE', 'DEF_30_CNT_SOCIAL_CIRCLE', 'OBS_60_CNT_SOCIAL_CIRCLE', 'DEF_60_CNT_SOCIAL_CIRCLE', 'DAYS_LAST_PHONE_CHANGE', 'FLAG_DOCUMENT_2', 'FLAG_DOCUMENT_3', 'FLAG_DOCUMENT_4', 'FLAG_DOCUMENT_5', 'FLAG_DOCUMENT_6', 'FLAG_DOCUMENT_7', 'FLAG_DOCUMENT_8', 'FLAG_DOCUMENT_9', 'FLAG_DOCUMENT_10', 'FLAG_DOCUMENT_11', 'FLAG_DOCUMENT_12', 'FLAG_DOCUMENT_13', 'FLAG_DOCUMENT_14', 'FLAG_DOCUMENT_15', 'FLAG_DOCUMENT_16', 'FLAG_DOCUMENT_17', 'FLAG_DOCUMENT_18', 'FLAG_DOCUMENT_19', 'FLAG_DOCUMENT_20', 'FLAG_DOCUMENT_21', 'AMT_REQ_CREDIT_BUREAU_HOUR', 'AMT_REQ_CREDIT_BUREAU_DAY', 'AMT_REQ_CREDIT_BUREAU_WEEK', 'AMT_REQ_CREDIT_BUREAU_MON', 'AMT_REQ_CREDIT_BUREAU_QRT', 'AMT_REQ_CREDIT_BUREAU_YEAR']\n\nInfo:\n&lt;class 'pandas.core.frame.DataFrame'&gt;\nRangeIndex: 307511 entries, 0 to 307510\nColumns: 122 entries, SK_ID_CURR to AMT_REQ_CREDIT_BUREAU_YEAR\ndtypes: float64(65), int64(41), object(16)\nmemory usage: 286.2+ MB\nNone\n\nPreview\n\n\n\n\n\n\n\n\n\nSK_ID_CURR\nTARGET\nNAME_CONTRACT_TYPE\nCODE_GENDER\nFLAG_OWN_CAR\nFLAG_OWN_REALTY\nCNT_CHILDREN\nAMT_INCOME_TOTAL\nAMT_CREDIT\nAMT_ANNUITY\n...\nFLAG_DOCUMENT_18\nFLAG_DOCUMENT_19\nFLAG_DOCUMENT_20\nFLAG_DOCUMENT_21\nAMT_REQ_CREDIT_BUREAU_HOUR\nAMT_REQ_CREDIT_BUREAU_DAY\nAMT_REQ_CREDIT_BUREAU_WEEK\nAMT_REQ_CREDIT_BUREAU_MON\nAMT_REQ_CREDIT_BUREAU_QRT\nAMT_REQ_CREDIT_BUREAU_YEAR\n\n\n\n\n0\n100002\n1\nCash loans\nM\nN\nY\n0\n202500.0\n406597.5\n24700.5\n...\n0\n0\n0\n0\n0.0\n0.0\n0.0\n0.0\n0.0\n1.0\n\n\n1\n100003\n0\nCash loans\nF\nN\nN\n0\n270000.0\n1293502.5\n35698.5\n...\n0\n0\n0\n0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n\n\n2\n100004\n0\nRevolving loans\nM\nY\nY\n0\n67500.0\n135000.0\n6750.0\n...\n0\n0\n0\n0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n\n\n3\n100006\n0\nCash loans\nF\nN\nY\n0\n135000.0\n312682.5\n29686.5\n...\n0\n0\n0\n0\nNaN\nNaN\nNaN\nNaN\nNaN\nNaN\n\n\n4\n100007\n0\nCash loans\nM\nN\nY\n0\n121500.0\n513000.0\n21865.5\n...\n0\n0\n0\n0\n0.0\n0.0\n0.0\n0.0\n0.0\n0.0\n\n\n\n\n5 rows × 122 columns",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -269,7 +348,6 @@
     "text": "1.3 Sample of application_train.csv\n\n10% of this data is sampled into app_sample and the sampled dataset is saved as a .csv file to enable merging.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -281,7 +359,6 @@
     "text": "1.4 Sample of bureau.csv\n\nbureau.csv is filtered to keep only rows that have SK_ID_CURR in the sample set bureau_sample, which is saved to .csv.\nFiltering this way ensures that only credit bureau records that pertain to applicants sampled in application_train will be included in the analysis.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -293,7 +370,6 @@
     "text": "1.5 Sample of bureau_balance.csv\n\nbureau_balance.csv filtered again, this time to keep only rows that have values for SK_ID_BUREAU, which is the shared key between this file and bureau.csv. This enables merging the tables later.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -305,7 +381,6 @@
     "text": "1.6 Sample of previous_application.csv\n\nFiltered to keep only rows with SK_ID_CURR, which will be the joining column for the final table.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -317,7 +392,6 @@
     "text": "1.7 Sample of POS_cash_balance.csv\n\nThis table shares SK_ID_PREV with with previous_applications.csv, so we filter only for rows that have this key for later merging.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -329,7 +403,6 @@
     "text": "1.8 Sample of installments_payments.csv\n\nThis table also shares SK_ID_PREV with with previous_applications.csv, so I filter only for rows that have this key for later merging.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -341,7 +414,6 @@
     "text": "1.9 Sample of credit_card_balance.csv\n\nThis table also shares SK_ID_PREV with with previous_applications.csv, so I filter only for rows that have this key for later merging.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -353,7 +425,6 @@
     "text": "2.1 Load samples\n\nStore sampled datasets into variables for merging.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -365,7 +436,6 @@
     "text": "2.2 Encode and aggregate bureau_bal_sample\n\nSTATUS is appropriate for one-hot encoding since it has low dimensionality and is potentially predictive of the target variable.\n\nIt contains categorical credit status codes (0, 1, …, 5, C, X) indicating the repayment behavior of each loan over time.\nIt is then aggregated by SK_ID_BUREAU to ensure one row per key.\nThe mean is used here to summarize each applicant’s monthly repayment behavior (for example: 1.0 IN STATUS_0 means credit was always current, while 0.5 means it was current in half of the recorded months).\n\nColumns are prepended with BB_ to indicate that they originated from the bureau_balance table to improve traceablility during feature engineering.\nThe index of bureau_bal_agg is reset so that SK_ID_BUREAU turns back into a regular column rather than a DataFrame index (which it became after the aggregation). This enables merging in the next step.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -377,7 +447,6 @@
     "text": "2.3 Merge bureau_bal_sample with bureau_sample into bureau_merged\n\nTheir shared key is SK_ID_BUREAU, which represents individual previous credit card accounts.\nThe resulting table bureau_merged still contains multiple rows for SK_ID_CURR, which will be fixed by aggregating to this key.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -389,7 +458,6 @@
     "text": "2.4 Encode and aggregate bureau_merged into bureau_agg\n\nFirst, bureau_merged features CREDIT_ACTIVE AND CREDIT_TYPE are one-hot encoded.\n\nCREDIT_ACTIVE: Current status of a credit line at the time of loan application.\n\nClasses: [“Active”, “Closed”, “Sold”, “Bad debt”]\nThis is a strong indicator of financial responsibility:\n\nActive accounts could mean that the client has increased financial obligations which may signal risk.\nClosed accounts indicate that their loans have been fully repaid, which is positive evidence of financial responsibility.\nSold / Bad debt / Charged off values may indicate that the lender offloaded the account due to deliquency, a potential red flag.\n\n\nCREDIT_TYPE: Type of credit product associated with each SK_ID_BUREAU.\n\nClasses (common occurrences): [“Consumer credit”, “Credit card”, “Car loan”, “Mortgage”, “Microloan”, “Loan for business development / working capital replinishment”]\nThis feature provides context into financial behaviors:\n\nClients with many credit cards may carry more short term debt, which indicates higher risk for a long-term home loan.\nPresence of mortages suggest that the corresponding clients have a higher income / higher ability to satisfy loan requirements.\n\n\n\nBoolean columns are included because, when averaged, these columns represent the proportion of credit lines matching each condition — for example: the percentage of a client’s previous credits that are still active, or that were mortgages.\nBUREAU_ is prepended to aggregated columns for traceability.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -401,7 +469,6 @@
     "text": "2.5 Merge bureau_agg with app_sample into app_with_bureau\n\nNow that bureau_agg is aggregated such that it has only one row per SK_ID_CURR, it can now be merged with the main table app_sample.\napp_sample is renamed to app_with_bureau, and will be renamed with each merge to clarify what it contains at each merging step.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -413,7 +480,6 @@
     "text": "2.6 Load and encode sample_previous_application\n\nThis table will eventually be merged alongside POS_CASH_balance, installments_payments, and credit_card_balance to enrich the app_sample records.\nOne-hot encoding is applied here to categorical variables so that downstream models (LightGBM, XGBoost, Logistic Regression) can interpret them numerically.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -425,7 +491,6 @@
     "text": "2.7 Aggregate numeric columns into prev_agg\n\nSince one column per SK_ID_CURR is needed, aggregate values of numerical and bool types (for reasons described above) are taken to facilitate this.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -437,7 +502,6 @@
     "text": "2.8 Merge sampled previous_application with main table on SK_ID_CURR",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -449,7 +513,6 @@
     "text": "2.9 Load sampled POS_CASH_balance\n\nWill be merged with sampled previous_application on SK_ID_PREV",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -461,7 +524,6 @@
     "text": "2.10 Aggregate numerical features from sampled POS_CASH_balance\n\nSummary of repayment activity for each loan (past loans with Home Credit)\nFeatures are grouped by SK_ID_PREV (one row per loan) and summary statistics are computed:\n\nMONTHS_BALANCE: how far back the record goes (min, max) and how many months are recorded (count)\nSK_DPD, SK_DPD_DEF: days past due / chronic delinquency\nCNT_INSTALMENT: total scheduled installments\nCNT_INSTALMENT_FUTURE: number of remaining scheduled installments on the loan at the time of observation",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -473,7 +535,6 @@
     "text": "2.11 Merge sampled and aggregated POS_CASH_balance with sampled previous_application on SK_ID_PREV\n\nSK_ID_PREV is shared by these two columns, and both that key and SK_ID_CURR are present in prev, so this is a precursor to a merge with the main table.\nThere are still multiple SK_ID_PREV values per SK_ID_CURR, so and second aggregation (mean) is taken to consolidate columns while retaining information.\nSK_ID_PREV is now redundant and is dropped.\nSampled POS_CASH_balance is merged with the main table, and main table is renamed for clarity.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -485,7 +546,6 @@
     "text": "2.12 Load sampled installments_payments",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -497,7 +557,6 @@
     "text": "2.13 Required feature engineering\n\nNew features are created for installments_payments to illustrate repayment behavior relative to scheduled payment plans.\n\nThese features provide insight into timeliness and consistency in past repayment history, which is presumably predictive of credit risk.\n\nNew features:\n\nPAYMENT_DIFF_DAYS: Difference between actual payment date and scheduled payment date. Positive values = late payments; Negative values = early payments.\nPAYMENT_RATIO: Ratio of actual amount paid to scheduled installment amount. Values &gt; 1 = overpayment; Values &lt; 1 = underpayment.\nPAYMENT_DIFF_AMT: Difference between amount paid and expected amount. Positive = overpayment; Negative = underpayment.\n\nNumerical features from installments_payments are then aggregated in same manner as previous tables.\nThis table is first merged with the SK_ID_PREV and SK_ID_CURR columns of previous_application on SK_ID_PREV, which facilitates a later merge with sampled application_train",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -509,7 +568,6 @@
     "text": "2.14 Load sampled credit_card_balance",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -521,7 +579,6 @@
     "text": "2.15 Aggregate time-based features from credit_card_balance on SK_ID_PREV, merge with previous_application, merge with main table\n\nSummarizes clients’ historical credit card behavior by aggregating monthly balance snapshots per previous credit line (SK_ID_PREV)\nOne row per previous credit card (later aggregated by application)\nAggregations:\n\nMONTHS_BALANCE: information about how long client has had these credit lines\nAMT_BALANCE, AMT_TOTAL_RECEIVABLE: outstanding balances\nAMT_CREDIT_LIMIT_ACTUAL: typical credit limit given\nAMT_DRAWINGS, CNT_DRAWINGS: how much / how often client withdrew and spent with credit card\nCNT_INSTALMENT_MATURE_CUM: number of fully paid installments (strong indicator of target)\nSK_DPD, SK_DPD_DEF: days past due (DPD) - repayment risk",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -533,7 +590,6 @@
     "text": "2.16 Final (sampled) table",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -545,7 +601,6 @@
     "text": "3.1 Initial checks and cleanup\n\nCopy of all_final is made\nNulls are inspected\n\n\n\n\n\n\n\n\n\n\ndtype\nnull_count\nnull_ratio\nn_unique\n\n\n\n\nPREVAPP_RATE_INTEREST_PRIVILEGED_STD\nfloat64\n30734\n0.999447\n8\n\n\nPREVAPP_RATE_INTEREST_PRIMARY_STD\nfloat64\n30734\n0.999447\n14\n\n\nPREVAPP_RATE_INTEREST_PRIMARY_MEAN\nfloat64\n30330\n0.986309\n52\n\n\nPREVAPP_RATE_INTEREST_PRIVILEGED_MEAN\nfloat64\n30330\n0.986309\n21\n\n\nPREVAPP_RATE_INTEREST_PRIVILEGED_MAX\nfloat64\n30330\n0.986309\n14\n\n\nPREVAPP_RATE_INTEREST_PRIVILEGED_MIN\nfloat64\n30330\n0.986309\n14\n\n\nPREVAPP_RATE_INTEREST_PRIMARY_MIN\nfloat64\n30330\n0.986309\n41\n\n\nPREVAPP_RATE_INTEREST_PRIMARY_MAX\nfloat64\n30330\n0.986309\n42\n\n\nCC_AMT_PAYMENT_CURRENT_MEAN\nfloat64\n25555\n0.831030\n5039\n\n\nCC_AMT_DRAWINGS_ATM_CURRENT_MEAN\nfloat64\n25526\n0.830087\n3213\n\n\nCC_CNT_DRAWINGS_OTHER_CURRENT_MEAN\nfloat64\n25526\n0.830087\n165\n\n\nBUREAU_AMT_ANNUITY_STD\nfloat64\n24462\n0.795486\n3960\n\n\nCC_SK_DPD_DEF_MEAN\nfloat64\n23030\n0.748919\n447\n\n\nCC_MONTHS_BALANCE_MIN\nfloat64\n23030\n0.748919\n107\n\n\nCC_CNT_DRAWINGS_CURRENT_MEAN\nfloat64\n23030\n0.748919\n2207\n\n\nCC_MONTHS_BALANCE_COUNT\nfloat64\n23030\n0.748919\n105\n\n\nCC_MONTHS_BALANCE_MAX\nfloat64\n23030\n0.748919\n5\n\n\nCC_AMT_TOTAL_RECEIVABLE_MAX\nfloat64\n23030\n0.748919\n5008\n\n\nCC_AMT_TOTAL_RECEIVABLE_MEAN\nfloat64\n23030\n0.748919\n5104\n\n\nCC_AMT_PAYMENT_CURRENT_SUM\nfloat64\n23030\n0.748919\n4952\n\n\nCC_SK_DPD_MEAN\nfloat64\n23030\n0.748919\n697\n\n\nCC_AMT_BALANCE_MAX\nfloat64\n23030\n0.748919\n5037\n\n\nCC_AMT_DRAWINGS_CURRENT_SUM\nfloat64\n23030\n0.748919\n4236\n\n\nCC_SK_DPD_MAX\nfloat64\n23030\n0.748919\n123\n\n\nCC_SK_DPD_DEF_MAX\nfloat64\n23030\n0.748919\n21\n\n\nCC_AMT_BALANCE_MEAN\nfloat64\n23030\n0.748919\n5121\n\n\nCC_AMT_CREDIT_LIMIT_ACTUAL_MEAN\nfloat64\n23030\n0.748919\n2434\n\n\nCC_CNT_DRAWINGS_CURRENT_SUM\nfloat64\n23030\n0.748919\n304\n\n\nCC_CNT_INSTALMENT_MATURE_CUM_MAX\nfloat64\n23030\n0.748919\n104\n\n\nCC_AMT_DRAWINGS_ATM_CURRENT_SUM\nfloat64\n23030\n0.748919\n1529",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -557,7 +612,6 @@
     "text": "3.2 Drop columns with nulls &gt; 95%\n\nThese columns are likely to introduce noise into modeling and are thus dropped.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -569,7 +623,6 @@
     "text": "3.3 Outlier clipping\nTo reduce the impact of extreme values without removing valuable training data, this step applies winzorization to all numeric features.\n\nThe top and bottom 1% of values in each column are clipped to reduce skew and stabilize model training.\nThis approach is more appropriate than row deletion for large, high-dimensional datasets where some outliers may carry signal.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -581,7 +634,6 @@
     "text": "3.4 Data splits\nThis section performs the initial split between features (X) and target (y) in preparation for modeling. Additional preprocessing is applied to ensure that all features are numeric and model-compatible:\n\nSK_ID_CURR (identifier) and TARGET (label) are dropped from X, and TARGET is assigned to y.\nColumns stored as object type are encoded to numeric where possible.\nRemaining object columns (true categoricals) are one-hot encoded using pd.get_dummies() to ensure compatibility with all models, including those that do not support categorical features natively.\ndummy_na=True ensures that missing categorical values are explicitly handled and represented as separate dummy variables.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -593,7 +645,6 @@
     "text": "3.5 Impute nulls with zero or median\nThis step handles applies two different imputation methods based on the meaning of each feature:\n\nZero imputation is applied to aggregated features originating from time-series or transactional data (e.g., CC_, POS_, INSTALL_, BUREAU_, PREVAPP_).\n\nThese missing values typically indicate an absence of activity, so filling them with 0 is both safe and meaningful.\n\nMedian imputation is used for all remaining features.\n\nThis helps preserve the overall distribution of each feature while minimizing the influence of extreme values.\n\n\n\n\nTrue",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -605,7 +656,6 @@
     "text": "3.6 Train/val/test splits\n\nData is split 60/20/20, with both scaled and unscaled versions for the various models that will be tested.\nIndexes between scaled and unscaled sets are aligned.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -617,7 +667,6 @@
     "text": "4.1 Logistic Regression\n\nPerformance baseline using logistic regression on scaled features.\nThreshold tuning is applied to ensure optimal results. Further refinement is reserved for the following models.\n\n\n\nThreshold: 0.05 | Precision: 0.087 | Recall: 0.978 | F1: 0.159\nThreshold: 0.10 | Precision: 0.093 | Recall: 0.950 | F1: 0.170\nThreshold: 0.15 | Precision: 0.100 | Recall: 0.915 | F1: 0.180\nThreshold: 0.20 | Precision: 0.108 | Recall: 0.877 | F1: 0.192\nThreshold: 0.25 | Precision: 0.117 | Recall: 0.847 | F1: 0.206\nThreshold: 0.30 | Precision: 0.125 | Recall: 0.802 | F1: 0.217\nThreshold: 0.35 | Precision: 0.135 | Recall: 0.764 | F1: 0.230\nThreshold: 0.40 | Precision: 0.142 | Recall: 0.706 | F1: 0.237\nThreshold: 0.45 | Precision: 0.154 | Recall: 0.655 | F1: 0.249\nThreshold: 0.50 | Precision: 0.166 | Recall: 0.605 | F1: 0.260\nThreshold: 0.55 | Precision: 0.180 | Recall: 0.560 | F1: 0.273\nThreshold: 0.60 | Precision: 0.195 | Recall: 0.510 | F1: 0.283\nThreshold: 0.65 | Precision: 0.210 | Recall: 0.446 | F1: 0.286\nThreshold: 0.70 | Precision: 0.228 | Recall: 0.379 | F1: 0.284\nThreshold: 0.75 | Precision: 0.250 | Recall: 0.315 | F1: 0.279\nThreshold: 0.80 | Precision: 0.283 | Recall: 0.252 | F1: 0.267\nThreshold: 0.85 | Precision: 0.315 | Recall: 0.187 | F1: 0.234\nThreshold: 0.90 | Precision: 0.388 | Recall: 0.127 | F1: 0.191\n\n\n\n\n\n\n\n\n\n\nLogistic Regression (Final Test Performance @ Threshold = 0.65)\n[[4766  881]\n [ 287  217]]\n              precision    recall  f1-score   support\n\n           0      0.943     0.844     0.891      5647\n           1      0.198     0.431     0.271       504\n\n    accuracy                          0.810      6151\n   macro avg      0.570     0.637     0.581      6151\nweighted avg      0.882     0.810     0.840      6151",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -629,7 +678,6 @@
     "text": "4.2 Random Forest\n\nA Random Forest classifier is trained as a second baseline model, leveraging its ability to handle complex, non-linear feature interactions without requiring feature scaling.\nThe initial model uses default hyperparameters with class balancing enabled to account for severe class imbalance in the target variable.\nPerformance is evaluated using AUC, precision, recall, F1-score, and a confusion matrix, using a default threshold of 0.5.\nOptuna is then used to perform hyperparameter tuning with cross-validated AUC as the objective function.\nThe best model from the Optuna search is retrained, and a threshold sweep is conducted to identify the optimal decision threshold for classification.\nFinal evaluation is performed on the holdout test set using the tuned threshold.\n\n\nInitial model (default parameters)\n\n\nInitial Random Forest (Threshold = 0.5)\nAUC: 0.6976\n              precision    recall  f1-score   support\n\n           0      0.918     1.000     0.957      5647\n           1      0.500     0.002     0.004       504\n\n    accuracy                          0.918      6151\n   macro avg      0.709     0.501     0.481      6151\nweighted avg      0.884     0.918     0.879      6151\n\n[[5646    1]\n [ 503    1]]\n\n\n\n\nHyperparameter Tuning with Optuna\n\n\nBest AUC : 0.7672\nBest Parameters:\nn_estimators: 779\nmax_depth: 16\nmin_samples_split: 18\nmin_samples_leaf: 19\nmax_features: None\nclass_weight: balanced_subsample\n\n\n\n\nRetrain and Threshold Tuning\n\n\nThreshold Tuning Results\nThreshold: 0.05 | Precision: 0.083 | Recall: 0.994 | F1: 0.154\nThreshold: 0.10 | Precision: 0.094 | Recall: 0.964 | F1: 0.172\nThreshold: 0.15 | Precision: 0.111 | Recall: 0.895 | F1: 0.197\nThreshold: 0.20 | Precision: 0.132 | Recall: 0.813 | F1: 0.227\nThreshold: 0.25 | Precision: 0.152 | Recall: 0.712 | F1: 0.251\nThreshold: 0.30 | Precision: 0.175 | Recall: 0.603 | F1: 0.271\nThreshold: 0.35 | Precision: 0.197 | Recall: 0.510 | F1: 0.284\nThreshold: 0.40 | Precision: 0.222 | Recall: 0.427 | F1: 0.292\nThreshold: 0.45 | Precision: 0.247 | Recall: 0.349 | F1: 0.289\nThreshold: 0.50 | Precision: 0.269 | Recall: 0.276 | F1: 0.273\nThreshold: 0.55 | Precision: 0.285 | Recall: 0.212 | F1: 0.243\nThreshold: 0.60 | Precision: 0.308 | Recall: 0.145 | F1: 0.197\nThreshold: 0.65 | Precision: 0.346 | Recall: 0.093 | F1: 0.147\nThreshold: 0.70 | Precision: 0.342 | Recall: 0.054 | F1: 0.093\nThreshold: 0.75 | Precision: 0.464 | Recall: 0.026 | F1: 0.049\nThreshold: 0.80 | Precision: 0.600 | Recall: 0.006 | F1: 0.012\nThreshold: 0.85 | Precision: 0.000 | Recall: 0.000 | F1: 0.000\nThreshold: 0.90 | Precision: 0.000 | Recall: 0.000 | F1: 0.000\n\n\n\n\n\n\n\n\n\n\nFinal Evaluation (Threshold = 0.40)\nAUC: 0.7401\n              precision    recall  f1-score   support\n\n           0      0.944     0.866     0.904      5647\n           1      0.222     0.427     0.292       504\n\n    accuracy                          0.830      6151\n   macro avg      0.583     0.646     0.598      6151\nweighted avg      0.885     0.830     0.853      6151\n\n[[4892  755]\n [ 289  215]]",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -641,7 +689,6 @@
     "text": "4.3 XGBoost\n\nThis section implements a full XGBoost classification pipeline using a scaled 60/20/20 train/val/test split.\n\nWe begin with an initial model using default hyperparameters and evaluate performance using AUC, precision, recall, and F1 score.\nNext, we tune the model using Optuna with a validation split nested inside the training set. The tuning objective maximizes AUC.\nAfter hyperparameter tuning, we retrain the model on the full training set using the best parameters.\nWe then sweep through decision thresholds from 0.05 to 0.95 to identify the threshold that maximizes F1 score, balancing precision and recall.\nFinal model performance is evaluated on the held-out test set using the optimal threshold.\n\n\n\nInitial model (default parameters)\n\n\nInitial XGBoost (Threshold = 0.5)\nAUC: 0.7615\n              precision    recall  f1-score   support\n\n           0      0.919     0.999     0.957      5647\n           1      0.429     0.012     0.023       504\n\n    accuracy                          0.918      6151\n   macro avg      0.674     0.505     0.490      6151\nweighted avg      0.879     0.918     0.881      6151\n\n[[5639    8]\n [ 498    6]]\n\n\n\n\nHyperparameter tuning with Optuna\n\n\nBest AUC: 0.7791\nBest parameters:\nn_estimators: 877\nmax_depth: 5\nlearning_rate: 0.06263537566244079\nsubsample: 0.8697660901175297\ncolsample_bytree: 0.8110399488499476\nscale_pos_weight: 3.0941905483954972\n\n\n\n\nRetrain and threshold tuning\n\n\nThreshold Sweep:\nThreshold: 0.05 | Precision: 0.160 | Recall: 0.681 | F1: 0.259\nThreshold: 0.10 | Precision: 0.202 | Recall: 0.508 | F1: 0.289\nThreshold: 0.15 | Precision: 0.235 | Recall: 0.401 | F1: 0.297\nThreshold: 0.20 | Precision: 0.257 | Recall: 0.313 | F1: 0.283\nThreshold: 0.25 | Precision: 0.281 | Recall: 0.246 | F1: 0.262\nThreshold: 0.30 | Precision: 0.304 | Recall: 0.198 | F1: 0.240\nThreshold: 0.35 | Precision: 0.307 | Recall: 0.157 | F1: 0.208\nThreshold: 0.40 | Precision: 0.332 | Recall: 0.131 | F1: 0.188\nThreshold: 0.45 | Precision: 0.371 | Recall: 0.111 | F1: 0.171\nThreshold: 0.50 | Precision: 0.393 | Recall: 0.095 | F1: 0.153\nThreshold: 0.55 | Precision: 0.421 | Recall: 0.079 | F1: 0.134\nThreshold: 0.60 | Precision: 0.389 | Recall: 0.056 | F1: 0.097\nThreshold: 0.65 | Precision: 0.423 | Recall: 0.044 | F1: 0.079\nThreshold: 0.70 | Precision: 0.486 | Recall: 0.034 | F1: 0.063\nThreshold: 0.75 | Precision: 0.520 | Recall: 0.026 | F1: 0.049\nThreshold: 0.80 | Precision: 0.545 | Recall: 0.012 | F1: 0.023\nThreshold: 0.85 | Precision: 0.500 | Recall: 0.004 | F1: 0.008\nThreshold: 0.90 | Precision: 0.500 | Recall: 0.002 | F1: 0.004\n\n\n\n\n\n\n\n\n\n\nBest Threshold = 0.15 with F1 = 0.297",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -653,7 +700,6 @@
     "text": "4.4 CatBoost\n\nIn this section, we train and evaluate a CatBoostClassifier, a gradient boosting model that natively handles categorical variables and does not require feature scaling.\nWe use the unscaled input features (X_train_unscaled, X_test_unscaled) because CatBoost handles raw numerical ranges internally and is often robust to feature distributions.\nA baseline model is trained first with default hyperparameters.\nWe then use Optuna with a SuccessiveHalvingPruner to tune critical parameters (e.g., depth, learning_rate, l2_leaf_reg, and class weights) to maximize AUC on a validation set.\nThe best parameters are manually re-used in a retraining step.\nA threshold sweep is conducted to identify the optimal cutoff probability for classification, targeting the best F1 score.\nFinally, we evaluate the model using the optimal threshold and report AUC, precision, recall, and the full classification report.\n\n\nInitial run\n\n\nInitial Run (Threshold = 0.5)\nAUC: 0.7552\n              precision    recall  f1-score   support\n\n           0      0.919     0.999     0.957      5647\n           1      0.545     0.012     0.023       504\n\n    accuracy                          0.918      6151\n   macro avg      0.732     0.506     0.490      6151\nweighted avg      0.888     0.918     0.881      6151\n\n[[5642    5]\n [ 498    6]]\n\n\n\n\nOptuna Tuning\n\n\nBest AUC: 0.7769934009398187\nBest Parameters:\nlearning_rate: 0.017401062497184344\ndepth: 4\nl2_leaf_reg: 6.11798718499005\n\n\n\n\nRetrain on full train/val with best params\n\n\n0:  test: 0.6639175 best: 0.6639175 (0) total: 27.9ms   remaining: 27.8s\n100:    test: 0.7372920 best: 0.7374698 (99)    total: 2.61s    remaining: 23.2s\n200:    test: 0.7474091 best: 0.7475647 (198)   total: 5.35s    remaining: 21.3s\n300:    test: 0.7544342 best: 0.7544781 (299)   total: 7.95s    remaining: 18.5s\n400:    test: 0.7580268 best: 0.7580792 (397)   total: 10.6s    remaining: 15.8s\n500:    test: 0.7595591 best: 0.7595591 (500)   total: 13.2s    remaining: 13.1s\n600:    test: 0.7621577 best: 0.7623123 (595)   total: 15.7s    remaining: 10.4s\n700:    test: 0.7640273 best: 0.7641004 (699)   total: 18.3s    remaining: 7.81s\n800:    test: 0.7652799 best: 0.7653361 (784)   total: 21s  remaining: 5.21s\nStopped by overfitting detector  (50 iterations wait)\n\nbestTest = 0.7660887506\nbestIteration = 844\n\nShrink model to first 845 iterations.\n\n\n\n\nThreshold tuning\n\n\nThreshold Tuning Results\nThreshold: 0.05 | Precision: 0.082 | Recall: 1.000 | F1: 0.151\nThreshold: 0.10 | Precision: 0.083 | Recall: 0.996 | F1: 0.153\nThreshold: 0.15 | Precision: 0.086 | Recall: 0.994 | F1: 0.158\nThreshold: 0.20 | Precision: 0.090 | Recall: 0.984 | F1: 0.166\nThreshold: 0.25 | Precision: 0.097 | Recall: 0.970 | F1: 0.176\nThreshold: 0.30 | Precision: 0.106 | Recall: 0.946 | F1: 0.190\nThreshold: 0.35 | Precision: 0.115 | Recall: 0.913 | F1: 0.205\nThreshold: 0.40 | Precision: 0.127 | Recall: 0.877 | F1: 0.221\nThreshold: 0.45 | Precision: 0.138 | Recall: 0.819 | F1: 0.237\nThreshold: 0.50 | Precision: 0.154 | Recall: 0.760 | F1: 0.256\nThreshold: 0.55 | Precision: 0.178 | Recall: 0.704 | F1: 0.284\nThreshold: 0.60 | Precision: 0.203 | Recall: 0.619 | F1: 0.305\nThreshold: 0.65 | Precision: 0.223 | Recall: 0.516 | F1: 0.311\nThreshold: 0.70 | Precision: 0.248 | Recall: 0.393 | F1: 0.304\nThreshold: 0.75 | Precision: 0.275 | Recall: 0.284 | F1: 0.279\nThreshold: 0.80 | Precision: 0.347 | Recall: 0.190 | F1: 0.246\nThreshold: 0.85 | Precision: 0.393 | Recall: 0.087 | F1: 0.143\nThreshold: 0.90 | Precision: 0.478 | Recall: 0.022 | F1: 0.042\n\n\n\n\n\n\n\n\n\n\nBest Threshold = 0.65 with F1 = 0.311\n\n\n\n\nFinal evaluation\n\n\nFinal Evaluation (Threshold = 0.65)\nAUC: 0.7661\n              precision    recall  f1-score   support\n\n           0      0.951     0.839     0.892      5647\n           1      0.223     0.516     0.311       504\n\n    accuracy                          0.813      6151\n   macro avg      0.587     0.678     0.601      6151\nweighted avg      0.891     0.813     0.844      6151\n\n[[4739  908]\n [ 244  260]]",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -665,7 +711,6 @@
     "text": "4.5 LightGBM\n\nIn this section, we implement and evaluate a LightGBM (LGBM) classifier for binary classification.\nLightGBM is a gradient boosting framework known for its speed and efficiency, particularly with large datasets and sparse features.\nSince LightGBM does not handle special characters in feature names, we first sanitize column headers to ensure compatibility.\nWe begin by training a baseline LightGBM model using the scaled training set.\nProbabilistic outputs are used to calculate ROC-AUC and generate default threshold classification metrics.\nNext, we perform hyperparameter tuning using Optuna to maximize AUC on a validation subset of the training data.\nThe best parameters are then used to retrain the model on the full training set.\nTo further optimize performance, we sweep through a range of classification thresholds (0.05 to 0.95) and evaluate precision, recall, and F1 scores at each point.\n\n\nInitial run\n\n\nThreshold: 0.05 | Precision: 0.115 | Recall: 0.851 | F1: 0.203\nThreshold: 0.10 | Precision: 0.139 | Recall: 0.740 | F1: 0.234\nThreshold: 0.15 | Precision: 0.153 | Recall: 0.619 | F1: 0.246\nThreshold: 0.20 | Precision: 0.176 | Recall: 0.562 | F1: 0.268\nThreshold: 0.25 | Precision: 0.189 | Recall: 0.482 | F1: 0.271\nThreshold: 0.30 | Precision: 0.203 | Recall: 0.419 | F1: 0.273\nThreshold: 0.35 | Precision: 0.220 | Recall: 0.361 | F1: 0.274\nThreshold: 0.40 | Precision: 0.240 | Recall: 0.313 | F1: 0.272\nThreshold: 0.45 | Precision: 0.258 | Recall: 0.268 | F1: 0.263\nThreshold: 0.50 | Precision: 0.271 | Recall: 0.214 | F1: 0.239\nThreshold: 0.55 | Precision: 0.307 | Recall: 0.192 | F1: 0.237\nThreshold: 0.60 | Precision: 0.340 | Recall: 0.163 | F1: 0.220\nThreshold: 0.65 | Precision: 0.371 | Recall: 0.137 | F1: 0.200\nThreshold: 0.70 | Precision: 0.388 | Recall: 0.099 | F1: 0.158\nThreshold: 0.75 | Precision: 0.396 | Recall: 0.071 | F1: 0.121\nThreshold: 0.80 | Precision: 0.456 | Recall: 0.052 | F1: 0.093\nThreshold: 0.85 | Precision: 0.486 | Recall: 0.036 | F1: 0.067\nThreshold: 0.90 | Precision: 0.412 | Recall: 0.014 | F1: 0.027\n\n\n\n\n\n\n\n\n\n\nBest Threshold = 0.35 with F1 = 0.274\n\nFinal Evaluation (Test Set) – Threshold = 0.35\nAUC: 0.7296\n              precision    recall  f1-score   support\n\n           0      0.940     0.884     0.911      5647\n           1      0.221     0.369     0.276       504\n\n    accuracy                          0.841      6151\n   macro avg      0.580     0.626     0.594      6151\nweighted avg      0.881     0.841     0.859      6151\n\n[[4990  657]\n [ 318  186]]\n\n\n\n\nOptuna Tuning\n\n\nBest AUC: 0.7512208390263649\nBest Parameters:\nn_estimators: 454\nlearning_rate: 0.01735647221222029\nmax_depth: 12\nnum_leaves: 17\nsubsample: 0.6216329271252681\ncolsample_bytree: 0.7773413401574687\n\n\n\n\nThreshold tuning\n\n\nThreshold Tuning (Validation Set)\nThreshold: 0.05 | Precision: 0.131 | Recall: 0.827 | F1: 0.226\nThreshold: 0.10 | Precision: 0.190 | Recall: 0.552 | F1: 0.283\nThreshold: 0.15 | Precision: 0.244 | Recall: 0.401 | F1: 0.303\nThreshold: 0.20 | Precision: 0.321 | Recall: 0.312 | F1: 0.316\nThreshold: 0.25 | Precision: 0.348 | Recall: 0.218 | F1: 0.268\nThreshold: 0.30 | Precision: 0.385 | Recall: 0.137 | F1: 0.202\nThreshold: 0.35 | Precision: 0.490 | Recall: 0.099 | F1: 0.165\nThreshold: 0.40 | Precision: 0.576 | Recall: 0.067 | F1: 0.121\nThreshold: 0.45 | Precision: 0.632 | Recall: 0.048 | F1: 0.089\nThreshold: 0.50 | Precision: 0.750 | Recall: 0.036 | F1: 0.068\nThreshold: 0.55 | Precision: 0.727 | Recall: 0.016 | F1: 0.031\nThreshold: 0.60 | Precision: 0.800 | Recall: 0.008 | F1: 0.016\nThreshold: 0.65 | Precision: 0.000 | Recall: 0.000 | F1: 0.000\nThreshold: 0.70 | Precision: 0.000 | Recall: 0.000 | F1: 0.000\nThreshold: 0.75 | Precision: 0.000 | Recall: 0.000 | F1: 0.000\nThreshold: 0.80 | Precision: 0.000 | Recall: 0.000 | F1: 0.000\nThreshold: 0.85 | Precision: 0.000 | Recall: 0.000 | F1: 0.000\nThreshold: 0.90 | Precision: 0.000 | Recall: 0.000 | F1: 0.000\n\n\n\n\n\n\n\n\n\n\nBest Threshold = 0.20 with F1 = 0.316\n\n\n\n\nFinal evaluation\n\n\n\nFinal Evaluation (Test Set) — Threshold = 0.20\nAUC: 0.7632\n              precision    recall  f1-score   support\n\n           0      0.938     0.936     0.937      5647\n           1      0.295     0.302     0.298       504\n\n    accuracy                          0.884      6151\n   macro avg      0.616     0.619     0.617      6151\nweighted avg      0.885     0.884     0.884      6151\n\n[[5284  363]\n [ 352  152]]",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -677,7 +722,6 @@
     "text": "5.1 Summary metrics\n\n\nFinal Model Comparison\n\n\n\n\n\n\n\n \nAUC\nPrecision\nRecall\nF1 Score\n\n\nModel\n \n \n \n \n\n\n\n\nCatBoost\n0.766\n0.223\n0.516\n0.311\n\n\nLightGBM\n0.763\n0.295\n0.302\n0.298\n\n\nXGBoost\n0.747\n0.235\n0.401\n0.297\n\n\nRandom Forest\n0.740\n0.222\n0.427\n0.292\n\n\nLogistic Regression\n0.722\n0.198\n0.431\n0.271",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -689,7 +733,6 @@
     "text": "6.1 Feature analysis\n\nSHAP function\n\n\n\nGenerating SHAP explanations for: CatBoost\n\nCatBoost - Global Feature Importance\n\n\n\n\n\n\n\n\n\n\nCatBoost - SHAP Summary Plot\n\n\n\n\n\n\n\n\n\n\nCatBoost - SHAP Force Plot for Row 433 (Prob = 0.952)\n\n\n\n\n\n\n\n\n\n\nCatBoost - SHAP Force Plot for Row 4759 (Prob = 0.933)\n\n\n\n\n\n\n\n\n\n\nCatBoost - SHAP Force Plot for Row 5004 (Prob = 0.931)\n\n\n\n\n\n\n\n\n\n\n\nFeature engineering (CatBoost)\n\n\nFeature engineering complete. New shape: (24601, 727)\nX_train_catboost shape: (18450, 727)\nX_test_catboost shape: (6151, 727)\n\ny_train_catboost class balance:\nTARGET\n0    0.918103\n1    0.081897\nName: proportion, dtype: float64\n\ny_test_catboost class balance:\nTARGET\n0    0.918062\n1    0.081938\nName: proportion, dtype: float64\n\n\n\n\nInitial run (CatBoost with added features)\n\n\n📊 Initial CatBoost AUC: 0.7666\n\n\n\n\nOputna (CatBoost with added features)\n\n\nBest CatBoost hyperparameters: {'learning_rate': 0.018107443628869686, 'depth': 5, 'l2_leaf_reg': 6.541082945946988, 'bootstrap_type': 'MVS'}\n\n\n\n\nThreshold tuning (CatBoost with added features)\n\n\nThreshold: 0.05 | Precision: 0.130 | Recall: 0.857 | F1: 0.226\nThreshold: 0.10 | Precision: 0.200 | Recall: 0.603 | F1: 0.301\nThreshold: 0.15 | Precision: 0.250 | Recall: 0.397 | F1: 0.307\nThreshold: 0.20 | Precision: 0.283 | Recall: 0.270 | F1: 0.276\nThreshold: 0.25 | Precision: 0.340 | Recall: 0.204 | F1: 0.255\nThreshold: 0.30 | Precision: 0.418 | Recall: 0.147 | F1: 0.217\nThreshold: 0.35 | Precision: 0.400 | Recall: 0.087 | F1: 0.143\nThreshold: 0.40 | Precision: 0.431 | Recall: 0.062 | F1: 0.108\nThreshold: 0.45 | Precision: 0.419 | Recall: 0.036 | F1: 0.066\nThreshold: 0.50 | Precision: 0.391 | Recall: 0.018 | F1: 0.034\nThreshold: 0.55 | Precision: 0.412 | Recall: 0.014 | F1: 0.027\nThreshold: 0.60 | Precision: 0.600 | Recall: 0.012 | F1: 0.023\nThreshold: 0.65 | Precision: 0.750 | Recall: 0.006 | F1: 0.012\nThreshold: 0.70 | Precision: 0.500 | Recall: 0.002 | F1: 0.004\nThreshold: 0.75 | Precision: 1.000 | Recall: 0.002 | F1: 0.004\nThreshold: 0.80 | Precision: 0.000 | Recall: 0.000 | F1: 0.000\nThreshold: 0.85 | Precision: 0.000 | Recall: 0.000 | F1: 0.000\nThreshold: 0.90 | Precision: 0.000 | Recall: 0.000 | F1: 0.000\n\nBest Threshold = 0.15 with F1 = 0.307",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Objective"
     ]
   },
@@ -757,7 +800,6 @@
     "text": "— title: “Home Credit Default Risk Analysis — Full Dataset” —",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Project Objective"
     ]
   },
@@ -769,7 +811,6 @@
     "text": "Project Objective\n\nThis notebook presents a comprehensive end-to-end modeling pipeline for predicting default risk using the entire Home Credit dataset (not a sample). The goal is to identify clients who are likely to experience payment difficulties, based on extensive historical and application data.\nWe use CatBoost, a gradient boosting model particularly well-suited for handling categorical features natively, and apply Optuna to tune hyperparameters for maximum performance. This version of the notebook represents the final cleaned, tuned, and fully cross-validated model, ready for interpretation and, with further adjustments, deployment.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Project Objective"
     ]
   },
@@ -781,7 +822,6 @@
     "text": "Key Features\n\nData Source: Kaggle - Home Credit Default Risk\nData Used: All relevant relational tables merged and aggregated appropriately (bureau, previous_application, installments_payments, etc.)\nTarget: TARGET (1 = client experienced payment difficulties, 0 = otherwise)\nModel: CatBoostClassifier\nTuning: Optuna hyperparameter optimization with stratified K-fold cross-validation\nEvaluation Metrics: AUC, Recall, Precision, F1-score, Confusion Matrix, and SHAP interpretability",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Project Objective"
     ]
   },
@@ -793,7 +833,6 @@
     "text": "Why CatBoost?\n\nHandles categorical features directly without one-hot encoding\nEfficient with large datasets\nExcellent performance on tabular, structured data",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Project Objective"
     ]
   },
@@ -805,7 +844,6 @@
     "text": "Notebook Outline\n\nData loading and merging\n\nRelational merging workflow\n\nSanity Checks and Preprocessing\n\nCatBoost Modeling\n\nFeature Engineering and SHAP Analysis\n\nFinal Model Validation and SHAP Summary\n\nConclusion",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Project Objective"
     ]
   },
@@ -817,7 +855,6 @@
     "text": "3.1 Train/Validation/Test Split\n\nSplits the full dataset into:\n\nTrain (60%)\nValidation (20%)\nTest (20%)\n\nUses StratifiedShuffleSplit logic via train_test_split() to maintain TARGET balance across splits.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Project Objective"
     ]
   },
@@ -829,7 +866,6 @@
     "text": "3.2 Notes / Inconsistencies Checked\n\nEach auxiliary table is successfully joined using consistent keys (SK_ID_CURR or SK_ID_PREV).\nAll merges are left joins to prevent data loss in the main tables.\nAll engineered features are renamed with clear prefixes (BB_, PREVAPP_, POS_, INSTALL_, CC_), avoiding column collisions.\nNo observed leakage — aggregations are scoped to past behavior only (i.e., not using future payment dates or default outcomes).",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Project Objective"
     ]
   },
@@ -841,7 +877,6 @@
     "text": "4.1 Initial Run (Baseline CatBoost Model)\nA baseline CatBoostClassifier is trained using manually set parameters:\ncat_model = CatBoostClassifier(\n    iterations=500,\n    learning_rate=0.01,\n    depth=6,\n    eval_metric='AUC',\n    random_seed=42,\n    verbose=100,\n    early_stopping_rounds=50\n)\n\n::: {#21926b6a-489c-44c0-b820-bebac3ab64c5 .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=50}\n\n::: {.cell-output .cell-output-stdout}\n0: test: 0.5612338 best: 0.5612338 (0) total: 520ms remaining: 4m 19s 100: test: 0.7672985 best: 0.7672985 (100) total: 30.7s remaining: 2m 1s 200: test: 0.7733849 best: 0.7733972 (199) total: 1m remaining: 1m 30s 300: test: 0.7762936 best: 0.7762936 (300) total: 1m 30s remaining: 59.6s 400: test: 0.7773160 best: 0.7773160 (400) total: 1m 59s remaining: 29.4s 499: test: 0.7780844 best: 0.7780844 (499) total: 2m 30s remaining: 0us\nbestTest = 0.7780844317 bestIteration = 499\nBaseline CatBoost Results (Threshold = 0.5) AUC: 0.7781 precision recall f1-score support\n       0      0.922     0.997     0.958     56537\n       1      0.520     0.040     0.074      4965\n\naccuracy                          0.920     61502\nmacro avg 0.721 0.518 0.516 61502 weighted avg 0.890 0.920 0.887 61502\n[[56354 183] [ 4767 198]]\n:::\n:::\n\n\n## 4.2 Optuna Hyperparameter Tuning\n\n- A custom objective() function is defined to search the hyperparameter space using Optuna with stratified validation inside the objective scope (to prevent leakage).\n\n- Key aspects:\n    - Parameters tuned:\n        learning_rate, depth, l2_leaf_reg, bootstrap_type\n    - Class imbalance addressed via:\n        class_weights = [1, 15]\n    - Evaluation metric:\n        roc_auc_score\n    - Optuna trial settings:\n        15 trials, SuccessiveHalvingPruner used for pruning poor runs\n        Best AUC and associated parameters printed after tuning\n\n::: {#5f0c9a4b-fd2d-4755-8fc1-c7b222d370fb .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=51}\n\n::: {.cell-output .cell-output-stdout}\nBest AUC: 0.7795 Best Parameters: learning_rate: 0.03759227415469158 depth: 6 l2_leaf_reg: 7.24195964417585\n:::\n:::\n\n\n## 4.3 Threshold Tuning\n\n- Rather than defaulting to a 0.5 threshold, we identify the optimal threshold based on F1-score maximization:\n    - Refit model with best Optuna parameters on training data.\n    - Generate probabilities on validation set (y_pred_prob_cb).\n    - Evaluate multiple thresholds from 0.05 to 0.95.\n    - Select threshold with maximum F1-score (best_threshold_cb).\n    - Final predictions and classification report are generated using this threshold.\n\n::: {#e0386970 .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=52}\n\n::: {.cell-output .cell-output-stdout}\nFinal CatBoost Evaluation (Threshold = 0.15) AUC: 0.7790 precision recall f1-score support\n       0      0.948     0.886     0.916     56537\n       1      0.257     0.450     0.327      4965\n\naccuracy                          0.851     61502\nmacro avg 0.603 0.668 0.622 61502 weighted avg 0.892 0.851 0.868 61502\n[[50083 6454] [ 2731 2234]]\n:::\n:::\n\n\n# Section 5: Feature Engineering and SHAP Analysis\n***\n- This section finalizes the modeling process by engineering domain-relevant features and interpreting model behavior using SHAP. \n- Feature engineering is done post-baseline modeling to avoid data leakage, and SHAP plots are generated for interpretability.\n\n## 5.1 SHAP Function (for CatBoost)\n\nWe define a custom function `explain_model_with_shap()` that:\n\n- Accepts any trained tree-based model (CatBoost, XGBoost, LightGBM, RandomForest).\n- Automatically handles **binary classification** class index selection.\n- Plots:\n  - **Global Feature Importance** (bar plot)\n  - **SHAP Summary Plot** (violin plot)\n  - **Force Plots** for the top-N highest-risk predictions \n\nThis helps interpret model logic both globally (what matters most) and locally (why a specific prediction was made).\n\n```python\nexplain_model_with_shap(\n    model=cat_model,\n    X=X_test,\n    model_name=\"CatBoost\",\n    pred_probs=y_pred_prob_cb,  # shape: (n_samples,) or [:, 1] if shape is (n_samples, 2)\n    class_index=1               # Needed because CatBoost returns a list of SHAP arrays\n)\n\n\n\n## 5.2 CatBoost (feature analysis)\n\n::: {#67507621 .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=54}\n\n::: {.cell-output .cell-output-stdout}\nGenerating SHAP explanations for: CatBoost\nCatBoost - Global Feature Importance\n:::\n\n::: {.cell-output .cell-output-display}\n![](02_homecredit_full_files/figure-html/cell-55-output-2.png){}\n:::\n\n::: {.cell-output .cell-output-stdout}\nCatBoost - SHAP Summary Plot\n:::\n\n::: {.cell-output .cell-output-display}\n![](02_homecredit_full_files/figure-html/cell-55-output-4.png){}\n:::\n\n::: {.cell-output .cell-output-stdout}\nCatBoost - SHAP Force Plot for Row 61079 (Prob = 0.907)\n:::\n\n::: {.cell-output .cell-output-display}\n![](02_homecredit_full_files/figure-html/cell-55-output-6.png){}\n:::\n\n::: {.cell-output .cell-output-stdout}\nCatBoost - SHAP Force Plot for Row 57347 (Prob = 0.869)\n:::\n\n::: {.cell-output .cell-output-display}\n![](02_homecredit_full_files/figure-html/cell-55-output-8.png){}\n:::\n\n::: {.cell-output .cell-output-stdout}\nCatBoost - SHAP Force Plot for Row 53728 (Prob = 0.855)\n:::\n\n::: {.cell-output .cell-output-display}\n![](02_homecredit_full_files/figure-html/cell-55-output-10.png){}\n:::\n:::\n\n\n## 5.3 Feature Engineering for CatBoost\n\nWe engineer several groups of features based on financial intuition and domain insight. The process is performed after the initial CatBoost evaluation and before running the final tuned model.\n- Ratio-Based Interactions\n    CREDIT_INCOME_RATIO, ANNUITY_INCOME_RATIO, GOODS_CREDIT_RATIO, EMPLOYED_BIRTH_RATIO\n- Log Transforms\n    LOG_CREDIT, LOG_INCOME, LOG_EMPLOYED_RATIO\n- Temporal Ratios\n    REGISTRATION_AGE_RATIO, ID_PUBLISH_AGE_RATIO\n- Document and Contact Flags\n    Sum of document flags and presence of phone/email indicators\n- Social Circle Default Ratios\n    DEF_30_RATIO, DEF_60_RATIO (defaults relative to social observation size)\n\nAll operations are applied to a copy of the dataset (X_catboost) to preserve the original.\n\n::: {#90545ab9 .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=55}\n\n::: {.cell-output .cell-output-stdout}\nFeature engineering complete. New shape: (307511, 385)\n:::\n:::\n\n\n## 5.4 Final Train/Val/Test Split (CatBoost Features)\n\n- A new stratified 60/20/20 split is done using the engineered features.\n- This ensures final model training uses the most robust signal.\n- Label balance is confirmed in each set.\n\n::: {#82c6086c .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=56}\n\n::: {.cell-output .cell-output-stdout}\nX_train_catboost shape: (184506, 385) X_val_catboost shape: (61502, 385) X_test_catboost shape: (61503, 385)\ny_train_catboost class balance: TARGET 0 0.919271 1 0.080729 Name: proportion, dtype: float64\ny_val_catboost class balance: TARGET 0 0.919271 1 0.080729 Name: proportion, dtype: float64\ny_test_catboost class balance: TARGET 0 0.919272 1 0.080728 Name: proportion, dtype: float64\n:::\n:::\n\n\n# Section 6: Final Model Validation and SHAP Summary\n***\n\n- This section brings together all the optimized components—feature engineering, Optuna tuning, and threshold calibration—into a final, cross-validated evaluation loop. \n- SHAP analysis is then applied at both global and local levels to understand how different feature domains contribute to model decisions.\n\n## 6.1 Final Cross-Validated Model (Optuna-Tuned + Threshold-Tuned)\n\n- Uses the best hyperparameters from Optuna and the optimal classification threshold based on F1-score.\n- Performs Stratified K-Fold cross-validation across all engineered data:\n  - Trains using `CatBoostClassifier` wrapped with `Pool` to handle categorical features natively.\n  - Applies threshold to maximize F1.\n  - Captures per-fold AUC, F1-score, and confusion matrix.\n\n### Initial run (CatBoost with added features)\n\n::: {#e8795d27 .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=57}\n\n::: {.cell-output .cell-output-stdout}\nInitial CatBoost AUC (Validation Set): 0.7796\n:::\n:::\n\n\n## 6.3 Oputna (CatBoost with added features)\n\n::: {#52fa02e9 .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=58}\n\n::: {.cell-output .cell-output-stdout}\nBest CatBoost hyperparameters: {‘learning_rate’: 0.04702817519258132, ‘depth’: 4, ‘l2_leaf_reg’: 2.1863735569594245, ‘bootstrap_type’: ‘Bernoulli’, ‘subsample’: 0.7679455713304951}\n:::\n:::\n\n\n## 6.4 Threshold tuning (CatBoost with added features)\n\n::: {#a07572ef .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=59}\n\n::: {.cell-output .cell-output-stdout}\nTARGET 0 56537 1 4965 Name: count, dtype: int64\n:::\n:::\n\n\n::: {#1b5ba0be .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=60}\n\n::: {.cell-output .cell-output-stdout}\nBest threshold (F1): 0.15 F1 Score at best threshold: 0.3231\n— Validation Set Evaluation — precision recall f1-score support\n       0      0.948     0.886     0.916     56537\n       1      0.254     0.444     0.323      4965\n\naccuracy                          0.850     61502\nmacro avg 0.601 0.665 0.619 61502 weighted avg 0.892 0.850 0.868 61502\nConfusion Matrix: [[50068 6469] [ 2762 2203]] Final AUC: 0.7777\n:::\n:::\n\n\n## 6.5 Final model (CatBoost with added features) - retrain with all available data \n\n::: {#24c1f787 .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=61}\n\n::: {.cell-output .cell-output-stdout}\n{‘learning_rate’: 0.03759227415469158, ‘depth’: 6, ‘l2_leaf_reg’: 7.24195964417585}\n:::\n:::\n\n\n::: {#fff0fc4c .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=62}\n\n::: {.cell-output .cell-output-stdout}\nFold 0 Confusion Matrix: [[50287 6251] [ 2743 2222]]\nFold 1 Confusion Matrix: [[50343 6194] [ 2672 2293]]\nFold 2 Confusion Matrix: [[50206 6331] [ 2737 2228]]\nFold 3 Confusion Matrix: [[50430 6107] [ 2727 2238]]\nFold 4 Confusion Matrix: [[50225 6312] [ 2760 2205]]\nAverage Confusion Matrix Across Folds: [[50298 6239] [ 2727 2237]]\nCross-validated AUC: 0.7820 Cross-validated F1: 0.3329\n:::\n\n::: {.cell-output .cell-output-display}\n![](02_homecredit_full_files/figure-html/cell-63-output-2.png){}\n:::\n:::\n\n\n## 6.6 Final SHAP Analysis (Domain-Grouped)\n\nA final SHAP interpretability suite is run on the full model trained with added features. This includes:\n\n#### Global SHAP Importance (All Features)\n- Bar plot and violin plot summarize which features contributed most across all predictions.\n\n#### SHAP Aggregated by Domain\nFeatures are grouped by domain:\n- `Credit Card`, `POS Cash`, `Installments`, `Bureau`, `Previous Applications`, `Social Circle`, and `Application`\n\nEach group's mean SHAP value is plotted to reveal which domains drive model predictions most.\n\n#### Local Force Plot (Grouped SHAP by Domain)\n- Top N highest-risk clients (by predicted probability) are selected.\n- SHAP values are grouped by domain for each case, then visualized in a waterfall bar plot.\n- This shows which domains contributed most to individual high-risk predictions, offering auditability for real-world deployment.\n\n::: {#10787896 .cell quarto-private-1='{\"key\":\"jupyter\",\"value\":{\"source_hidden\":true}}' execution_count=63}\n\n::: {.cell-output .cell-output-stdout}\nFinal Model - Global SHAP Feature Importance\n:::\n\n::: {.cell-output .cell-output-display}\n![](02_homecredit_full_files/figure-html/cell-64-output-2.png){}\n:::\n\n::: {.cell-output .cell-output-stdout}\nFinal Model - SHAP Summary Plot (All Samples) ``` :::\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n:::",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Project Objective"
     ]
   },
@@ -853,7 +888,6 @@
     "text": "6.7 SHAP Feature Importance Summary\n\nGlobal Feature Importance (Mean SHAP Values)\n\nEXT_SOURCE_2, EXT_SOURCE_3, and EXT_SOURCE_1 are by far the most important features, indicating that external credit scores are critical predictors of loan default risk.\nOther highly influential features include:\n\nCODE_GENDER: Gender has measurable predictive power, which may reflect embedded socioeconomic patterns.\nINSTALL_PAYMENT_DIFF_DAYS_MAX and AMT_ANNUITY: Timeliness and size of payments are key behavioral signals.\nEngineered features like GOODS_CREDIT_RATIO and LOG_EMPLOYED_RATIO are impactful, confirming that domain-specific feature engineering adds real value.\n\n\n\n\n\nSHAP Summary Plot (All Samples)\n\nFor top features (e.g., EXT_SOURCE_2), higher values (in red) are associated with lower SHAP values, pushing the model toward non-default predictions.\nFor variables like INSTALL_PAYMENT_DIFF_DAYS_MAX, higher values (red) often contribute to higher SHAP values, increasing predicted risk.\nThe spread and gradient of colors suggest non-linear interactions and context-dependent effects across the dataset.\n\n\n\n\nSHAP by Feature Group\n\nInstallments and Application-level features dominate in aggregate importance, suggesting that a client’s payment behavior and initial application details provide the most signal.\nPOS Cash, Social Circle, and Credit Card data contribute modestly, while Previous Applications and Bureau data offer limited additional predictive power.\n\n\n\n\nSHAP Force Plots (Individual Explanations)\n\nClient-specific visualizations reveal which domains contribute most positively or negatively to the prediction.\n\nFor example, in the strongest negative prediction (Row 37987), almost all domains—especially Application and Bureau—push the model toward default.\nIn contrast, some clients (e.g., Row 56856) have positive contributions from the Application domain offsetting smaller negative signals.\n\nThis shows how different features drive risk dynamically on a per-client basis, supporting the model’s explainability and accountability.\n\n\n\n\nKey Takeaways\n\nExternal credit scores (EXT_SOURCE_*) remain the backbone of prediction.\nFeature engineering (ratios, logs) meaningfully boosts interpretability and performance.\nSHAP value visualizations confirm both global insights** and **local model behavior, making this model well-suited for production with explainability requirements.",
     "crumbs": [
       "Home",
-      "Notebooks",
       "Project Objective"
     ]
   },
@@ -862,69 +896,109 @@
     "href": "reports/Feature_Engineering_Notes.html",
     "title": "Feature Engineering Notes — Home Credit Default Risk",
     "section": "",
-    "text": "This document outlines the engineered features used to enhance predictive performance in the default classification model. Features were constructed from both raw application data and multi-level aggregations across 7 relational tables."
+    "text": "This document outlines the engineered features used to enhance predictive performance in the default classification model. Features were constructed from both raw application data and multi-level aggregations across 7 relational tables.",
+    "crumbs": [
+      "Home",
+      "Feature Engineering Notes — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/Feature_Engineering_Notes.html#from-application_train.csv",
     "href": "reports/Feature_Engineering_Notes.html#from-application_train.csv",
     "title": "Feature Engineering Notes — Home Credit Default Risk",
     "section": "From application_train.csv",
-    "text": "From application_train.csv\n\nRatio Features\n\nCREDIT_TO_INCOME_RATIO = AMT_CREDIT / AMT_INCOME_TOTAL\n\nANNUITY_TO_INCOME_RATIO = AMT_ANNUITY / AMT_INCOME_TOTAL\n\nCREDIT_TO_ANNUITY_RATIO = AMT_CREDIT / AMT_ANNUITY\n\nINCOME_PER_FAM_MEMBER = AMT_INCOME_TOTAL / CNT_FAM_MEMBERS\n\nEMPLOYED_BIRTH_RATIO = DAYS_EMPLOYED / DAYS_BIRTH\n\nThese domain-informed ratios provided strong signal, especially the credit-to-income and annuity-to-income measures, which consistently ranked among top features in SHAP importance across both sample and full datasets."
+    "text": "From application_train.csv\n\nRatio Features\n\nCREDIT_TO_INCOME_RATIO = AMT_CREDIT / AMT_INCOME_TOTAL\n\nANNUITY_TO_INCOME_RATIO = AMT_ANNUITY / AMT_INCOME_TOTAL\n\nCREDIT_TO_ANNUITY_RATIO = AMT_CREDIT / AMT_ANNUITY\n\nINCOME_PER_FAM_MEMBER = AMT_INCOME_TOTAL / CNT_FAM_MEMBERS\n\nEMPLOYED_BIRTH_RATIO = DAYS_EMPLOYED / DAYS_BIRTH\n\nThese domain-informed ratios provided strong signal, especially the credit-to-income and annuity-to-income measures, which consistently ranked among top features in SHAP importance across both sample and full datasets.",
+    "crumbs": [
+      "Home",
+      "Feature Engineering Notes — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/Feature_Engineering_Notes.html#external-risk-scores",
     "href": "reports/Feature_Engineering_Notes.html#external-risk-scores",
     "title": "Feature Engineering Notes — Home Credit Default Risk",
     "section": "External Risk Scores",
-    "text": "External Risk Scores\n\nCombined Source Metrics\n\nEXT_SOURCES_MEAN = mean of EXT_SOURCE_1/2/3\n\nEXT_SOURCES_STD = standard deviation of EXT_SOURCE_1/2/3\n\nThese variables—especially EXT_SOURCE_2 and EXT_SOURCE_3—were the highest-impact features in both global and local SHAP plots. Their predictive power remained stable in both the sample and full models."
+    "text": "External Risk Scores\n\nCombined Source Metrics\n\nEXT_SOURCES_MEAN = mean of EXT_SOURCE_1/2/3\n\nEXT_SOURCES_STD = standard deviation of EXT_SOURCE_1/2/3\n\nThese variables—especially EXT_SOURCE_2 and EXT_SOURCE_3—were the highest-impact features in both global and local SHAP plots. Their predictive power remained stable in both the sample and full models.",
+    "crumbs": [
+      "Home",
+      "Feature Engineering Notes — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/Feature_Engineering_Notes.html#temporal-ratios",
     "href": "reports/Feature_Engineering_Notes.html#temporal-ratios",
     "title": "Feature Engineering Notes — Home Credit Default Risk",
     "section": "Temporal Ratios",
-    "text": "Temporal Ratios\n\nREGISTRATION_AGE_RATIO = DAYS_REGISTRATION / DAYS_BIRTH\n\nID_PUBLISH_AGE_RATIO = DAYS_ID_PUBLISH / DAYS_BIRTH\n\nTemporal features were moderately predictive and helped improve recall when paired with other behavioral indicators."
+    "text": "Temporal Ratios\n\nREGISTRATION_AGE_RATIO = DAYS_REGISTRATION / DAYS_BIRTH\n\nID_PUBLISH_AGE_RATIO = DAYS_ID_PUBLISH / DAYS_BIRTH\n\nTemporal features were moderately predictive and helped improve recall when paired with other behavioral indicators.",
+    "crumbs": [
+      "Home",
+      "Feature Engineering Notes — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/Feature_Engineering_Notes.html#from-bureau.csv-bureau_balance.csv",
     "href": "reports/Feature_Engineering_Notes.html#from-bureau.csv-bureau_balance.csv",
     "title": "Feature Engineering Notes — Home Credit Default Risk",
     "section": "From bureau.csv + bureau_balance.csv",
-    "text": "From bureau.csv + bureau_balance.csv\nGrouped by SK_ID_CURR: - NUM_PREV_CREDITS = Count of bureau credits\n- TOTAL_BUREAU_DEBT = Sum of AMT_CREDIT_SUM_DEBT\n- BUREAU_DEBT_TO_CREDIT_RATIO = Debt / Credit per client\n- AVG_BUREAU_OVERDUE = Mean of AMT_CREDIT_SUM_OVERDUE\nThese aggregated variables added signal about historical indebtedness and delinquency. While not individually dominant, they contributed to improved F1 after threshold tuning."
+    "text": "From bureau.csv + bureau_balance.csv\nGrouped by SK_ID_CURR: - NUM_PREV_CREDITS = Count of bureau credits\n- TOTAL_BUREAU_DEBT = Sum of AMT_CREDIT_SUM_DEBT\n- BUREAU_DEBT_TO_CREDIT_RATIO = Debt / Credit per client\n- AVG_BUREAU_OVERDUE = Mean of AMT_CREDIT_SUM_OVERDUE\nThese aggregated variables added signal about historical indebtedness and delinquency. While not individually dominant, they contributed to improved F1 after threshold tuning.",
+    "crumbs": [
+      "Home",
+      "Feature Engineering Notes — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/Feature_Engineering_Notes.html#from-previous_application.csv",
     "href": "reports/Feature_Engineering_Notes.html#from-previous_application.csv",
     "title": "Feature Engineering Notes — Home Credit Default Risk",
     "section": "From previous_application.csv",
-    "text": "From previous_application.csv\nGrouped by SK_ID_CURR: - NUM_PREV_APPS = Number of past applications\n- APPROVAL_RATE = Ratio of approved to total applications\n- PREV_APP_CREDIT_MEAN = Mean approved credit\n- PREV_APP_DOWNPAYMENT_RATE = AMT_DOWN_PAYMENT / AMT_GOODS_PRICE\nThe APPROVAL_RATE feature was especially useful in identifying borderline applicants and added explainability in grouped SHAP analysis by domain."
+    "text": "From previous_application.csv\nGrouped by SK_ID_CURR: - NUM_PREV_APPS = Number of past applications\n- APPROVAL_RATE = Ratio of approved to total applications\n- PREV_APP_CREDIT_MEAN = Mean approved credit\n- PREV_APP_DOWNPAYMENT_RATE = AMT_DOWN_PAYMENT / AMT_GOODS_PRICE\nThe APPROVAL_RATE feature was especially useful in identifying borderline applicants and added explainability in grouped SHAP analysis by domain.",
+    "crumbs": [
+      "Home",
+      "Feature Engineering Notes — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/Feature_Engineering_Notes.html#from-credit_card_balance.csv-and-pos_cash_balance.csv",
     "href": "reports/Feature_Engineering_Notes.html#from-credit_card_balance.csv-and-pos_cash_balance.csv",
     "title": "Feature Engineering Notes — Home Credit Default Risk",
     "section": "From credit_card_balance.csv and POS_CASH_balance.csv",
-    "text": "From credit_card_balance.csv and POS_CASH_balance.csv\nGrouped by SK_ID_CURR: - CC_BALANCE_MEAN = Mean monthly card balance\n- POS_DPD_MEAN = Mean delay from POS loans\n- NUM_ACTIVE_CARDS = Count of active credit lines\nThese features contributed indirectly via aggregated risk indicators. Their cumulative importance was visualized using grouped SHAP summary plots."
+    "text": "From credit_card_balance.csv and POS_CASH_balance.csv\nGrouped by SK_ID_CURR: - CC_BALANCE_MEAN = Mean monthly card balance\n- POS_DPD_MEAN = Mean delay from POS loans\n- NUM_ACTIVE_CARDS = Count of active credit lines\nThese features contributed indirectly via aggregated risk indicators. Their cumulative importance was visualized using grouped SHAP summary plots.",
+    "crumbs": [
+      "Home",
+      "Feature Engineering Notes — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/Feature_Engineering_Notes.html#from-installments_payments.csv",
     "href": "reports/Feature_Engineering_Notes.html#from-installments_payments.csv",
     "title": "Feature Engineering Notes — Home Credit Default Risk",
     "section": "From installments_payments.csv",
-    "text": "From installments_payments.csv\nGrouped by SK_ID_CURR: - MEAN_PAYMENT_DELAY = Mean of DAYS_ENTRY_PAYMENT - DAYS_INSTALMENT\n- MISSED_PAYMENT_RATIO = Missed payments / total payments\n- INSTALMENT_COMPLETION_RATIO = Total paid / expected payments\nRepayment punctuality features improved recall in the full dataset model, especially when paired with credit behavior from other domains."
+    "text": "From installments_payments.csv\nGrouped by SK_ID_CURR: - MEAN_PAYMENT_DELAY = Mean of DAYS_ENTRY_PAYMENT - DAYS_INSTALMENT\n- MISSED_PAYMENT_RATIO = Missed payments / total payments\n- INSTALMENT_COMPLETION_RATIO = Total paid / expected payments\nRepayment punctuality features improved recall in the full dataset model, especially when paired with credit behavior from other domains.",
+    "crumbs": [
+      "Home",
+      "Feature Engineering Notes — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/Feature_Engineering_Notes.html#feature-impact-summary",
     "href": "reports/Feature_Engineering_Notes.html#feature-impact-summary",
     "title": "Feature Engineering Notes — Home Credit Default Risk",
     "section": "Feature Impact Summary",
-    "text": "Feature Impact Summary\n\nTop Features (SHAP): EXT_SOURCE_2, EXT_SOURCE_3, AMT_ANNUITY, CREDIT_TO_INCOME_RATIO, EMPLOYED_BIRTH_RATIO\nMost Improved from Aggregation: Installment-based delay ratios, previous application approval rate, and bureau-level credit ratios\nGrouped SHAP Insight: Application features dominated local impact, but previous application and installment histories contributed disproportionately to positive-class predictions"
+    "text": "Feature Impact Summary\n\nTop Features (SHAP): EXT_SOURCE_2, EXT_SOURCE_3, AMT_ANNUITY, CREDIT_TO_INCOME_RATIO, EMPLOYED_BIRTH_RATIO\nMost Improved from Aggregation: Installment-based delay ratios, previous application approval rate, and bureau-level credit ratios\nGrouped SHAP Insight: Application features dominated local impact, but previous application and installment histories contributed disproportionately to positive-class predictions",
+    "crumbs": [
+      "Home",
+      "Feature Engineering Notes — Home Credit Default Risk"
+    ]
   },
   {
     "objectID": "reports/Feature_Engineering_Notes.html#final-notes",
     "href": "reports/Feature_Engineering_Notes.html#final-notes",
     "title": "Feature Engineering Notes — Home Credit Default Risk",
     "section": "Final Notes",
-    "text": "Final Notes\n\nAll aggregation used .groupby('SK_ID_CURR') followed by mean, sum, std, count, and domain-specific ratios\nSkewed numeric features were log-transformed when appropriate\nFeatures were validated by:\n\nNull value thresholding\nCorrelation with TARGET\nSHAP and permutation importance\n\nFeature selection was driven by business logic, model feedback, and impact on recall"
+    "text": "Final Notes\n\nAll aggregation used .groupby('SK_ID_CURR') followed by mean, sum, std, count, and domain-specific ratios\nSkewed numeric features were log-transformed when appropriate\nFeatures were validated by:\n\nNull value thresholding\nCorrelation with TARGET\nSHAP and permutation importance\n\nFeature selection was driven by business logic, model feedback, and impact on recall",
+    "crumbs": [
+      "Home",
+      "Feature Engineering Notes — Home Credit Default Risk"
+    ]
   }
 ]
