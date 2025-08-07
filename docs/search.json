@@ -301,7 +301,7 @@
     "href": "notebooks/01_homecredit_sample.html#notebook-outline",
     "title": "Notebook 01 (Sample Data)",
     "section": "Notebook Outline",
-    "text": "Notebook Outline\n\nLoad and sample datasets\nEncode, aggregate, and merge\nPreprocessing\nModeling\nModel selection\nFeature engineering\nFinal model\nConclusion",
+    "text": "Notebook Outline\n\nLoad and sample datasets\n\nEncode, aggregate, and merge\n\nPreprocessing\n\nModeling\n\nModel selection\n\nFeature engineering\n\nFinal model (CatBoost with added features) - retrain with all available data\n\nConclusion",
     "crumbs": [
       "Home",
       "Notebook 01 (Sample Data)"

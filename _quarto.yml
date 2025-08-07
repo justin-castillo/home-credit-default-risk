@@ -26,7 +26,7 @@ execute:
   freeze: auto            # skip execution unless notebooks change
 
 website:
-  title: "Home Credit Default Risk"
+  title: "Home Credit Default Risk Analysis"
   navbar:
     left:
       - text: Home
