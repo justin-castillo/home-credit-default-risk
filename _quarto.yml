@@ -37,7 +37,9 @@ website:
           - notebooks/02_homecredit_full.ipynb
       - text: Docs
         menu:
-          - docs/credit_scoring_project.md
+          - reports/EDA_Report.md
+          - reports/Feature_Engineering_Notes.md
+          - reports/Final_Report.md
   sidebar:
     collapse-level: 2
     style: floating
