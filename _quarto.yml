@@ -2,6 +2,7 @@ format:
   html:
     toc: true
     number-sections: false
+    self-contained: true
 
 execute:
   echo: false          # keep hiding code
