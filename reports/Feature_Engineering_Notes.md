@@ -1,5 +1,5 @@
 ---
-title: "Feature Engineering Notes — Home Credit Default Risk"
+title: "Feature Engineering Notes"
 ---
 
 This document outlines the engineered features used to enhance predictive performance in the default classification model. Features were constructed from both raw application data and multi-level aggregations across 7 relational tables.

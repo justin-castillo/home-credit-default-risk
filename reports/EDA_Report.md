@@ -1,5 +1,5 @@
 --- 
-title: "Exploratory Data Analysis — Home Credit Default Risk" 
+title: "Exploratory Data Analysis" 
 ---
 
 This analysis explores the `application_train.csv` dataset to understand the class distribution, identify potential predictive signals, and inform feature engineering. The EDA also supports modeling strategy decisions by evaluating data quality, skew, and feature relationships.
