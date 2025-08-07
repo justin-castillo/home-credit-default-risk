@@ -1,4 +1,4 @@
-
+# Home Credit Default Risk Analysis
 ---
 
 This project develops a robust credit scoring pipeline to predict the probability of loan applicants defaulting, using comprehensive financial and demographic data provided by Home Credit. The primary goal is to effectively identify applicants at higher risk of default, assisting lenders in reducing losses and making better-informed credit decisions.
