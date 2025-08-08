@@ -58,8 +58,6 @@ The project utilized the complete [Home Credit Default Risk dataset](https://www
 
 ---
 
-https://public.tableau.com/views/HomeCreditQuickDemo/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
-
 ## Quick Start Guide
 
 **To reproduce the pipeline locally:**
