@@ -57,20 +57,6 @@ The project utilized the complete [Home Credit Default Risk dataset](https://www
 - SHAP analysis ensured transparency, clearly communicating feature impacts to stakeholders.
 
 ---
-## Quick Start Guide
-
-**To reproduce the pipeline locally:**
-
-```bash
-conda env create -f environment.yml
-conda activate homecredit
-
-python src/features/build_features.py
-python src/training/train.py
-python src/predict.py --output submission.csv
-```
-
----
 
 ## Project Structure
 

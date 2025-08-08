@@ -762,14 +762,7 @@
     "href": "index.html#key-insights-business-impact",
     "title": "Project Overview",
     "section": "Key Insights & Business Impact",
-    "text": "Key Insights & Business Impact\n\nAchieved strong predictive performance with a ROC-AUC of 0.782, significantly capturing at-risk clients (Recall: 0.683).\nSHAP analysis ensured transparency, clearly communicating feature impacts to stakeholders.\n\n\nhttps://public.tableau.com/views/HomeCreditQuickDemo/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
-  },
-  {
-    "objectID": "index.html#quick-start-guide",
-    "href": "index.html#quick-start-guide",
-    "title": "Project Overview",
-    "section": "Quick Start Guide",
-    "text": "Quick Start Guide\nTo reproduce the pipeline locally:\nconda env create -f environment.yml\nconda activate homecredit\n\npython src/features/build_features.py\npython src/training/train.py\npython src/predict.py --output submission.csv"
+    "text": "Key Insights & Business Impact\n\nAchieved strong predictive performance with a ROC-AUC of 0.782, significantly capturing at-risk clients (Recall: 0.683).\nSHAP analysis ensured transparency, clearly communicating feature impacts to stakeholders."
   },
   {
     "objectID": "index.html#project-structure",
