@@ -741,49 +741,7 @@
     "href": "index.html",
     "title": "Project Overview",
     "section": "",
-    "text": "&lt;iframe\n  src=\"https://public.tableau.com/views/HomeCreditQuickDemo/Dashboard1?:showVizHome=no&:embed=y\"\n  allowfullscreen\n  loading=\"lazy\"&gt;\n&lt;/iframe&gt;\nThis project develops a robust credit scoring pipeline to predict the probability of loan applicants defaulting, using comprehensive financial and demographic data provided by Home Credit. The primary goal is to effectively identify applicants at higher risk of default, assisting lenders in reducing losses and making better-informed credit decisions."
-  },
-  {
-    "objectID": "index.html#project-results-highlights",
-    "href": "index.html#project-results-highlights",
-    "title": "Project Overview",
-    "section": "Project Results & Highlights",
-    "text": "Project Results & Highlights\n\n\n\n\n\n\n\n\n\n\nModel\nROC-AUC\nPrecision\nRecall\nF1 Score\n\n\n\n\nCatBoost (Final CV)\n0.774\n0.267\n0.376\n0.313\n\n\nXGBoost\n0.761\n0.235\n0.401\n0.297\n\n\nLightGBM\n0.763\n0.295\n0.302\n0.298\n\n\nRandom Forest\n0.740\n0.222\n0.427\n0.292\n\n\nLogistic Regression\n0.722\n0.198\n0.431\n0.271\n\n\n\nThe final CatBoost model was selected due to its highest ROC-AUC and strong recall, effectively identifying a significant proportion of high-risk clients."
-  },
-  {
-    "objectID": "index.html#detailed-project-overview",
-    "href": "index.html#detailed-project-overview",
-    "title": "Project Overview",
-    "section": "Detailed Project Overview",
-    "text": "Detailed Project Overview\n\nDataset\nThe project utilized the complete Home Credit Default Risk dataset, integrating multiple relational tables: - Bureau data (credit history from other institutions) - Previous loan applications - Installment payments history - Credit card usage data - POS cash balances\n\n\nMethodology\n\nExploratory Data Analysis\n\nIdentified critical features: external credit scores, employment history, loan payment behavior.\n\nFeature Engineering\n\nEngineered over 380 predictive features, including financial ratios (e.g., credit-to-income, annuity-to-income) and behavioral indicators (payment timeliness, delinquency).\n\nModeling & Evaluation\n\nTested several machine learning models: Logistic Regression, Random Forest, XGBoost, LightGBM, and CatBoost.\nSelected CatBoost due to superior handling of categorical data and highest model performance metrics.\n\nHyperparameter Optimization\n\nUtilized Optuna for hyperparameter tuning.\n\nThreshold Tuning & Validation\n\nUsed stratified K-fold cross-validation and optimized classification thresholds to maximize F1-score and recall.\n\nExplainability & Interpretability\n\nApplied SHAP analysis to interpret model predictions, providing insights into influential factors.\n\n\n\n\nTools & Technologies\n\nProgramming: Python\nLibraries: CatBoost, XGBoost, LightGBM, Optuna, SHAP, Pandas, NumPy, Matplotlib, Seaborn\nCI/CD: GitHub Actions\nEnvironment & Versioning: Conda, Docker, DVC"
-  },
-  {
-    "objectID": "index.html#key-insights-business-impact",
-    "href": "index.html#key-insights-business-impact",
-    "title": "Project Overview",
-    "section": "Key Insights & Business Impact",
-    "text": "Key Insights & Business Impact\n\nAchieved strong predictive performance with a ROC-AUC of 0.782, significantly capturing at-risk clients (Recall: 0.683).\nSHAP analysis ensured transparency, clearly communicating feature impacts to stakeholders."
-  },
-  {
-    "objectID": "index.html#quick-start-guide",
-    "href": "index.html#quick-start-guide",
-    "title": "Project Overview",
-    "section": "Quick Start Guide",
-    "text": "Quick Start Guide\nTo reproduce the pipeline locally:\nconda env create -f environment.yml\nconda activate homecredit\n\npython src/features/build_features.py\npython src/training/train.py\npython src/predict.py --output submission.csv"
-  },
-  {
-    "objectID": "index.html#project-structure",
-    "href": "index.html#project-structure",
-    "title": "Project Overview",
-    "section": "Project Structure",
-    "text": "Project Structure\n.\n├── data/                   # Raw and processed data\n├── notebooks/              # Exploratory and modeling notebooks\n├── models/                 # Trained models and metadata\n├── src/                    # Project source code\n├── reports/                # Generated reports and visuals\n├── environment.yml         # Conda environment setup\n└── Dockerfile              # Docker container definition"
-  },
-  {
-    "objectID": "index.html#author",
-    "href": "index.html#author",
-    "title": "Project Overview",
-    "section": "Author",
-    "text": "Author\nJustin Castillo\nEmail: jcastillo.hotels@gmail.com\nGitHub: github.com/justin-castillo\nLinkedIn: linkedin.com/in/justin-castillo-69351198"
+    "text": "&lt;noscript&gt;\n  &lt;a href='#'&gt;\n    &lt;img alt='Dashboard 1'\n         src='https://public.tableau.com/static/images/Ho/HomeCreditQuickDemo/Dashboard1/1.png'\n         style='border:none'/&gt;\n  &lt;/a&gt;\n&lt;/noscript&gt;\n&lt;object class='tableauViz' style='display:none;'&gt;\n  &lt;param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /&gt;\n  &lt;param name='embed_code_version' value='3' /&gt;\n  &lt;param name='site_root' value='' /&gt;\n  &lt;param name='name' value='HomeCreditQuickDemo/Dashboard1' /&gt;\n  &lt;param name='tabs' value='no' /&gt;\n  &lt;param name='toolbar' value='yes' /&gt;\n  &lt;param name='static_image' value='https://public.tableau.com/static/images/Ho/HomeCreditQuickDemo/Dashboard1/1.png' /&gt;\n  &lt;param name='animate_transition' value='yes' /&gt;\n  &lt;param name='display_static_image' value='yes' /&gt;\n  &lt;param name='display_spinner' value='yes' /&gt;\n  &lt;param name='display_overlay' value='yes' /&gt;\n  &lt;param name='display_count' value='yes' /&gt;\n  &lt;param name='language' value='en-US' /&gt;\n  &lt;param name='filter' value='publish=yes' /&gt;\n&lt;/object&gt;"
   },
   {
     "objectID": "notebooks/02_homecredit_full.html",
