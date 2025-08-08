@@ -741,7 +741,7 @@
     "href": "index.html",
     "title": "Project Overview",
     "section": "",
-    "text": "This project develops a robust credit scoring pipeline to predict the probability of loan applicants defaulting, using comprehensive financial and demographic data provided by Home Credit. The primary goal is to effectively identify applicants at higher risk of default, assisting lenders in reducing losses and making better-informed credit decisions."
+    "text": "&lt;iframe\n  src=\"https://public.tableau.com/views/HomeCreditQuickDemo/Dashboard1?:showVizHome=no&:embed=y\"\n  allowfullscreen\n  loading=\"lazy\"&gt;\n&lt;/iframe&gt;\nThis project develops a robust credit scoring pipeline to predict the probability of loan applicants defaulting, using comprehensive financial and demographic data provided by Home Credit. The primary goal is to effectively identify applicants at higher risk of default, assisting lenders in reducing losses and making better-informed credit decisions."
   },
   {
     "objectID": "index.html#project-results-highlights",
