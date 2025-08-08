@@ -3990,8 +3990,8 @@ vertical-align: -.125em;
 </header>
 
 
-<div style="max-width:760px;margin:0 auto;">
-<div id="vizHomeCreditSmall" class="tableauPlaceholder" style="position:relative;">
+<div style="max-width:1024px;margin:0 auto;">
+<div id="vizHomeCreditTablet" class="tableauPlaceholder" style="position:relative;">
 <pre><code>&lt;noscript&gt;
   &lt;a href=&quot;#&quot;&gt;&lt;img alt=&quot;Dashboard 1&quot;
     src=&quot;https://public.tableau.com/static/images/Ho/HomeCreditQuickDemo/Dashboard1/1.png&quot;
@@ -4000,7 +4000,6 @@ vertical-align: -.125em;
 &lt;object class=&quot;tableauViz&quot; style=&quot;display:none;&quot;&gt;
   &lt;param name=&quot;host_url&quot; value=&quot;https%3A%2F%2Fpublic.tableau.com%2F&quot;/&gt;
   &lt;param name=&quot;embed_code_version&quot; value=&quot;3&quot;/&gt;
-  &lt;param name=&quot;site_root&quot; value=&quot;&quot;/&gt;
   &lt;param name=&quot;name&quot; value=&quot;HomeCreditQuickDemo/Dashboard1&quot;/&gt;
   &lt;param name=&quot;tabs&quot; value=&quot;no&quot;/&gt;
   &lt;param name=&quot;toolbar&quot; value=&quot;yes&quot;/&gt;
@@ -4015,15 +4014,15 @@ vertical-align: -.125em;
 &lt;/object&gt;</code></pre>
 </div>
 </div>
-<script type="text/javascript">
-  var divElement = document.getElementById('vizHomeCreditSmall');
-  var vizElement = divElement.getElementsByTagName('object')[0];
-  // Small, fixed size that fits a narrow content column
-  vizElement.style.width  = '760px';   // make narrower if needed (e.g., 640px)
-  vizElement.style.height = '920px';   // tweak up/down to avoid internal scrolling
-  var scriptElement = document.createElement('script');
-  scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-  vizElement.parentNode.insertBefore(scriptElement, vizElement);
+<script>
+  // Size to match your tablet layout (iPad Air 1024x768 in your screenshot)
+  var vizDiv = document.getElementById('vizHomeCreditTablet');
+  var vizObj = vizDiv.getElementsByTagName('object')[0];
+  vizObj.style.width  = '1024px';
+  vizObj.style.height = '680px'; // bump up/down until no inner scrollbar
+  var s = document.createElement('script');
+  s.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+  vizObj.parentNode.insertBefore(s, vizObj);
 </script>
 <hr>
 <p>This project develops a robust credit scoring pipeline to predict the probability of loan applicants defaulting, using comprehensive financial and demographic data provided by Home Credit. The primary goal is to effectively identify applicants at higher risk of default, assisting lenders in reducing losses and making better-informed credit decisions.</p>
@@ -4632,8 +4631,8 @@ LinkedIn: <a href="https://www.linkedin.com/in/justin-castillo-69351198/">linked
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;Project Overview&quot;</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> style</span><span class="op">=</span><span class="st">&quot;max-width:760px;margin:0 auto;&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;tableauPlaceholder&quot;</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;vizHomeCreditSmall&quot;</span><span class="ot"> style</span><span class="op">=</span><span class="st">&quot;position:relative;&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> style</span><span class="op">=</span><span class="st">&quot;max-width:1024px;margin:0 auto;&quot;</span><span class="dt">&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;tableauPlaceholder&quot;</span><span class="ot"> id</span><span class="op">=</span><span class="st">&quot;vizHomeCreditTablet&quot;</span><span class="ot"> style</span><span class="op">=</span><span class="st">&quot;position:relative;&quot;</span><span class="dt">&gt;</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">noscript</span><span class="dt">&gt;</span></span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">&quot;#&quot;</span><span class="dt">&gt;&lt;</span><span class="kw">img</span><span class="ot"> alt</span><span class="op">=</span><span class="st">&quot;Dashboard 1&quot;</span></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="ot">        src</span><span class="op">=</span><span class="st">&quot;https://public.tableau.com/static/images/Ho/HomeCreditQuickDemo/Dashboard1/1.png&quot;</span></span>
@@ -4642,31 +4641,31 @@ LinkedIn: <a href="https://www.linkedin.com/in/justin-castillo-69351198/">linked
 <span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">object</span><span class="ot"> class</span><span class="op">=</span><span class="st">&quot;tableauViz&quot;</span><span class="ot"> style</span><span class="op">=</span><span class="st">&quot;display:none;&quot;</span><span class="dt">&gt;</span></span>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;host_url&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;https%3A%2F%2Fpublic.tableau.com%2F&quot;</span><span class="dt">/&gt;</span></span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;embed_code_version&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;3&quot;</span><span class="dt">/&gt;</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;site_root&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;&quot;</span><span class="dt">/&gt;</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;name&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;HomeCreditQuickDemo/Dashboard1&quot;</span><span class="dt">/&gt;</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;tabs&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;no&quot;</span><span class="dt">/&gt;</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;toolbar&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;yes&quot;</span><span class="dt">/&gt;</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;static_image&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;https://public.tableau.com/static/images/Ho/HomeCreditQuickDemo/Dashboard1/1.png&quot;</span><span class="dt">/&gt;</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;animate_transition&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;yes&quot;</span><span class="dt">/&gt;</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;display_static_image&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;yes&quot;</span><span class="dt">/&gt;</span></span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;display_spinner&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;yes&quot;</span><span class="dt">/&gt;</span></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;display_overlay&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;yes&quot;</span><span class="dt">/&gt;</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;display_count&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;yes&quot;</span><span class="dt">/&gt;</span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;language&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;en-US&quot;</span><span class="dt">/&gt;</span></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;filter&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;publish=yes&quot;</span><span class="dt">/&gt;</span></span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">object</span><span class="dt">&gt;</span></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> type=</span><span class="st">&quot;text/javascript&quot;</span><span class="dt">&gt;</span></span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> divElement <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&#39;vizHomeCreditSmall&#39;</span>)<span class="op">;</span></span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> vizElement <span class="op">=</span> divElement<span class="op">.</span><span class="fu">getElementsByTagName</span>(<span class="st">&#39;object&#39;</span>)[<span class="dv">0</span>]<span class="op">;</span></span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Small, fixed size that fits a narrow content column</span></span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>  vizElement<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">width</span>  <span class="op">=</span> <span class="st">&#39;760px&#39;</span><span class="op">;</span>   <span class="co">// make narrower if needed (e.g., 640px)</span></span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>  vizElement<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">height</span> <span class="op">=</span> <span class="st">&#39;920px&#39;</span><span class="op">;</span>   <span class="co">// tweak up/down to avoid internal scrolling</span></span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> scriptElement <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">&#39;script&#39;</span>)<span class="op">;</span></span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>  scriptElement<span class="op">.</span><span class="at">src</span> <span class="op">=</span> <span class="st">&#39;https://public.tableau.com/javascripts/api/viz_v1.js&#39;</span><span class="op">;</span></span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>  vizElement<span class="op">.</span><span class="at">parentNode</span><span class="op">.</span><span class="fu">insertBefore</span>(scriptElement<span class="op">,</span> vizElement)<span class="op">;</span></span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;name&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;HomeCreditQuickDemo/Dashboard1&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;tabs&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;no&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;toolbar&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;yes&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;static_image&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;https://public.tableau.com/static/images/Ho/HomeCreditQuickDemo/Dashboard1/1.png&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;animate_transition&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;yes&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;display_static_image&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;yes&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;display_spinner&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;yes&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;display_overlay&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;yes&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;display_count&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;yes&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;language&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;en-US&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>      <span class="dt">&lt;</span><span class="kw">param</span><span class="ot"> name</span><span class="op">=</span><span class="st">&quot;filter&quot;</span><span class="ot"> value</span><span class="op">=</span><span class="st">&quot;publish=yes&quot;</span><span class="dt">/&gt;</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">object</span><span class="dt">&gt;</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>  <span class="co">// Size to match your tablet layout (iPad Air 1024x768 in your screenshot)</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> vizDiv <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&#39;vizHomeCreditTablet&#39;</span>)<span class="op">;</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> vizObj <span class="op">=</span> vizDiv<span class="op">.</span><span class="fu">getElementsByTagName</span>(<span class="st">&#39;object&#39;</span>)[<span class="dv">0</span>]<span class="op">;</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>  vizObj<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">width</span>  <span class="op">=</span> <span class="st">&#39;1024px&#39;</span><span class="op">;</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>  vizObj<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">height</span> <span class="op">=</span> <span class="st">&#39;680px&#39;</span><span class="op">;</span> <span class="co">// bump up/down until no inner scrollbar</span></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>  <span class="kw">var</span> s <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">&#39;script&#39;</span>)<span class="op">;</span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>  s<span class="op">.</span><span class="at">src</span> <span class="op">=</span> <span class="st">&#39;https://public.tableau.com/javascripts/api/viz_v1.js&#39;</span><span class="op">;</span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a>  vizObj<span class="op">.</span><span class="at">parentNode</span><span class="op">.</span><span class="fu">insertBefore</span>(s<span class="op">,</span> vizObj)<span class="op">;</span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a></span>

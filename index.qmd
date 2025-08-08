@@ -2,8 +2,8 @@
 title: "Project Overview"
 ---
 
-<div style="max-width:760px;margin:0 auto;">
-  <div class="tableauPlaceholder" id="vizHomeCreditSmall" style="position:relative;">
+<div style="max-width:1024px;margin:0 auto;">
+  <div class="tableauPlaceholder" id="vizHomeCreditTablet" style="position:relative;">
     <noscript>
       <a href="#"><img alt="Dashboard 1"
         src="https://public.tableau.com/static/images/Ho/HomeCreditQuickDemo/Dashboard1/1.png"
@@ -12,7 +12,6 @@ title: "Project Overview"
     <object class="tableauViz" style="display:none;">
       <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F"/>
       <param name="embed_code_version" value="3"/>
-      <param name="site_root" value=""/>
       <param name="name" value="HomeCreditQuickDemo/Dashboard1"/>
       <param name="tabs" value="no"/>
       <param name="toolbar" value="yes"/>
@@ -27,16 +26,17 @@ title: "Project Overview"
     </object>
   </div>
 </div>
-<script type="text/javascript">
-  var divElement = document.getElementById('vizHomeCreditSmall');
-  var vizElement = divElement.getElementsByTagName('object')[0];
-  // Small, fixed size that fits a narrow content column
-  vizElement.style.width  = '760px';   // make narrower if needed (e.g., 640px)
-  vizElement.style.height = '920px';   // tweak up/down to avoid internal scrolling
-  var scriptElement = document.createElement('script');
-  scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-  vizElement.parentNode.insertBefore(scriptElement, vizElement);
+<script>
+  // Size to match your tablet layout (iPad Air 1024x768 in your screenshot)
+  var vizDiv = document.getElementById('vizHomeCreditTablet');
+  var vizObj = vizDiv.getElementsByTagName('object')[0];
+  vizObj.style.width  = '1024px';
+  vizObj.style.height = '680px'; // bump up/down until no inner scrollbar
+  var s = document.createElement('script');
+  s.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+  vizObj.parentNode.insertBefore(s, vizObj);
 </script>
+
 
 
 
