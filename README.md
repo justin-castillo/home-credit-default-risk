@@ -57,7 +57,6 @@ The project utilized the complete [Home Credit Default Risk dataset](https://www
 - SHAP analysis ensured transparency, clearly communicating feature impacts to stakeholders.
 
 ---
-
 ## Quick Start Guide
 
 **To reproduce the pipeline locally:**
