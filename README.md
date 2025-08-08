@@ -58,6 +58,28 @@ The project utilized the complete [Home Credit Default Risk dataset](https://www
 
 ---
 
+```{=html}
+<style>
+.tableau-embed { position: relative; width: 100%; padding-top: 66.5%; } /* 680/1024 ≈ 66.5% */
+.tableau-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+</style>
+
+<div class="tableau-embed">
+  <iframe
+    src="https://public.tableau.com/views/HomeCreditQuickDemo/Dashboard1?:showVizHome=no&:embed=y"
+    allowfullscreen
+    loading="lazy">
+  </iframe>
+</div>
+
+---
+
 ## Quick Start Guide
 
 **To reproduce the pipeline locally:**
