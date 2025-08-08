@@ -3,16 +3,39 @@ title: "Project Overview"
 ---
 
 <div style="max-width:1024px;margin:0 auto;">
-  <iframe
-    src="https://public.tableau.com/views/HomeCreditQuickDemo/Dashboard1?:showVizHome=no&:embed=y"
-    width="1024"
-    height="700"
-    frameborder="0"
-    scrolling="no"
-    allowfullscreen>
-  </iframe>
+  <div class="tableauPlaceholder" id="vizHomeCreditTablet" style="position:relative;">
+    <noscript>
+      <a href="#"><img alt="Dashboard 1"
+        src="https://public.tableau.com/static/images/Ho/HomeCreditQuickDemo/Dashboard1/1.png"
+        style="border:none"/></a>
+    </noscript>
+    <object class="tableauViz" style="display:none;">
+      <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F"/>
+      <param name="embed_code_version" value="3"/>
+      <param name="name" value="HomeCreditQuickDemo/Dashboard1"/>
+      <param name="tabs" value="no"/>
+      <param name="toolbar" value="yes"/>
+      <param name="static_image" value="https://public.tableau.com/static/images/Ho/HomeCreditQuickDemo/Dashboard1/1.png"/>
+      <param name="animate_transition" value="yes"/>
+      <param name="display_static_image" value="yes"/>
+      <param name="display_spinner" value="yes"/>
+      <param name="display_overlay" value="yes"/>
+      <param name="display_count" value="yes"/>
+      <param name="language" value="en-US"/>
+      <param name="filter" value="publish=yes"/>
+    </object>
+  </div>
 </div>
-
+<script>
+  var vizDiv = document.getElementById('vizHomeCreditTablet');
+  var vizObj = vizDiv.getElementsByTagName('object')[0];
+  // Match your tablet layout; tweak height if you still see an inner scrollbar
+  vizObj.style.width  = '1024px';
+  vizObj.style.height = '680px';
+  var s = document.createElement('script');
+  s.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+  vizObj.parentNode.insertBefore(s, vizObj);
+</script>
 
 {{< include README.md >}}
 
