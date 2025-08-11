@@ -169,6 +169,6 @@ These were retained and validated via SHAP and F1-score improvements during mode
 
 ---
 
-## 10. Next Step
+## 10. Next Steps
 
 Leverage these insights in a unified feature engineering pipeline, merge relational tables, and evaluate performance impacts through stratified CV and SHAP-based model introspection.

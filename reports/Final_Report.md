@@ -75,14 +75,14 @@ title: "Final Report"
 
 ---
 
-## 6 | Estimated Business Impact  
+## 6 | Estimated Business Impact  
 
 | KPI (per 100 K apps) | Current Scorecard | New CatBoost<br>(recall = **45.1 %**) | Δ vs. Scorecard |
 |----------------------|------------------:|--------------------------------------:|----------------:|
-| Defaulters correctly flagged | 4 100 | **≈ 6 815** | **+ 2 715** |
+| Defaulters correctly flagged | 4,100 | **≈ 6 815** | **+ 2 715** |
 | Incremental charge-off avoided \*** | — | **≈ $ 3.26 M** | — |
 
-\*Based on an average loss-given-default (LGD) of **$1 200** per defaulted account.
+\*Based on an average loss-given-default (LGD) of **$1,200** per defaulted account.
 
 ---
 
@@ -109,10 +109,3 @@ Email: [jcastillo.hotels@gmail.com](mailto:jcastillo.hotels@gmail.com)
 GitHub: [github.com/justin-castillo](https://github.com/justin-castillo)  
 LinkedIn: [linkedin.com/in/justin-castillo-69351198](https://www.linkedin.com/in/justin-castillo-69351198/)
 
-## Sources
-
-<!-- Sources -->
-1. **Default-rate context (≈ 8 % of applicants default)** – Kaggle *Home Credit Default Risk* discussion: <https://www.kaggle.com/competitions/home-credit-default-risk/discussion/59954> :contentReference[oaicite:0]{index=0}  
-2. **CatBoost evaluation (recall ≈ 0.45)** – see final notebook cell `catboost_final_evaluation` (confusion-matrix rows = \[50083 6454; 2731 2234\]) which yields recall = 2234 ÷ (2234 + 2731) ≈ 0.451.  
-3. **Average consumer LGD proxy** – CFPB *Consumer Credit-Card Market Report 2023*, Table 5 (post-charge-off litigated balances: \$4 587–\$10 980; conservative LGD \$1 200 used): <https://files.consumerfinance.gov/f/documents/cfpb_consumer-credit-card-market-report_2023.pdf> :contentReference[oaicite:1]{index=1}  
-4. **Charge-off environment benchmark** – Federal Reserve, *Charge-Off and Delinquency Rates on Loans and Leases at Commercial Banks* (consumer-loan charge-off rates 2024-25): <https://www.federalreserve.gov/releases/chargeoff/> :contentReference[oaicite:2]{index=2}  

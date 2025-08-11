@@ -7,23 +7,26 @@ format:
     toc: true
     number-sections: false
     self-contained: true
-    code-tools: true        # adds “Show code / Hide code”
-    echo: false             # hide code by default (PUBLIC)
+    code-tools: true           
+    code-fold: true            
+    code-summary: "Code"       
+    echo: true                 
 
-# ---------- dev version ----------
 profiles:
   dev:
+    project:
+      output-dir: docs-dev
     format:
       html:
         toc: true
         number-sections: false
         self-contained: true
         code-tools: true
-        echo: true          # show code (DEV)
-        output-dir: docs-dev
+        code-fold: true      
+        echo: true
 
 execute:
-  freeze: auto            # skip execution unless notebooks change
+  freeze: auto
 
 website:
   title: "Home Credit Default Risk Analysis"
