@@ -3961,10 +3961,9 @@ vertical-align: -.125em;
   <li><a href="#feature-engineering-highlights" id="toc-feature-engineering-highlights" class="nav-link" data-scroll-target="#feature-engineering-highlights">3 | Feature Engineering Highlights</a></li>
   <li><a href="#modelling-process" id="toc-modelling-process" class="nav-link" data-scroll-target="#modelling-process">4 | Modelling Process</a></li>
   <li><a href="#explainability-compliance" id="toc-explainability-compliance" class="nav-link" data-scroll-target="#explainability-compliance">5 | Explainability &amp; Compliance</a></li>
-  <li><a href="#estimated-business-impact" id="toc-estimated-business-impact" class="nav-link" data-scroll-target="#estimated-business-impact">6 | Estimated Business Impact</a></li>
+  <li><a href="#estimated-business-impact" id="toc-estimated-business-impact" class="nav-link" data-scroll-target="#estimated-business-impact">6 | Estimated Business Impact</a></li>
   <li><a href="#risk-management-next-steps" id="toc-risk-management-next-steps" class="nav-link" data-scroll-target="#risk-management-next-steps">7 | Risk Management &amp; Next Steps</a></li>
   <li><a href="#author" id="toc-author" class="nav-link" data-scroll-target="#author">Author</a></li>
-  <li><a href="#sources" id="toc-sources" class="nav-link" data-scroll-target="#sources">Sources</a></li>
   </ul>
 </nav>
     </div>
@@ -4189,7 +4188,7 @@ vertical-align: -.125em;
 <hr>
 </section>
 <section id="estimated-business-impact" class="level2">
-<h2 class="anchored" data-anchor-id="estimated-business-impact">6 | Estimated Business Impact</h2>
+<h2 class="anchored" data-anchor-id="estimated-business-impact">6 | Estimated Business Impact</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 22%">
@@ -4208,7 +4207,7 @@ vertical-align: -.125em;
 <tbody>
 <tr class="odd">
 <td>Defaulters correctly flagged</td>
-<td style="text-align: right;">4 100</td>
+<td style="text-align: right;">4,100</td>
 <td style="text-align: right;"><strong>≈ 6 815</strong></td>
 <td style="text-align: right;"><strong>+ 2 715</strong></td>
 </tr>
@@ -4220,7 +4219,7 @@ vertical-align: -.125em;
 </tr>
 </tbody>
 </table>
-<p>*Based on an average loss-given-default (LGD) of <strong>$1 200</strong> per defaulted account.</p>
+<p>*Based on an average loss-given-default (LGD) of <strong>$1,200</strong> per defaulted account.</p>
 <hr>
 </section>
 <section id="risk-management-next-steps" class="level2">
@@ -4263,19 +4262,6 @@ vertical-align: -.125em;
 Email: <a href="mailto:jcastillo.hotels@gmail.com">jcastillo.hotels@gmail.com</a><br>
 GitHub: <a href="https://github.com/justin-castillo">github.com/justin-castillo</a><br>
 LinkedIn: <a href="https://www.linkedin.com/in/justin-castillo-69351198/">linkedin.com/in/justin-castillo-69351198</a></p>
-</section>
-<section id="sources" class="level2">
-<h2 class="anchored" data-anchor-id="sources">Sources</h2>
-<!-- Sources -->
-<ol type="1">
-<li><strong>Default-rate context (≈ 8 % of applicants default)</strong> – Kaggle <em>Home Credit Default Risk</em> discussion: <a href="https://www.kaggle.com/competitions/home-credit-default-risk/discussion/59954" class="uri">https://www.kaggle.com/competitions/home-credit-default-risk/discussion/59954</a> :contentReference<span data-index="0">oaicite:0</span><br>
-</li>
-<li><strong>CatBoost evaluation (recall ≈ 0.45)</strong> – see final notebook cell <code>catboost_final_evaluation</code> (confusion-matrix rows = [50083 6454; 2731 2234]) which yields recall = 2234 ÷ (2234 + 2731) ≈ 0.451.<br>
-</li>
-<li><strong>Average consumer LGD proxy</strong> – CFPB <em>Consumer Credit-Card Market Report 2023</em>, Table 5 (post-charge-off litigated balances: $4 587–$10 980; conservative LGD $1 200 used): <a href="https://files.consumerfinance.gov/f/documents/cfpb_consumer-credit-card-market-report_2023.pdf" class="uri">https://files.consumerfinance.gov/f/documents/cfpb_consumer-credit-card-market-report_2023.pdf</a> :contentReference<span data-index="1">oaicite:1</span><br>
-</li>
-<li><strong>Charge-off environment benchmark</strong> – Federal Reserve, <em>Charge-Off and Delinquency Rates on Loans and Leases at Commercial Banks</em> (consumer-loan charge-off rates 2024-25): <a href="https://www.federalreserve.gov/releases/chargeoff/" class="uri">https://www.federalreserve.gov/releases/chargeoff/</a> :contentReference<span data-index="2">oaicite:2</span></li>
-</ol>
 
 
 <!-- -->
@@ -4810,14 +4796,14 @@ LinkedIn: <a href="https://www.linkedin.com/in/justin-castillo-69351198/">linked
 <span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="fu">## 6 | Estimated Business Impact  </span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="fu">## 6 | Estimated Business Impact  </span></span>
 <span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> KPI (per 100 K apps) <span class="pp">|</span> Current Scorecard <span class="pp">|</span> New CatBoost<span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span>(recall = **45.1 %**) <span class="pp">|</span> Δ vs. Scorecard <span class="pp">|</span></span>
 <span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="pp">|----------------------|------------------:|--------------------------------------:|----------------:|</span></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Defaulters correctly flagged <span class="pp">|</span> 4 100 <span class="pp">|</span> **≈ 6 815** | **+ 2 715** <span class="pp">|</span></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Defaulters correctly flagged <span class="pp">|</span> 4,100 <span class="pp">|</span> **≈ 6 815** | **+ 2 715** <span class="pp">|</span></span>
 <span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Incremental charge-off avoided <span class="sc">\*</span>** <span class="pp">|</span> — <span class="pp">|</span> **≈ $ 3.26 M** <span class="pp">|</span> — <span class="pp">|</span></span>
 <span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="sc">\*</span>Based on an average loss-given-default (LGD) of **$1 200** per defaulted account.</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="sc">\*</span>Based on an average loss-given-default (LGD) of **$1,200** per defaulted account.</span>
 <span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>---</span>
 <span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
@@ -4842,15 +4828,7 @@ LinkedIn: <a href="https://www.linkedin.com/in/justin-castillo-69351198/">linked
 <span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>**Justin Castillo**  </span>
 <span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>Email: <span class="co">[</span><span class="ot">jcastillo.hotels@gmail.com</span><span class="co">](mailto:jcastillo.hotels@gmail.com)</span>  </span>
 <span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>GitHub: <span class="co">[</span><span class="ot">github.com/justin-castillo</span><span class="co">](https://github.com/justin-castillo)</span>  </span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>LinkedIn: <span class="co">[</span><span class="ot">linkedin.com/in/justin-castillo-69351198</span><span class="co">](https://www.linkedin.com/in/justin-castillo-69351198/)</span></span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="fu">## Sources</span></span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Sources --&gt;</span></span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Default-rate context (≈ 8 % of applicants default)** – Kaggle *Home Credit Default Risk* discussion: <span class="ot">&lt;https://www.kaggle.com/competitions/home-credit-default-risk/discussion/59954&gt;</span> :contentReference<span class="co">[</span><span class="ot">oaicite:0</span><span class="co">]</span>{index=0}  </span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**CatBoost evaluation (recall ≈ 0.45)** – see final notebook cell <span class="in">`catboost_final_evaluation`</span> (confusion-matrix rows = <span class="sc">\[</span>50083 6454; 2731 2234<span class="sc">\]</span>) which yields recall = 2234 ÷ (2234 + 2731) ≈ 0.451.  </span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Average consumer LGD proxy** – CFPB *Consumer Credit-Card Market Report 2023*, Table 5 (post-charge-off litigated balances: \$4 587–\$10 980; conservative LGD \$1 200 used): <span class="ot">&lt;https://files.consumerfinance.gov/f/documents/cfpb_consumer-credit-card-market-report_2023.pdf&gt;</span> :contentReference<span class="co">[</span><span class="ot">oaicite:1</span><span class="co">]</span>{index=1}  </span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Charge-off environment benchmark** – Federal Reserve, *Charge-Off and Delinquency Rates on Loans and Leases at Commercial Banks* (consumer-loan charge-off rates 2024-25): <span class="ot">&lt;https://www.federalreserve.gov/releases/chargeoff/&gt;</span> :contentReference<span class="co">[</span><span class="ot">oaicite:2</span><span class="co">]</span>{index=2}  </span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></pre></div>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>LinkedIn: <span class="co">[</span><span class="ot">linkedin.com/in/justin-castillo-69351198</span><span class="co">](https://www.linkedin.com/in/justin-castillo-69351198/)</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
